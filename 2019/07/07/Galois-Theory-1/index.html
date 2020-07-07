@@ -28,7 +28,7 @@
 <meta property="og:description" content="有限伽罗瓦扩张  阿廷引理和戴德金无关性引理 正规基 一些习题    有限伽罗瓦扩张 伽罗瓦扩张 是指可分正规扩张, 有限伽罗瓦扩张 是指有限可分正规扩张. {:.success} 设 \(E&#x2F;F\) 是任意域扩张, 令 \[G &#x3D; \mathrm{Gal}(E&#x2F;F) &#x3D; \{\sigma: E \rightarrow F 是域同构 \mid \sigma(a) &#x3D; a, \forall a">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-07-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-07-07T13:29:56.773Z">
+<meta property="article:modified_time" content="2020-07-07T18:07:09.207Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math Algebra 伽罗瓦理论">
 <meta name="twitter:card" content="summary">
@@ -157,12 +157,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-07 21:29:56" itemprop="dateModified" datetime="2020-07-07T21:29:56+08:00">2020-07-07</time>
+                <time title="修改时间：2020-07-08 02:07:09" itemprop="dateModified" datetime="2020-07-08T02:07:09+08:00">2020-07-08</time>
               </span>
 
           
@@ -257,19 +257,19 @@
 <p><strong>伽罗瓦扩张</strong> 是指可分正规扩张, <strong>有限伽罗瓦扩张</strong> 是指有限可分正规扩张. {:.success}</p>
 <p>设 <span class="math inline">\(E/F\)</span> 是任意域扩张, 令</p>
 <p><span class="math display">\[G = \mathrm{Gal}(E/F) = \{\sigma: E \rightarrow F 是域同构 \mid \sigma(a) = a, \forall a \in F\}.\]</span></p>
-<p>则 <span class="math inline">\(\mathrm{Gal}(E/F)\)</span> 对于映射的合成作成群. 记 <span class="math display">\[\Omega = \{E/F 的中间域\}\]</span>, <span class="math display">\[\Gamma = \{G 的子群\}\]</span>. 考虑如下两个映射, 通常称之为 <strong>伽罗瓦对应</strong>:</p>
-<p><span class="math display">\[
+<p>则 <span class="math inline">\(\mathrm{Gal}(E/F)\)</span> 对于映射的合成作成群. 记 <span class="math inline">\(\Omega = \{E/F 的中间域\}\)</span>, <span class="math inline">\(\Gamma = \{G 的子群\}\)</span>. 考虑如下两个映射, 通常称之为 <strong>伽罗瓦对应</strong>:</p>
+<p><span class="math display">\[\begin{aligned}
     \mathrm{Gal}(E/-): \Omega \rightarrow \Gamma, \mathrm{Gal}(E/-)(M) = \mathrm{Gal}(E/M), \forall M \in \Omega, \\
     \mathrm{Inv}: \Gamma \rightarrow \Omega, \mathrm{Inv}(H) = \{a \in E \mid \sigma(a) = a,\forall \sigma \in H\},\forall H \in \Gamma.
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>这里 <span class="math inline">\(\mathrm{Gal}(E/M)\)</span> 称作 <span class="math inline">\(E\)</span> 在 <span class="math inline">\(M\)</span> 上的 <strong>伽罗瓦群</strong>; <span class="math inline">\(\mathrm{Inv}(H)\)</span> 称为 <span class="math inline">\(H\)</span> 的不动点域. <a id="more"></a></p>
 <p><strong>引理</strong> 设 <span class="math inline">\(E/F\)</span> 是域扩张, <span class="math inline">\(G\)</span>,<span class="math inline">\(\Omega\)</span>,<span class="math inline">\(\Gamma\)</span> 的定义同上, 则<br />
 <span class="math inline">\((\mathrm i)\)</span> 若 <span class="math inline">\(M_1 \subseteq M_2\)</span> 是 <span class="math inline">\(E/F\)</span> 的中间域, 则 <span class="math inline">\(\mathrm{Gal}(E/M_1) \supseteq \mathrm{Gal}(E/M_2)\)</span>;<br />
 若 <span class="math inline">\(H_1\subseteq H_2\)</span> 都是 <span class="math inline">\(G\)</span> 的子群, 则 <span class="math inline">\(\mathrm{Inv}(H_1) \supseteq \mathrm{Inv}(H_2)\)</span>.<br />
 <span class="math inline">\((\mathrm{ii})\)</span> (作用 <span class="math inline">\(2\)</span> 次变大) 对于 <span class="math inline">\(M \in \Omega\)</span>, 有 <span class="math inline">\(M \subseteq \mathrm{Inv}(\mathrm{Gal}(E/M))\)</span>; 对于 <span class="math inline">\(H \in \Gamma\)</span> 有 <span class="math inline">\(H \subseteq \mathrm{Gal}(E/\mathrm{Inv(H)})\)</span>.<br />
 <span class="math inline">\((\mathrm {iii})\)</span> (作用 <span class="math inline">\(3\)</span> 次等于作用 <span class="math inline">\(1\)</span> 次) 对于 <span class="math inline">\(M \in \Omega\)</span>, <span class="math inline">\(H \in \Gamma\)</span>, 有<br />
-<span class="math inline">\(\mathrm{Gal}(E/\mathrm{Inv}(\mathrm{Gal}(E/M))) = \mathrm{Gal}(E/M)\)</span>;<span class="math inline">\(\mathrm{Inv}(\mathrm{Gal}(E/\mathrm{Inv}(H))) = \mathrm{Inv}(H)\)</span>. {:.info} ## 阿廷引理和戴德金无关性引理 <strong>引理</strong> (<strong>阿廷引理</strong>) 设 <span class="math inline">\(Q\)</span> 是 <span class="math inline">\(\mathrm{Aut}(K)\)</span> 的有限子群. 则有 <span class="math display">\[[K :\mathrm{Inv}(Q)] \le \mid Q \mid\]</span>, 其中 <span class="math display">\[\mathrm{Inv}(Q) = \{a \in K \mid \sigma(a) = a, \forall \sigma \in Q\}\]</span>. {:.info}</p>
-<p><strong>证明</strong> 记 <span class="math inline">\(\mid Q \mid = n\ge 1\)</span>, 欲证 <span class="math inline">\([K: \mathrm{Inv}(Q)] \le n\)</span>, 只需证明 <span class="math inline">\(K\)</span> 上任意 <span class="math inline">\(n+1\)</span> 个元必然 <span class="math inline">\(\mathrm{Inv}(Q)\)</span>-线性相关. 记 <span class="math display">\[Q = \{f_1 = \mathrm{Id}_K,f_2,\cdots ,f_n\}\]</span>, 对任意 <span class="math inline">\(a_1,a_2,\cdots ,a_{n+1} \in K\)</span>, 考虑方程组</p>
+<span class="math inline">\(\mathrm{Gal}(E/\mathrm{Inv}(\mathrm{Gal}(E/M))) = \mathrm{Gal}(E/M)\)</span>;<span class="math inline">\(\mathrm{Inv}(\mathrm{Gal}(E/\mathrm{Inv}(H))) = \mathrm{Inv}(H)\)</span>. {:.info} ## 阿廷引理和戴德金无关性引理 <strong>引理</strong> (<strong>阿廷引理</strong>) 设 <span class="math inline">\(Q\)</span> 是 <span class="math inline">\(\mathrm{Aut}(K)\)</span> 的有限子群. 则有 <span class="math inline">\([K :\mathrm{Inv}(Q)] \le \mid Q \mid\)</span>, 其中 <span class="math inline">\(\mathrm{Inv}(Q) = \{a \in K \mid \sigma(a) = a, \forall \sigma \in Q\}\)</span>. {:.info}</p>
+<p><strong>证明</strong> 记 <span class="math inline">\(\mid Q \mid = n\ge 1\)</span>, 欲证 <span class="math inline">\([K: \mathrm{Inv}(Q)] \le n\)</span>, 只需证明 <span class="math inline">\(K\)</span> 上任意 <span class="math inline">\(n+1\)</span> 个元必然 <span class="math inline">\(\mathrm{Inv}(Q)\)</span>-线性相关. 记 <span class="math inline">\(Q = \{f_1 = \mathrm{Id}_K,f_2,\cdots ,f_n\}\)</span>, 对任意 <span class="math inline">\(a_1,a_2,\cdots ,a_{n+1} \in K\)</span>, 考虑方程组</p>
 <p><span class="math display">\[
 \left\{
     \begin{array}{l}
@@ -293,7 +293,7 @@
 <p align="right">
 <span class="math inline">\(\blacksquare\)</span>
 </p>
-<p>群 <span class="math inline">\(H\)</span> 到域 <span class="math inline">\(K\)</span> 非零元组成的乘法群 <span class="math display">\[K^*\]</span> 的同态称为群 <span class="math inline">\(H\)</span> 的 <span class="math inline">\(K\)</span>-<strong>线性特征标</strong>.</p>
+<p>群 <span class="math inline">\(H\)</span> 到域 <span class="math inline">\(K\)</span> 非零元组成的乘法群 <span class="math inline">\(K^*\)</span> 的同态称为群 <span class="math inline">\(H\)</span> 的 <span class="math inline">\(K\)</span>-<strong>线性特征标</strong>.</p>
 <p><strong>引理</strong> (<strong>戴德金无关性引理</strong>) 设 <span class="math inline">\(\chi_1,\cdots , \chi_n\)</span> 是群 <span class="math inline">\(H\)</span> 两两不同的 <span class="math inline">\(K\)</span>-线性特征标, 则 <span class="math inline">\(\chi_1,\cdots ,\chi_n\)</span> 在 <span class="math inline">\(K\)</span> 上线性无关. {:.info}</p>
 <p><strong>证明</strong> (反证) 若不然, 存在不全为零的元素 <span class="math inline">\(c_1,c_2,\cdots ,c_n \in K\)</span> 使得 <span class="math inline">\(\sum_{1 \le i \le n}c_i\chi_i(g) = 0,\forall g \in H\)</span>. 取其中非零元个数最少的 <span class="math inline">\(c_1,\cdots ,c_n\)</span>. 不妨设 <span class="math inline">\(c_1,c_2, \cdots ,c_t \ne 0\)</span> 而 <span class="math inline">\(c_{t+1},\cdots ,c_n = 0\)</span>. (<span class="math inline">\(t\)</span> 必然大于 <span class="math inline">\(1\)</span>). <span class="math inline">\(\chi_1 \ne \chi_2\)</span>, 故存在 <span class="math inline">\(h \in H\)</span> 使 <span class="math inline">\(\chi_1(h) \ne \chi_2(h)\)</span>. 将</p>
 <p><span class="math display">\[
@@ -310,7 +310,7 @@
 <p>用戴德金无关性引理, 我们可以给出伽罗瓦群的上界.</p>
 <p><strong>推论</strong> 设 <span class="math inline">\(E/F\)</span> 是域的有限扩张, 则 <span class="math inline">\(\mid \mathrm{Gal}(E/F)\mid \le [E:F]\)</span>. {:.info }</p>
 <p><strong>证明</strong> 首先证明 <span class="math inline">\(G = \mathrm{Gal}(E/F)\)</span> 是有限群. <span class="math inline">\(E/F\)</span> 是有限扩张,从而是代数扩张. 记 <span class="math inline">\(E = F(u_1,u_2,\cdots ,u_t)\)</span>, 则 <span class="math inline">\(\sigma \in G\)</span> 由 <span class="math inline">\(\sigma(u_1),\cdots ,\sigma(u_t)\)</span> 决定. 记 <span class="math inline">\(u_i\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式为 <span class="math inline">\(f_i(x)\)</span>, 则 <span class="math inline">\(0 = \sigma(f_i(u_i)) = f_i(\sigma(u_i))\)</span>, 从而 <span class="math inline">\(\sigma(u_i)\)</span> 也是 <span class="math inline">\(f_i(x)\)</span> 的根, 只有有限种可能. 综上, <span class="math inline">\(\mid G \mid &lt; \infty\)</span>.</p>
-<p>用反证法, 若结论不正确, 记 <span class="math display">\[G = \{\sigma_1,\sigma_2,\cdots ,\sigma_m\}\]</span>, <span class="math inline">\([E:F] = n &lt; m\)</span>, 取 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基 <span class="math inline">\(a_1,a_2,\cdots ,a_n\)</span>. 因 <span class="math inline">\(n &lt; m\)</span>, 所以矩阵</p>
+<p>用反证法, 若结论不正确, 记 <span class="math inline">\(G = \{\sigma_1,\sigma_2,\cdots ,\sigma_m\}\)</span>, <span class="math inline">\([E:F] = n &lt; m\)</span>, 取 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基 <span class="math inline">\(a_1,a_2,\cdots ,a_n\)</span>. 因 <span class="math inline">\(n &lt; m\)</span>, 所以矩阵</p>
 <p><span class="math display">\[
 \begin{pmatrix}
     \sigma_1(a_1) &amp; \sigma_1(a_2) &amp; \cdots &amp; \sigma_2(a_n) \\
@@ -323,7 +323,7 @@
 <p><span class="math display">\[
     \sum_{i=1}^{m}c_i\sigma_i(x) = \sum_{i=1}^{m}\sum_{j=1}^{n}c_i\sigma_i(k_ja_j) = \sum_{j=1}^{n}k_j\sum_{i=1}^{m}c_i\sigma_i(a_j) = 0
 \]</span></p>
-这说明 <span class="math inline">\(\sigma_1,\sigma_2,\cdots ,\sigma_m\)</span> <span class="math inline">\(E\)</span>-线性相关. 但是 <span class="math inline">\(\sigma_1,\cdots ,\sigma_m\)</span> 是 <span class="math display">\[E^*\]</span> 两两不同的 <span class="math inline">\(E\)</span>-线性特征标, 这与戴德金无关性引理矛盾!
+这说明 <span class="math inline">\(\sigma_1,\sigma_2,\cdots ,\sigma_m\)</span> <span class="math inline">\(E\)</span>-线性相关. 但是 <span class="math inline">\(\sigma_1,\cdots ,\sigma_m\)</span> 是 <span class="math inline">\(E^*\)</span> 两两不同的 <span class="math inline">\(E\)</span>-线性特征标, 这与戴德金无关性引理矛盾!
 <p align="right">
 <span class="math inline">\(\blacksquare\)</span>
 </p>
@@ -336,11 +336,11 @@
 <p><strong>证明</strong> 只证 <span class="math inline">\((\rm iii) \Rightarrow (\rm iv)\)</span>, <span class="math inline">\((\rm iv) \Rightarrow (\rm i)\)</span>.</p>
 <p><span class="math inline">\((\rm iii) \Rightarrow (\rm iv)\)</span>: 由 <span class="math inline">\((\rm iii)\)</span> 知 $ G =(E/F)$ 是有限群. 由定义有 <span class="math inline">\(F \subseteq \mathrm{Inv}(\mathrm{Gal}(E/F))\)</span>. 我们有</p>
 <p><span class="math display">\[
-\begin{aligned}
+\begin{split}
     [E : \mathrm{Inv}(\mathrm{Gal}(E/F))] &amp;\le [E : F] = |\mathrm{Gal}(E/F)| \\
     &amp; = |\mathrm{Gal}(E/\mathrm{Inv}(\mathrm{Gal}(E/F)))| \\
     &amp;\le [E: \mathrm{Inv}(\mathrm{Gal}(E/F))].
-\end{aligned}
+\end{split}    
 \]</span></p>
 <p>于是 <span class="math inline">\([E: \mathrm{Inv}(\mathrm{Gal}(E/F))] = [E : F]\)</span>. 因此 <span class="math inline">\(F = \mathrm{Inv}(\mathrm{Gal}(E/F))\)</span>.</p>
 <p><span class="math inline">\((\rm iv) \Rightarrow (\rm i)\)</span>: 有</p>
@@ -354,7 +354,7 @@
 <span class="math inline">\(\blacksquare\)</span>
 </p>
 <h2 id="正规基">正规基</h2>
-<p><strong>引理</strong> <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\([E:F] = n\)</span>, <span class="math display">\[\mathrm{Gal}(E/F) = \{\sigma_1,\sigma_2,\cdots ,\sigma_n\}\]</span>, 则 <span class="math inline">\(p_1,p_2,\cdots p_n\)</span> 是 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基当且仅当行列式 <span class="math inline">\(\det{(\sigma_j(p_i))_{1 \le j,i \le n}} \ne 0\)</span>. {:.info}</p>
+<p><strong>引理</strong> <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\([E:F] = n\)</span>, <span class="math inline">\(\mathrm{Gal}(E/F) = \{\sigma_1,\sigma_2,\cdots ,\sigma_n\}\)</span>, 则 <span class="math inline">\(p_1,p_2,\cdots p_n\)</span> 是 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基当且仅当行列式 <span class="math inline">\(\det{(\sigma_j(p_i))_{1 \le j,i \le n}} \ne 0\)</span>. {:.info}</p>
 <p><strong>证明</strong> <span class="math inline">\(\Rightarrow\)</span> 假若 <span class="math inline">\(\det(\sigma_j(p_i)) = 0\)</span>, 则矩阵</p>
 <p><span class="math display">\[
 \begin{pmatrix}
@@ -367,15 +367,15 @@
 <p><span class="math display">\[
 \sum_{i=1}^{n}{c_i\sigma_i(x)} = \sum_{i=1}^{n}\sum_{j=1}^{n}{c_i\sigma_i(k_jp_j)} = \sum_{j=1}^{n}k_j\sum_{i=1}^{n}c_i\sigma_i(p_j) = 0
 \]</span></p>
-<p>这说明 <span class="math inline">\(\sigma_1,\cdots ,\sigma_n\)</span> <span class="math inline">\(E\)</span>-线性相关. 然而 <span class="math inline">\(\sigma_1,\cdots ,\sigma_n\)</span> 是 <span class="math display">\[E^*\]</span> 的 <span class="math inline">\(E\)</span>-线性特征标, 这与戴德金无关性引理矛盾.</p>
+<p>这说明 <span class="math inline">\(\sigma_1,\cdots ,\sigma_n\)</span> <span class="math inline">\(E\)</span>-线性相关. 然而 <span class="math inline">\(\sigma_1,\cdots ,\sigma_n\)</span> 是 <span class="math inline">\(E^*\)</span> 的 <span class="math inline">\(E\)</span>-线性特征标, 这与戴德金无关性引理矛盾.</p>
 <p><span class="math inline">\(\Leftarrow\)</span> 假若 <span class="math inline">\(p_1,\cdots ,p_n\)</span> 不是 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基, 则它们 <span class="math inline">\(F\)</span>-线性相关. 存在 <span class="math inline">\(c_1,\cdots ,c_n \in F\)</span> 使得 <span class="math inline">\(\sum_{1 \le i \le n}{c_ip_i} = 0\)</span>. 两边用 <span class="math inline">\(\sigma_j\)</span> 作用得 <span class="math inline">\(\sum_{1 \le i \le n}{c_i\sigma_j(p_i)} = 0\)</span> (<span class="math inline">\(j = 1,2,\cdots, n\)</span>). 这说明矩阵 <span class="math inline">\((\sigma_j(p_i))_{j,i}\)</span> 的列向量线性相关, 这导致其行列式为零.</p>
-<p><strong>定理</strong> (<strong>正规基</strong>) 若 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, 则存在 <span class="math inline">\(a \in E\)</span> 使 <span class="math display">\[\{\sigma{(a)} \mid \sigma \in \mathrm{Gal}(E/F)\}\]</span> 是 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基. {:.info}</p>
+<p><strong>定理</strong> (<strong>正规基</strong>) 若 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, 则存在 <span class="math inline">\(a \in E\)</span> 使 <span class="math inline">\(\{\sigma{(a)} \mid \sigma \in \mathrm{Gal}(E/F)\}\)</span> 是 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基. {:.info}</p>
 <p>以下证明主要摘录自 E.Artin 的 《Galois Theory》.</p>
-<p><strong>证明</strong> 先证明 <span class="math inline">\(F\)</span> 是无限域的情况. <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, 从而是单扩张. 记 <span class="math inline">\(E = F(u)\)</span>, <span class="math inline">\(u\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式为 <span class="math inline">\(f(x)\)</span>, 有 <span class="math inline">\(f(x)\)</span> 无重根. 记 <span class="math inline">\([E:F] = n\)</span>, <span class="math display">\[G = \mathrm{Gal}(E/F) = \{\sigma_1,\cdots ,\sigma_n\}\]</span>. 可知 <span class="math inline">\(f(x)\)</span> 的根恰是 <span class="math display">\[Gu = \{\sigma(u) \mid \sigma \in G\}\]</span>, 且</p>
+<p><strong>证明</strong> 先证明 <span class="math inline">\(F\)</span> 是无限域的情况. <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, 从而是单扩张. 记 <span class="math inline">\(E = F(u)\)</span>, <span class="math inline">\(u\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式为 <span class="math inline">\(f(x)\)</span>, 有 <span class="math inline">\(f(x)\)</span> 无重根. 记 <span class="math inline">\([E:F] = n\)</span>, <span class="math inline">\(G = \mathrm{Gal}(E/F) = \{\sigma_1,\cdots ,\sigma_n\}\)</span>. 可知 <span class="math inline">\(f(x)\)</span> 的根恰是 <span class="math inline">\(Gu = \{\sigma(u) \mid \sigma \in G\}\)</span>, 且</p>
 <p><span class="math display">\[
     f(x) = \prod_{t \in Gu}(x-t).
 \]</span></p>
-<p>记 <span class="math inline">\(\sigma_{i_j} = \sigma_i\sigma_j\)</span>,<span class="math inline">\(1 \le i,j \le n\)</span>. 并令 <span class="math inline">\(u_{i_j} = \sigma_{i_j}(u)\)</span>. 则 <span class="math display">\[u_{1_j}, u_{2_j} \cdots ,u_{n_j}\]</span> 和 <span class="math display">\[u_{i_1}, u_{i_2},\cdots ,u_{i_n}\]</span> 均是 <span class="math inline">\(Gu\)</span> 的一个置换.</p>
+<p>记 <span class="math inline">\(\sigma_{i_j} = \sigma_i\sigma_j\)</span>,<span class="math inline">\(1 \le i,j \le n\)</span>. 并令 <span class="math inline">\(u_{i_j} = \sigma_{i_j}(u)\)</span>. 则 <span class="math inline">\(u_{1_j}, u_{2_j} \cdots ,u_{n_j}\)</span> 和 <span class="math inline">\(u_{i_1}, u_{i_2},\cdots ,u_{i_n}\)</span> 均是 <span class="math inline">\(Gu\)</span> 的一个置换.</p>
 <p>令 <span class="math inline">\(g(x) = \frac{f(x)}{(x-u)f&#39;(u)} \in E[x]\)</span>, <span class="math inline">\(g_{i_j}(x) = \frac{f(x)}{(x-u_{i_j})f&#39;(u_{i_j})} \in E[x]\)</span>. 则当 <span class="math inline">\(\alpha \in F\)</span> 时, <span class="math inline">\(g_{i_j}(\alpha) = \sigma_{i_j}(g(\alpha))\)</span>. 且 <span class="math inline">\(g_{i_j}(u_{i_j}) = 1\)</span>, <span class="math inline">\(g_{i_j}(u_{k_t}) = 0\)</span>, <span class="math inline">\(\forall u_{i_j} \ne u_{k_t}\)</span>.</p>
 <p>考虑行列式</p>
 <p><span class="math display">\[
@@ -419,7 +419,6 @@ d(a) =
 <p>此处再摘录另一个证明, 它来自柯斯特利金的《代数学引论》.</p>
 <p><strong>定义</strong> 设 <span class="math inline">\(K,L\)</span> 是两个域. 一组单同态 <span class="math inline">\(\eta_1,\eta_2,\cdots ,\eta_n : K \rightarrow L\)</span> 叫做在 <span class="math inline">\(L\)</span> 上<strong>代数无关</strong>, 如果</p>
 <p><span class="math display">\[f \in L[x_1,x_2,\cdots ,x_n], f(\eta_1(u),\eta_2(u),\cdots ,\eta_n(u)) = 0, \forall u \in K \Rightarrow f = 0.\]</span></p>
-<p>{:.success}</p>
 <p><strong>引理</strong> 设 <span class="math inline">\(F\)</span> 是无限域, <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上有限可分扩张, <span class="math inline">\(L\)</span> 是 <span class="math inline">\(E /F\)</span> 的正规闭包. 设 <span class="math inline">\(\eta_1,\eta_2,\cdots ,\eta_n\)</span> 是 <span class="math inline">\(n = [E:F]\)</span> 个两两不同的单同态 <span class="math inline">\(E \rightarrow L\)</span> 且 <span class="math inline">\(\eta_i\mid_F = \mathrm{Id}\)</span>. 则 <span class="math inline">\(\eta_i\)</span> 在 <span class="math inline">\(L\)</span> 上代数无关. {:.info}</p>
 <p><strong>证明</strong> (反证) 否则, 假定 <span class="math inline">\(f \in L[x_1,x_2,\cdots x_n]\)</span> 使得 <span class="math inline">\(f(\eta_1(u),\cdots,\eta_n(u)) = 0, \forall u \in E\)</span>. 设 <span class="math inline">\((u_i)\)</span> 是 <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(F\)</span>-基, 则任意 <span class="math inline">\(a_i \in F\)</span>, 记 <span class="math inline">\(u = \sum_ia_iu_i\)</span>, 有</p>
 <p><span class="math display">\[
@@ -452,19 +451,19 @@ g\left(\sum_{j,k}v_{1j}\eta_j(u_k)x_k,\cdots,\sum_{j,k}v_{nj}\eta_j(u_k)x_k\righ
 <p><strong>例</strong> 求 <span class="math inline">\(\mathbb{Q}(\sqrt{2},\sqrt{3})/\mathbb{ Q }\)</span> 的一组正规基. {:.warning}</p>
 <p><strong>解</strong> <span class="math inline">\(\mathbb{Q}(\sqrt{2},\sqrt{3})\)</span> 是 可分多项式 <span class="math inline">\((x^2-2)(x^2-3)\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的分裂域. 故 <span class="math inline">\(\mathbb{Q}(\sqrt{2},\sqrt{3}) / \mathbb{Q}\)</span> 是有限伽罗瓦扩张. 它的维度为 <span class="math inline">\(4\)</span>. 它的一组基为 <span class="math inline">\(1,\sqrt{2},\sqrt{3},\sqrt{6}\)</span>. <span class="math inline">\(\mathrm{Gal}{(E/F)}\)</span> 的四个元分别由</p>
 <p><span class="math display">\[
-\begin{aligned}
+\begin{split}
     &amp;\sigma_1 = \mathrm{Id}; \\
     &amp;\sigma_2: \sqrt{2} \mapsto -\sqrt{2}, \sqrt{3} \mapsto \sqrt{3}; \\
     &amp;\sigma_3: \sqrt{2} \mapsto \sqrt{2}, \sqrt{3} \mapsto -\sqrt{3}; \\
     &amp;\sigma_4: \sqrt{2} \mapsto -\sqrt{2}, \sqrt{3} \mapsto -\sqrt{3}.
-\end{aligned}
+\end{split}
 \]</span></p>
 <p>决定. 取 <span class="math inline">\(a = 1 + \sqrt{2} + \sqrt{3} + \sqrt{6} \in \mathbb{Q}(\sqrt{2},\sqrt{3})\)</span>, 则</p>
 <p><span class="math display">\[
-\begin{aligned}
+\begin{split}
 \mathrm{Gal}{(E/F)}a = &amp;\{1 + \sqrt{2} + \sqrt{3} + \sqrt{6},1 - \sqrt{2} + \sqrt{3} - \sqrt{6}, \\
 &amp;1 + \sqrt{2} - \sqrt{3} - \sqrt{6},1 - \sqrt{2} - \sqrt{3} + \sqrt{6}\}.
-\end{aligned}
+\end{split}
 \]</span></p>
 <p>由</p>
 <p><span class="math display">\[
