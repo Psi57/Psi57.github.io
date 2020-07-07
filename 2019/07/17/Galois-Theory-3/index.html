@@ -14,12 +14,10 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  
-  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="认真抄书(逃   伽罗瓦的原始思想 判别式  四次方程的伽罗瓦群    伽罗瓦的原始思想 设 \(E\) 是域 \(F\) 上多项式 \(f(x)\) 在域 \(F\) 上的分裂域. 将伽罗瓦群 \(\mathrm{Gal}(E&#x2F;F)\) 称为多项式 \(f(x)\) 或方程 \(f(x)&#x3D;0\) 在 \(F\) 上的伽罗瓦群, 记为 \(\mathrm{Gal}(f(x), F)\). 或简记为">
@@ -38,7 +36,7 @@
 <link rel="canonical" href="http://yoursite.com/2019/07/17/Galois-Theory-3/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -60,6 +58,8 @@
   <style>
   body { margin-top: 2rem; }
 
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
   .use-motion .menu-item,
   .use-motion .sidebar,
   .use-motion .post-block,
@@ -67,12 +67,7 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
+  .use-motion .collection-header,
   .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
@@ -149,16 +144,16 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#伽罗瓦的原始思想"><span class="nav-number">1.</span> <span class="nav-text">伽罗瓦的原始思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判别式"><span class="nav-number">2.</span> <span class="nav-text">判别式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四次方程的伽罗瓦群"><span class="nav-number">2.1.</span> <span class="nav-text">四次方程的伽罗瓦群</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#伽罗瓦的原始思想"><span class="nav-number">1.</span> <span class="nav-text">伽罗瓦的原始思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判别式"><span class="nav-number">2.</span> <span class="nav-text">判别式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四次方程的伽罗瓦群"><span class="nav-number">2.1.</span> <span class="nav-text">四次方程的伽罗瓦群</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
       <section class="site-overview-wrap sidebar-panel">
-        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Psi</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap animated">
+<div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
@@ -540,6 +535,8 @@ a_2b_2 = 12
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 

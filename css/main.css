@@ -494,7 +494,8 @@ code {
   overflow-wrap: break-word;
 }
 kbd {
-  border: 2px solid #ccc;
+  background-image: linear-gradient(var(--highlight-gutter-background), var(--highlight-background), var(--highlight-gutter-background));
+  border: 1px solid #ccc;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
   font-family: inherit;
@@ -1298,7 +1299,7 @@ pre code {
   }
 }
 .use-motion .menu-item {
-  visibility: hidden;
+  opacity: 0;
 }
 .sidebar-inner {
   color: #999;
@@ -1735,16 +1736,16 @@ pre code {
 .use-motion .post-block,
 .use-motion .pagination,
 .use-motion .comments {
-  visibility: hidden;
+  opacity: 0;
 }
 .use-motion .post-header {
-  visibility: hidden;
+  opacity: 0;
 }
 .use-motion .post-body {
-  visibility: hidden;
+  opacity: 0;
 }
 .use-motion .collection-header {
-  visibility: hidden;
+  opacity: 0;
 }
 .posts-collapse {
   margin-left: 35px;
@@ -2426,9 +2427,6 @@ mjx-container[jax="CHTML"][display="true"],
 mjx-container[display="true"] + br {
   display: none;
 }
-.use-motion .animated {
-  visibility: inherit;
-}
 .header {
   align-self: stretch;
 }
@@ -2606,7 +2604,7 @@ mjx-container[display="true"] + br {
   position: sticky;
   top: 12px;
   width: 240px;
-  visibility: hidden;
+  opacity: 0;
 }
 @media (max-width: 991px) {
   .sidebar {
