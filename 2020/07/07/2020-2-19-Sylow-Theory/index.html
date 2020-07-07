@@ -14,18 +14,20 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="主要是习题整理.    Sylow Theorems Fusion in the normalizer of a $\bm p$-Sylow subgroup Local conjugacy and Alperin’s Theorem Exercises    Sylow TheoremsDefinition. 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p">
+  <meta name="description" content="主要是习题整理.   Sylow Theorems Fusion in the normalizer of a \(\bm p\)-Sylow subgroup Local conjugacy and Alperin&#39;s Theorem Exercises   Sylow Theorems Definition. 设有限群 \(G\),设 \(p^n\) 为 \(\mid G \mid\) 的因子">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sylow 定理">
 <meta property="og:url" content="http://yoursite.com/2020/07/07/2020-2-19-Sylow-Theory/index.html">
 <meta property="og:site_name" content="Psi&#39;s Blog">
-<meta property="og:description" content="主要是习题整理.    Sylow Theorems Fusion in the normalizer of a $\bm p$-Sylow subgroup Local conjugacy and Alperin’s Theorem Exercises    Sylow TheoremsDefinition. 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p">
+<meta property="og:description" content="主要是习题整理.   Sylow Theorems Fusion in the normalizer of a \(\bm p\)-Sylow subgroup Local conjugacy and Alperin&#39;s Theorem Exercises   Sylow Theorems Definition. 设有限群 \(G\),设 \(p^n\) 为 \(\mid G \mid\) 的因子">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-07T11:28:27.502Z">
 <meta property="article:modified_time" content="2020-02-19T15:09:14.000Z">
@@ -36,7 +38,7 @@
 <link rel="canonical" href="http://yoursite.com/2020/07/07/2020-2-19-Sylow-Theory/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -56,24 +58,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
@@ -83,22 +97,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Psi's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -111,41 +123,82 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sylow-theorems"><span class="nav-number">1.</span> <span class="nav-text">Sylow Theorems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup"><span class="nav-number">2.</span> <span class="nav-text">Fusion in the normalizer of a \(\bm p\)-Sylow subgroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#local-conjugacy-and-alperins-theorem"><span class="nav-number">3.</span> <span class="nav-text">Local conjugacy and Alperin&#39;s Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exercises"><span class="nav-number">4.</span> <span class="nav-text">Exercises</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Psi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -197,32 +250,46 @@
       
         <p>主要是习题整理.</p>
 <!-- vim-markdown-toc GFM -->
-
 <ul>
 <li><a href="#sylow-theorems">Sylow Theorems</a></li>
-<li><a href="#fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a $\bm p$-Sylow subgroup</a></li>
-<li><a href="#local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin’s Theorem</a></li>
+<li><a href="#fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a <span class="math inline">\(\bm p\)</span>-Sylow subgroup</a></li>
+<li><a href="#local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin's Theorem</a></li>
 <li><a href="#exercises">Exercises</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h2 id="Sylow-Theorems"><a href="#Sylow-Theorems" class="headerlink" title="Sylow Theorems"></a>Sylow Theorems</h2><p><strong>Definition.</strong> 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p$ 的幂次.$G$ 的子群 $H$ 被称为 $p$-Sylow 子群,如果 $\mid H\mid = p^n$.<br>{:.success}</p>
-<p><strong>Proposition.</strong> i) 每个有限群都有 $p$-Sylow 子群,其中 $p \mid ,\mid!G!\mid$.<br>ii) (1) $G$ 的每个 $p$-子群都被含于某一 $p$-Sylow 子群.<br>(2) $G$ 的 $p$-Sylow 子群彼此共轭.<br>(3) $G$ 的 $p$-Sylow 子群的个数 $\equiv 1 \pmod{p}$.<br>{:.warning}</p>
-<p><strong>Proposition.(Frattini)</strong> 设 $H$ 是 $G$ 的正规子群, $Q$ 是 $H$ 的一个 $p$-Sylow 子群,则 $HN_G(Q) = G$.<br>{:.warning}</p>
-<p><strong>Corollary.</strong> 令 $S$ 是 $G$ 的一个 $p$-Sylow 子群,令 $H$ 为 $G$ 的子群,且 $N_G(S) \subset H$.则 $N_G(H) = H$. 特别地, $N_G(N_G(S)) = N_G(S)$.<br>{:.warning}</p>
-<p><em>Proof.</em> 记 $K = N_G(H)$, 则 $H$ 正规于 $K$. 由 Frattini 论断,有 $K = HN_K(S)$. 但是 $N_K(S) \subset N_G(S) \subset H$, 有 $K = H$.</p>
-<h2 id="Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup"><a href="#Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup" class="headerlink" title="Fusion in the normalizer of a $\bm p$-Sylow subgroup"></a>Fusion in the normalizer of a $\bm p$-Sylow subgroup</h2><p>若 $S \subset K$, 都是 $G$ 的子群. $H$ 的两个元素被称为在 $K$ 中融合,如果它们是 $K$-共轭的.</p>
-<p><strong>Proposition.</strong> 设 $S$ 是 $G$ 的 $p$-Sylow 子群.令 $(A_i,B_i)_{i \in I}$ 为两族 $S$-正规的子集(即 $gA_ig^{-1} = A_i, gB_ig^{-1} = B_i \forall i \in I, g \in S$). 若 $g \in G$ 使 $gA_ig^{-1} = B_i, \forall i \in I$,则存在 $n \in N_G(S)$ 使得 $nA_in^{-1} = B_i, \forall i \in I$.<br>{:.warning}</p>
-<p><em>proof.</em> 令 $N_A = \bigcap_{i \in I} N_G(A_i)$ 和 $N_B = \bigcap_{i \in I} N_G(B_i)$. 则 $gN_Ag^{-1} = N_B$. 由 $A_i,B_i$ 是 $S$-正规的,知道 $S \subset N_A \cap N_B$, 从而 $gSg^{-1} \subset N_B$. $S$, $gSg^{-1}$ 是 $N_B$ 的 $p$-Sylow 子群, 从而存在 $z \in N_B$, 使得 $zSz^{-1} = gSg^{-1}$. 因此 $n = z^{-1}g \in N_G(B)$, 且 $nA_in^{-1} = z^{-1}gA_ig^{-1}z = z^{-1}Bz = B_i, \forall i \in I$.</p>
-<p><strong>Corollary.</strong> $S$ 的两个正规子群如果是 $G$-共轭的,则是 $N_G(S)$-共轭的.<br>{:.warning}</p>
-<p><strong>Theorem.(Burnside)</strong> 设 $X,Y$ 是 $S$ 的中心的子集, 且 $g \in G$ 使 $gXg^{-1} = Y$.则存在 $n \in N_G(S)$ 使 $nxn^{-1} = gxg^{-1}, \forall x \in X$.</p>
-<h2 id="Local-conjugacy-and-Alperin’s-Theorem"><a href="#Local-conjugacy-and-Alperin’s-Theorem" class="headerlink" title="Local conjugacy and Alperin’s Theorem"></a>Local conjugacy and Alperin’s Theorem</h2><p>设 $S$ 是 $G$ 的一个 $p$-Sylow 子群.</p>
-<p><strong>Theorem.</strong> 设 $A \subset S$, 设 $g \in G$ 使得 $A^g \subset S$. 则存在整数 $n \ge 1$, 和 $S$ 的子群 $U_1,\ldots ,U_n$, 以及 $g_1,\ldots ,g_n \in G$,使得<br>(1) $g = g_1\cdots g_n$.<br>(2) $g_i \in N_G(U_i)$, 对 $1 \le i \le n$.<br>(3) $A^{g_1\cdots g_{i-1}} \subset U_i$, 对 $1 \le i \le n$.<br>{:.warning}</p>
-<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><p><em>(Construction of subgroups of index 2)</em> 令 $S$ 是一有限群 $G$ 的 $2$-Sylow 子群. 令 $H$ 是 $S$ 的子群.则 $G$ 作用于 $G /H$,令 $\varepsilon_H$ 是映射的合成</p>
-<p>$$<br>    G \longrightarrow \mathcal{S}_{G /H} \xrightarrow{\varepsilon} {\pm 1}.<br>$$</p>
-<p>其中 $\varepsilon(\sigma)$ 给出 $\sigma$ 的符号.</p>
-<p>令 $C$ 是 $S$ 的一个非平凡循环群.且 $\mid C\mid \times  \mid H \mid =  \mid S \mid$, 对每一个 $g \in G$,$C \cap gHg^{-1} = 1$.</p>
-<p>a) $C$ 在 $G /H$ 上的作用作用自由,它的轨道数是奇数.<br>b) $\varepsilon_H(C) = {1,-1}$.从而 $\ker \varepsilon_H$ 是 $G$ 的一个指数为 $2$ 的子群,并且不包含 $C$.</p>
+<h2 id="sylow-theorems">Sylow Theorems</h2>
+<p><strong>Definition.</strong> 设有限群 <span class="math inline">\(G\)</span>,设 <span class="math inline">\(p^n\)</span> 为 <span class="math inline">\(\mid G \mid\)</span> 的因子中最大的 <span class="math inline">\(p\)</span> 的幂次.<span class="math inline">\(G\)</span> 的子群 <span class="math inline">\(H\)</span> 被称为 <span class="math inline">\(p\)</span>-Sylow 子群,如果 <span class="math inline">\(\mid H\mid = p^n\)</span>. {:.success}</p>
+<p><strong>Proposition.</strong> i) 每个有限群都有 <span class="math inline">\(p\)</span>-Sylow 子群,其中 <span class="math inline">\(p \mid \,\mid\!G\!\mid\)</span>.<br />
+ii) (1) <span class="math inline">\(G\)</span> 的每个 <span class="math inline">\(p\)</span>-子群都被含于某一 <span class="math inline">\(p\)</span>-Sylow 子群.<br />
+(2) <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群彼此共轭.<br />
+(3) <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群的个数 <span class="math inline">\(\equiv 1 \pmod{p}\)</span>. {:.warning}</p>
+<p><strong>Proposition.(Frattini)</strong> 设 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的正规子群, <span class="math inline">\(Q\)</span> 是 <span class="math inline">\(H\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群,则 <span class="math inline">\(HN_G(Q) = G\)</span>. {:.warning}</p>
+<p><strong>Corollary.</strong> 令 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群,令 <span class="math inline">\(H\)</span> 为 <span class="math inline">\(G\)</span> 的子群,且 <span class="math inline">\(N_G(S) \subset H\)</span>.则 <span class="math inline">\(N_G(H) = H\)</span>. 特别地, <span class="math inline">\(N_G(N_G(S)) = N_G(S)\)</span>. {:.warning}</p>
+<p><em>Proof.</em> 记 <span class="math inline">\(K = N_G(H)\)</span>, 则 <span class="math inline">\(H\)</span> 正规于 <span class="math inline">\(K\)</span>. 由 Frattini 论断,有 <span class="math inline">\(K = HN_K(S)\)</span>. 但是 <span class="math inline">\(N_K(S) \subset N_G(S) \subset H\)</span>, 有 <span class="math inline">\(K = H\)</span>.</p>
+<h2 id="fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a <span class="math inline">\(\bm p\)</span>-Sylow subgroup</h2>
+<p>若 <span class="math inline">\(S \subset K\)</span>, 都是 <span class="math inline">\(G\)</span> 的子群. <span class="math inline">\(H\)</span> 的两个元素被称为在 <span class="math inline">\(K\)</span> 中融合,如果它们是 <span class="math inline">\(K\)</span>-共轭的.</p>
+<p><strong>Proposition.</strong> 设 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群.令 <span class="math inline">\((A_i,B_i)_{i \in I}\)</span> 为两族 <span class="math inline">\(S\)</span>-正规的子集(即 <span class="math inline">\(gA_ig^{-1} = A_i, gB_ig^{-1} = B_i \forall i \in I, g \in S\)</span>). 若 <span class="math inline">\(g \in G\)</span> 使 <span class="math inline">\(gA_ig^{-1} = B_i, \forall i \in I\)</span>,则存在 <span class="math inline">\(n \in N_G(S)\)</span> 使得 <span class="math inline">\(nA_in^{-1} = B_i, \forall i \in I\)</span>. {:.warning}</p>
+<p><em>proof.</em> 令 <span class="math inline">\(N_A = \bigcap_{i \in I} N_G(A_i)\)</span> 和 <span class="math inline">\(N_B = \bigcap_{i \in I} N_G(B_i)\)</span>. 则 <span class="math inline">\(gN_Ag^{-1} = N_B\)</span>. 由 <span class="math inline">\(A_i,B_i\)</span> 是 <span class="math inline">\(S\)</span>-正规的,知道 <span class="math inline">\(S \subset N_A \cap N_B\)</span>, 从而 <span class="math inline">\(gSg^{-1} \subset N_B\)</span>. <span class="math inline">\(S\)</span>, <span class="math inline">\(gSg^{-1}\)</span> 是 <span class="math inline">\(N_B\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群, 从而存在 <span class="math inline">\(z \in N_B\)</span>, 使得 <span class="math inline">\(zSz^{-1} = gSg^{-1}\)</span>. 因此 <span class="math inline">\(n = z^{-1}g \in N_G(B)\)</span>, 且 <span class="math inline">\(nA_in^{-1} = z^{-1}gA_ig^{-1}z = z^{-1}Bz = B_i, \forall i \in I\)</span>.</p>
+<p><strong>Corollary.</strong> <span class="math inline">\(S\)</span> 的两个正规子群如果是 <span class="math inline">\(G\)</span>-共轭的,则是 <span class="math inline">\(N_G(S)\)</span>-共轭的. {:.warning}</p>
+<p><strong>Theorem.(Burnside)</strong> 设 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(S\)</span> 的中心的子集, 且 <span class="math inline">\(g \in G\)</span> 使 <span class="math inline">\(gXg^{-1} = Y\)</span>.则存在 <span class="math inline">\(n \in N_G(S)\)</span> 使 <span class="math inline">\(nxn^{-1} = gxg^{-1}, \forall x \in X\)</span>.</p>
+<h2 id="local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin's Theorem</h2>
+<p>设 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群.</p>
+<p><strong>Theorem.</strong> 设 <span class="math inline">\(A \subset S\)</span>, 设 <span class="math inline">\(g \in G\)</span> 使得 <span class="math inline">\(A^g \subset S\)</span>. 则存在整数 <span class="math inline">\(n \ge 1\)</span>, 和 <span class="math inline">\(S\)</span> 的子群 <span class="math inline">\(U_1,\ldots ,U_n\)</span>, 以及 <span class="math inline">\(g_1,\ldots ,g_n \in G\)</span>,使得<br />
+(1) <span class="math inline">\(g = g_1\cdots g_n\)</span>.<br />
+(2) <span class="math inline">\(g_i \in N_G(U_i)\)</span>, 对 <span class="math inline">\(1 \le i \le n\)</span>.<br />
+(3) <span class="math inline">\(A^{g_1\cdots g_{i-1}} \subset U_i\)</span>, 对 <span class="math inline">\(1 \le i \le n\)</span>. {:.warning}</p>
+<h2 id="exercises">Exercises</h2>
+<p><em>(Construction of subgroups of index 2)</em> 令 <span class="math inline">\(S\)</span> 是一有限群 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(2\)</span>-Sylow 子群. 令 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(S\)</span> 的子群.则 <span class="math inline">\(G\)</span> 作用于 <span class="math inline">\(G /H\)</span>,令 <span class="math inline">\(\varepsilon_H\)</span> 是映射的合成</p>
+<p><span class="math display">\[
+    G \longrightarrow \mathcal{S}_{G /H} \xrightarrow{\varepsilon} \{\pm 1\}.
+\]</span></p>
+<p>其中 <span class="math inline">\(\varepsilon(\sigma)\)</span> 给出 <span class="math inline">\(\sigma\)</span> 的符号.</p>
+<p>令 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(S\)</span> 的一个非平凡循环群.且 <span class="math inline">\(\mid C\mid \times \mid H \mid = \mid S \mid\)</span>, 对每一个 <span class="math inline">\(g \in G\)</span>,<span class="math inline">\(C \cap gHg^{-1} = 1\)</span>.</p>
+<ol type="a">
+<li><span class="math inline">\(C\)</span> 在 <span class="math inline">\(G /H\)</span> 上的作用作用自由,它的轨道数是奇数.<br />
+</li>
+<li><span class="math inline">\(\varepsilon_H(C) = \{1,-1\}\)</span>.从而 <span class="math inline">\(\ker \varepsilon_H\)</span> 是 <span class="math inline">\(G\)</span> 的一个指数为 <span class="math inline">\(2\)</span> 的子群,并且不包含 <span class="math inline">\(C\)</span>.</li>
+</ol>
 
     </div>
 
@@ -258,8 +325,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -283,63 +350,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sylow-Theorems"><span class="nav-number">1.</span> <span class="nav-text">Sylow Theorems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup"><span class="nav-number">2.</span> <span class="nav-text">Fusion in the normalizer of a $\bm p$-Sylow subgroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-conjugacy-and-Alperin’s-Theorem"><span class="nav-number">3.</span> <span class="nav-text">Local conjugacy and Alperin’s Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">4.</span> <span class="nav-text">Exercises</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Psi</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -358,7 +368,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Psi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -376,20 +386,13 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   

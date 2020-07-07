@@ -14,10 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -31,7 +33,7 @@
 <link rel="canonical" href="http://yoursite.com/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -51,24 +53,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
@@ -78,22 +92,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Psi's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -106,41 +118,81 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Psi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content index posts-expand">
-            
+        <div class="content index posts-expand">
+          
       
   
   
@@ -263,9 +315,9 @@
 
       
           <p>方法一:</p>
-<p>令 $g(x) = x^2+x+1$, $f(x)=x^6+x^3+1 = g(x^3)$. 熟知 $g(x)$ 在 $\mathbb{F}_2$ 上不可约. 设 $\alpha$ 是 $g(x)$ 的一根. 令 $F_1 = \mathbb{F}_2(\alpha)$. 有 $[F_1:\mathbb{F}_2] = 2$. 在 $F_1$ 上, $x^3-\alpha$ 无根, 从而 $x^3-\alpha$ 在 $F_1$ 上不可约. 令 $\beta$ 是 $x^3-\alpha$ 的一根, 取 $F_2 =F_1(\beta)=\mathbb{F}_2(\alpha,\beta)=\mathbb{F}_2(\beta)$. 则 $\beta$ 是 $f(x)$ 的一根, 且 $[F_2:\mathbb{F}_2] = 6$. 故 $\beta$ 在 $\mathbb{F}_2$ 上的极小多项式次数为 $6$, 故 $f(x)$ 不可约.</p>
+<p>令 <span class="math inline">\(g(x) = x^2+x+1\)</span>, <span class="math inline">\(f(x)=x^6+x^3+1 = g(x^3)\)</span>. 熟知 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(\mathbb{F}_2\)</span> 上不可约. 设 <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(g(x)\)</span> 的一根. 令 <span class="math inline">\(F_1 = \mathbb{F}_2(\alpha)\)</span>. 有 <span class="math inline">\([F_1:\mathbb{F}_2] = 2\)</span>. 在 <span class="math inline">\(F_1\)</span> 上, <span class="math inline">\(x^3-\alpha\)</span> 无根, 从而 <span class="math inline">\(x^3-\alpha\)</span> 在 <span class="math inline">\(F_1\)</span> 上不可约. 令 <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(x^3-\alpha\)</span> 的一根, 取 <span class="math inline">\(F_2 =F_1(\beta)=\mathbb{F}_2(\alpha,\beta)=\mathbb{F}_2(\beta)\)</span>. 则 <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(f(x)\)</span> 的一根, 且 <span class="math inline">\([F_2:\mathbb{F}_2] = 6\)</span>. 故 <span class="math inline">\(\beta\)</span> 在 <span class="math inline">\(\mathbb{F}_2\)</span> 上的极小多项式次数为 <span class="math inline">\(6\)</span>, 故 <span class="math inline">\(f(x)\)</span> 不可约.</p>
 <p>方法二:</p>
-<p>$x^6+x^3+1 = \frac{x^9-1}{x^3-1} \in \mathbb{F}_2[x]$ 无重根. 设 $\alpha$ 是它的一个根, 则 $\alpha^9 = 1$. 设 $F = \mathbb{F}_2(\alpha)$, 易知 $\alpha$ 在 $F^*$ 中的阶是 $9$. 故 $9 \mid  \mid F \mid -1$. 设 $F=2^k$, 有 $k \le 6$, 结合 $9 \mid 2^k-1$ 知道 $k=6$, 故 $[F:\mathbb{F}_2] = 6$, 这直接导致 $x^6+x^3+1$ 在 $\mathbb{F}_2$ 上不可约.</p>
+<p><span class="math inline">\(x^6+x^3+1 = \frac{x^9-1}{x^3-1} \in \mathbb{F}_2[x]\)</span> 无重根. 设 <span class="math inline">\(\alpha\)</span> 是它的一个根, 则 <span class="math inline">\(\alpha^9 = 1\)</span>. 设 <span class="math inline">\(F = \mathbb{F}_2(\alpha)\)</span>, 易知 <span class="math inline">\(\alpha\)</span> 在 <span class="math inline">\(F^*\)</span> 中的阶是 <span class="math inline">\(9\)</span>. 故 <span class="math inline">\(9 \mid \mid F \mid -1\)</span>. 设 <span class="math inline">\(F=2^k\)</span>, 有 <span class="math inline">\(k \le 6\)</span>, 结合 <span class="math inline">\(9 \mid 2^k-1\)</span> 知道 <span class="math inline">\(k=6\)</span>, 故 <span class="math inline">\([F:\mathbb{F}_2] = 6\)</span>, 这直接导致 <span class="math inline">\(x^6+x^3+1\)</span> 在 <span class="math inline">\(\mathbb{F}_2\)</span> 上不可约.</p>
 
       
     </div>
@@ -332,32 +384,46 @@
       
           <p>主要是习题整理.</p>
 <!-- vim-markdown-toc GFM -->
-
 <ul>
 <li><a href="#sylow-theorems">Sylow Theorems</a></li>
-<li><a href="#fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a $\bm p$-Sylow subgroup</a></li>
-<li><a href="#local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin’s Theorem</a></li>
+<li><a href="#fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a <span class="math inline">\(\bm p\)</span>-Sylow subgroup</a></li>
+<li><a href="#local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin's Theorem</a></li>
 <li><a href="#exercises">Exercises</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h2 id="Sylow-Theorems"><a href="#Sylow-Theorems" class="headerlink" title="Sylow Theorems"></a>Sylow Theorems</h2><p><strong>Definition.</strong> 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p$ 的幂次.$G$ 的子群 $H$ 被称为 $p$-Sylow 子群,如果 $\mid H\mid = p^n$.<br>{:.success}</p>
-<p><strong>Proposition.</strong> i) 每个有限群都有 $p$-Sylow 子群,其中 $p \mid ,\mid!G!\mid$.<br>ii) (1) $G$ 的每个 $p$-子群都被含于某一 $p$-Sylow 子群.<br>(2) $G$ 的 $p$-Sylow 子群彼此共轭.<br>(3) $G$ 的 $p$-Sylow 子群的个数 $\equiv 1 \pmod{p}$.<br>{:.warning}</p>
-<p><strong>Proposition.(Frattini)</strong> 设 $H$ 是 $G$ 的正规子群, $Q$ 是 $H$ 的一个 $p$-Sylow 子群,则 $HN_G(Q) = G$.<br>{:.warning}</p>
-<p><strong>Corollary.</strong> 令 $S$ 是 $G$ 的一个 $p$-Sylow 子群,令 $H$ 为 $G$ 的子群,且 $N_G(S) \subset H$.则 $N_G(H) = H$. 特别地, $N_G(N_G(S)) = N_G(S)$.<br>{:.warning}</p>
-<p><em>Proof.</em> 记 $K = N_G(H)$, 则 $H$ 正规于 $K$. 由 Frattini 论断,有 $K = HN_K(S)$. 但是 $N_K(S) \subset N_G(S) \subset H$, 有 $K = H$.</p>
-<h2 id="Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup"><a href="#Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup" class="headerlink" title="Fusion in the normalizer of a $\bm p$-Sylow subgroup"></a>Fusion in the normalizer of a $\bm p$-Sylow subgroup</h2><p>若 $S \subset K$, 都是 $G$ 的子群. $H$ 的两个元素被称为在 $K$ 中融合,如果它们是 $K$-共轭的.</p>
-<p><strong>Proposition.</strong> 设 $S$ 是 $G$ 的 $p$-Sylow 子群.令 $(A_i,B_i)_{i \in I}$ 为两族 $S$-正规的子集(即 $gA_ig^{-1} = A_i, gB_ig^{-1} = B_i \forall i \in I, g \in S$). 若 $g \in G$ 使 $gA_ig^{-1} = B_i, \forall i \in I$,则存在 $n \in N_G(S)$ 使得 $nA_in^{-1} = B_i, \forall i \in I$.<br>{:.warning}</p>
-<p><em>proof.</em> 令 $N_A = \bigcap_{i \in I} N_G(A_i)$ 和 $N_B = \bigcap_{i \in I} N_G(B_i)$. 则 $gN_Ag^{-1} = N_B$. 由 $A_i,B_i$ 是 $S$-正规的,知道 $S \subset N_A \cap N_B$, 从而 $gSg^{-1} \subset N_B$. $S$, $gSg^{-1}$ 是 $N_B$ 的 $p$-Sylow 子群, 从而存在 $z \in N_B$, 使得 $zSz^{-1} = gSg^{-1}$. 因此 $n = z^{-1}g \in N_G(B)$, 且 $nA_in^{-1} = z^{-1}gA_ig^{-1}z = z^{-1}Bz = B_i, \forall i \in I$.</p>
-<p><strong>Corollary.</strong> $S$ 的两个正规子群如果是 $G$-共轭的,则是 $N_G(S)$-共轭的.<br>{:.warning}</p>
-<p><strong>Theorem.(Burnside)</strong> 设 $X,Y$ 是 $S$ 的中心的子集, 且 $g \in G$ 使 $gXg^{-1} = Y$.则存在 $n \in N_G(S)$ 使 $nxn^{-1} = gxg^{-1}, \forall x \in X$.</p>
-<h2 id="Local-conjugacy-and-Alperin’s-Theorem"><a href="#Local-conjugacy-and-Alperin’s-Theorem" class="headerlink" title="Local conjugacy and Alperin’s Theorem"></a>Local conjugacy and Alperin’s Theorem</h2><p>设 $S$ 是 $G$ 的一个 $p$-Sylow 子群.</p>
-<p><strong>Theorem.</strong> 设 $A \subset S$, 设 $g \in G$ 使得 $A^g \subset S$. 则存在整数 $n \ge 1$, 和 $S$ 的子群 $U_1,\ldots ,U_n$, 以及 $g_1,\ldots ,g_n \in G$,使得<br>(1) $g = g_1\cdots g_n$.<br>(2) $g_i \in N_G(U_i)$, 对 $1 \le i \le n$.<br>(3) $A^{g_1\cdots g_{i-1}} \subset U_i$, 对 $1 \le i \le n$.<br>{:.warning}</p>
-<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><p><em>(Construction of subgroups of index 2)</em> 令 $S$ 是一有限群 $G$ 的 $2$-Sylow 子群. 令 $H$ 是 $S$ 的子群.则 $G$ 作用于 $G /H$,令 $\varepsilon_H$ 是映射的合成</p>
-<p>$$<br>    G \longrightarrow \mathcal{S}_{G /H} \xrightarrow{\varepsilon} {\pm 1}.<br>$$</p>
-<p>其中 $\varepsilon(\sigma)$ 给出 $\sigma$ 的符号.</p>
-<p>令 $C$ 是 $S$ 的一个非平凡循环群.且 $\mid C\mid \times  \mid H \mid =  \mid S \mid$, 对每一个 $g \in G$,$C \cap gHg^{-1} = 1$.</p>
-<p>a) $C$ 在 $G /H$ 上的作用作用自由,它的轨道数是奇数.<br>b) $\varepsilon_H(C) = {1,-1}$.从而 $\ker \varepsilon_H$ 是 $G$ 的一个指数为 $2$ 的子群,并且不包含 $C$.</p>
+<h2 id="sylow-theorems">Sylow Theorems</h2>
+<p><strong>Definition.</strong> 设有限群 <span class="math inline">\(G\)</span>,设 <span class="math inline">\(p^n\)</span> 为 <span class="math inline">\(\mid G \mid\)</span> 的因子中最大的 <span class="math inline">\(p\)</span> 的幂次.<span class="math inline">\(G\)</span> 的子群 <span class="math inline">\(H\)</span> 被称为 <span class="math inline">\(p\)</span>-Sylow 子群,如果 <span class="math inline">\(\mid H\mid = p^n\)</span>. {:.success}</p>
+<p><strong>Proposition.</strong> i) 每个有限群都有 <span class="math inline">\(p\)</span>-Sylow 子群,其中 <span class="math inline">\(p \mid \,\mid\!G\!\mid\)</span>.<br />
+ii) (1) <span class="math inline">\(G\)</span> 的每个 <span class="math inline">\(p\)</span>-子群都被含于某一 <span class="math inline">\(p\)</span>-Sylow 子群.<br />
+(2) <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群彼此共轭.<br />
+(3) <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群的个数 <span class="math inline">\(\equiv 1 \pmod{p}\)</span>. {:.warning}</p>
+<p><strong>Proposition.(Frattini)</strong> 设 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的正规子群, <span class="math inline">\(Q\)</span> 是 <span class="math inline">\(H\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群,则 <span class="math inline">\(HN_G(Q) = G\)</span>. {:.warning}</p>
+<p><strong>Corollary.</strong> 令 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群,令 <span class="math inline">\(H\)</span> 为 <span class="math inline">\(G\)</span> 的子群,且 <span class="math inline">\(N_G(S) \subset H\)</span>.则 <span class="math inline">\(N_G(H) = H\)</span>. 特别地, <span class="math inline">\(N_G(N_G(S)) = N_G(S)\)</span>. {:.warning}</p>
+<p><em>Proof.</em> 记 <span class="math inline">\(K = N_G(H)\)</span>, 则 <span class="math inline">\(H\)</span> 正规于 <span class="math inline">\(K\)</span>. 由 Frattini 论断,有 <span class="math inline">\(K = HN_K(S)\)</span>. 但是 <span class="math inline">\(N_K(S) \subset N_G(S) \subset H\)</span>, 有 <span class="math inline">\(K = H\)</span>.</p>
+<h2 id="fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a <span class="math inline">\(\bm p\)</span>-Sylow subgroup</h2>
+<p>若 <span class="math inline">\(S \subset K\)</span>, 都是 <span class="math inline">\(G\)</span> 的子群. <span class="math inline">\(H\)</span> 的两个元素被称为在 <span class="math inline">\(K\)</span> 中融合,如果它们是 <span class="math inline">\(K\)</span>-共轭的.</p>
+<p><strong>Proposition.</strong> 设 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群.令 <span class="math inline">\((A_i,B_i)_{i \in I}\)</span> 为两族 <span class="math inline">\(S\)</span>-正规的子集(即 <span class="math inline">\(gA_ig^{-1} = A_i, gB_ig^{-1} = B_i \forall i \in I, g \in S\)</span>). 若 <span class="math inline">\(g \in G\)</span> 使 <span class="math inline">\(gA_ig^{-1} = B_i, \forall i \in I\)</span>,则存在 <span class="math inline">\(n \in N_G(S)\)</span> 使得 <span class="math inline">\(nA_in^{-1} = B_i, \forall i \in I\)</span>. {:.warning}</p>
+<p><em>proof.</em> 令 <span class="math inline">\(N_A = \bigcap_{i \in I} N_G(A_i)\)</span> 和 <span class="math inline">\(N_B = \bigcap_{i \in I} N_G(B_i)\)</span>. 则 <span class="math inline">\(gN_Ag^{-1} = N_B\)</span>. 由 <span class="math inline">\(A_i,B_i\)</span> 是 <span class="math inline">\(S\)</span>-正规的,知道 <span class="math inline">\(S \subset N_A \cap N_B\)</span>, 从而 <span class="math inline">\(gSg^{-1} \subset N_B\)</span>. <span class="math inline">\(S\)</span>, <span class="math inline">\(gSg^{-1}\)</span> 是 <span class="math inline">\(N_B\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群, 从而存在 <span class="math inline">\(z \in N_B\)</span>, 使得 <span class="math inline">\(zSz^{-1} = gSg^{-1}\)</span>. 因此 <span class="math inline">\(n = z^{-1}g \in N_G(B)\)</span>, 且 <span class="math inline">\(nA_in^{-1} = z^{-1}gA_ig^{-1}z = z^{-1}Bz = B_i, \forall i \in I\)</span>.</p>
+<p><strong>Corollary.</strong> <span class="math inline">\(S\)</span> 的两个正规子群如果是 <span class="math inline">\(G\)</span>-共轭的,则是 <span class="math inline">\(N_G(S)\)</span>-共轭的. {:.warning}</p>
+<p><strong>Theorem.(Burnside)</strong> 设 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(S\)</span> 的中心的子集, 且 <span class="math inline">\(g \in G\)</span> 使 <span class="math inline">\(gXg^{-1} = Y\)</span>.则存在 <span class="math inline">\(n \in N_G(S)\)</span> 使 <span class="math inline">\(nxn^{-1} = gxg^{-1}, \forall x \in X\)</span>.</p>
+<h2 id="local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin's Theorem</h2>
+<p>设 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群.</p>
+<p><strong>Theorem.</strong> 设 <span class="math inline">\(A \subset S\)</span>, 设 <span class="math inline">\(g \in G\)</span> 使得 <span class="math inline">\(A^g \subset S\)</span>. 则存在整数 <span class="math inline">\(n \ge 1\)</span>, 和 <span class="math inline">\(S\)</span> 的子群 <span class="math inline">\(U_1,\ldots ,U_n\)</span>, 以及 <span class="math inline">\(g_1,\ldots ,g_n \in G\)</span>,使得<br />
+(1) <span class="math inline">\(g = g_1\cdots g_n\)</span>.<br />
+(2) <span class="math inline">\(g_i \in N_G(U_i)\)</span>, 对 <span class="math inline">\(1 \le i \le n\)</span>.<br />
+(3) <span class="math inline">\(A^{g_1\cdots g_{i-1}} \subset U_i\)</span>, 对 <span class="math inline">\(1 \le i \le n\)</span>. {:.warning}</p>
+<h2 id="exercises">Exercises</h2>
+<p><em>(Construction of subgroups of index 2)</em> 令 <span class="math inline">\(S\)</span> 是一有限群 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(2\)</span>-Sylow 子群. 令 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(S\)</span> 的子群.则 <span class="math inline">\(G\)</span> 作用于 <span class="math inline">\(G /H\)</span>,令 <span class="math inline">\(\varepsilon_H\)</span> 是映射的合成</p>
+<p><span class="math display">\[
+    G \longrightarrow \mathcal{S}_{G /H} \xrightarrow{\varepsilon} \{\pm 1\}.
+\]</span></p>
+<p>其中 <span class="math inline">\(\varepsilon(\sigma)\)</span> 给出 <span class="math inline">\(\sigma\)</span> 的符号.</p>
+<p>令 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(S\)</span> 的一个非平凡循环群.且 <span class="math inline">\(\mid C\mid \times \mid H \mid = \mid S \mid\)</span>, 对每一个 <span class="math inline">\(g \in G\)</span>,<span class="math inline">\(C \cap gHg^{-1} = 1\)</span>.</p>
+<ol type="a">
+<li><span class="math inline">\(C\)</span> 在 <span class="math inline">\(G /H\)</span> 上的作用作用自由,它的轨道数是奇数.<br />
+</li>
+<li><span class="math inline">\(\varepsilon_H(C) = \{1,-1\}\)</span>.从而 <span class="math inline">\(\ker \varepsilon_H\)</span> 是 <span class="math inline">\(G\)</span> 的一个指数为 <span class="math inline">\(2\)</span> 的子群,并且不包含 <span class="math inline">\(C\)</span>.</li>
+</ol>
 
       
     </div>
@@ -416,17 +482,18 @@
 
       
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
@@ -493,16 +560,14 @@
 
       
           <p>(记录记录)</p>
-<p>令$K$为无限域,$u,v$在$K$上代数且可分,则存在$a \in K$使得$K(u,v) = K(u+av)$.但对有限域不一定成立.</p>
-<img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Screenshot_20200326_221604_com.tencent.mobileqq.jpg">
-
-<p>对不可分扩张有反例$\mathbf{F}_p(x^p,y^p) \subset \mathbf{F}_p(x,y)$.这是$p^2$阶扩张,但后者每一个元素的$p$次方都在前者.</p>
+<p>令<span class="math inline">\(K\)</span>为无限域,<span class="math inline">\(u,v\)</span>在<span class="math inline">\(K\)</span>上代数且可分,则存在<span class="math inline">\(a \in K\)</span>使得<span class="math inline">\(K(u,v) = K(u+av)\)</span>.但对有限域不一定成立.</p>
+<p><img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Screenshot_20200326_221604_com.tencent.mobileqq.jpg"></p>
+<p>对不可分扩张有反例<span class="math inline">\(\mathbf{F}_p(x^p,y^p) \subset \mathbf{F}_p(x,y)\)</span>.这是<span class="math inline">\(p^2\)</span>阶扩张,但后者每一个元素的<span class="math inline">\(p\)</span>次方都在前者.</p>
 <p>其他见书.</p>
 <p>2020-7-2 更新.</p>
 <p>第10周Galois理论的作业.</p>
-<img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Screenshot_20200702_024541.png">
-
-<img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Screenshot_20200702_024428.png">
+<p><img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Screenshot_20200702_024541.png"></p>
+<p><img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Screenshot_20200702_024428.png"></p>
 
       
     </div>
@@ -568,25 +633,33 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
 <li><a href="#preliminaries">Preliminaries</a></li>
-<li><a href="#burnsides-lemma">Burnside’s Lemma</a></li>
+<li><a href="#burnsides-lemma">Burnside's Lemma</a></li>
 <li><a href="#n-transitivity">n-Transitivity</a></li>
 <li><a href="#primitive-actions">Primitive Actions</a></li>
 <li><a href="#applications">Applications</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-<p>主要是 “Finite Groups, an Introduction” 第一章关于群作用部分的总结和习题.</p>
-<h2 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h2><p>设 $G$ 是一个群. $G$ (左)作用在集合 $X$ 上是指一个映射</p>
-<p>$$<br>    G \times X \to X, (g,x) \mapsto gx,<br>$$</p>
+<p>主要是 "Finite Groups, an Introduction" 第一章关于群作用部分的总结和习题.</p>
+<h2 id="preliminaries">Preliminaries</h2>
+<p>设 <span class="math inline">\(G\)</span> 是一个群. <span class="math inline">\(G\)</span> (左)作用在集合 <span class="math inline">\(X\)</span> 上是指一个映射</p>
+<p><span class="math display">\[
+    G \times X \to X, (g,x) \mapsto gx,
+\]</span></p>
 <p>满足如下性质:</p>
-<p>$(1), g(g’x) = (gg’)x, \forall x \in X, g,g’ \in G$.<br>$(2), 1x = x,\forall x \in X$.</p>
-<p>等价的, $G$ 在 $X$ 上的作用也可由群同态 $G \to \mathcal{S}_X$ 给出, 其中 $\mathcal{S}_X$ 指 $X$ 的对称群.</p>
-<p><strong>Definition.</strong> 若集合 $X$ 被 $G$ 作用, 称 $X$ 为 $G$-Set.<br>设 $X,Y$ 是两个 $G$-Set, 映射 $f: X \to Y$ 被称为 $G$-Map, 如果 $f(gx) = gf(x)$ 对任意 $x \in X, g \in G$ 成立.<br>设 $X,Y$ 是 $G$-Set, 若存在一一对应的 $G$-Map $X \to Y$, 称 $G$ 在 $X,Y$ 上的作用同构的. 下文简称 $X,Y$ 是 $G$-同构的.<br>{:.success}</p>
-<p><strong>Definition.</strong> 设 $X$ 是一个 $G$-Set, $x \in X$, 用 $G_x$ 表示 $x$ 的稳定子群(Stabilizer)<br>{:.success}</p>
-<p><strong>Definition.</strong> $G$ 在 $X$ 上的作用被称为<br>$(1)$ 忠实的(faithful), 若 $G \to \mathcal{S}<em>X$ 是单射. 这等价于 $\bigcap</em>{x \in X}G_x = 1$.<br>$(2)$ 自由的(free), 若任意 $x \in X$, 有 $G_x = 1$.<br>若 $G$ 自由且传递地作用于 $X$, 则 $X$ 称为 $G$-torsor.<br>{:.success}</p>
-<p>其他需要的概念和性质, 例如 $G$-轨道(Orbit), 轨道-稳定子群定理, 这里省去. $X$ 的所有轨道组成的集合记为 $X/G$.</p>
+<p><span class="math inline">\((1)\, g(g&#39;x) = (gg&#39;)x, \forall x \in X, g,g&#39; \in G\)</span>.<br />
+<span class="math inline">\((2)\, 1x = x,\forall x \in X\)</span>.</p>
+<p>等价的, <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X\)</span> 上的作用也可由群同态 <span class="math inline">\(G \to \mathcal{S}_X\)</span> 给出, 其中 <span class="math inline">\(\mathcal{S}_X\)</span> 指 <span class="math inline">\(X\)</span> 的对称群.</p>
+<p><strong>Definition.</strong> 若集合 <span class="math inline">\(X\)</span> 被 <span class="math inline">\(G\)</span> 作用, 称 <span class="math inline">\(X\)</span> 为 <span class="math inline">\(G\)</span>-Set.<br />
+设 <span class="math inline">\(X,Y\)</span> 是两个 <span class="math inline">\(G\)</span>-Set, 映射 <span class="math inline">\(f: X \to Y\)</span> 被称为 <span class="math inline">\(G\)</span>-Map, 如果 <span class="math inline">\(f(gx) = gf(x)\)</span> 对任意 <span class="math inline">\(x \in X, g \in G\)</span> 成立.<br />
+设 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(G\)</span>-Set, 若存在一一对应的 <span class="math inline">\(G\)</span>-Map <span class="math inline">\(X \to Y\)</span>, 称 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X,Y\)</span> 上的作用同构的. 下文简称 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(G\)</span>-同构的. {:.success}</p>
+<p><strong>Definition.</strong> 设 <span class="math inline">\(X\)</span> 是一个 <span class="math inline">\(G\)</span>-Set, <span class="math inline">\(x \in X\)</span>, 用 <span class="math inline">\(G_x\)</span> 表示 <span class="math inline">\(x\)</span> 的稳定子群(Stabilizer) {:.success}</p>
+<p><strong>Definition.</strong> <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X\)</span> 上的作用被称为<br />
+<span class="math inline">\((1)\)</span> 忠实的(faithful), 若 <span class="math inline">\(G \to \mathcal{S}_X\)</span> 是单射. 这等价于 <span class="math inline">\(\bigcap_{x \in X}G_x = 1\)</span>.<br />
+<span class="math inline">\((2)\)</span> 自由的(free), 若任意 <span class="math inline">\(x \in X\)</span>, 有 <span class="math inline">\(G_x = 1\)</span>.<br />
+若 <span class="math inline">\(G\)</span> 自由且传递地作用于 <span class="math inline">\(X\)</span>, 则 <span class="math inline">\(X\)</span> 称为 <span class="math inline">\(G\)</span>-torsor. {:.success}</p>
+<p>其他需要的概念和性质, 例如 <span class="math inline">\(G\)</span>-轨道(Orbit), 轨道-稳定子群定理, 这里省去. <span class="math inline">\(X\)</span> 的所有轨道组成的集合记为 <span class="math inline">\(X/G\)</span>.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/29/Group-Action/#more" rel="contents">
@@ -659,17 +732,16 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
 <li><a href="#一般方程">一般方程</a></li>
 <li><a href="#一些习题">一些习题</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h2 id="一般方程"><a href="#一般方程" class="headerlink" title="一般方程"></a>一般方程</h2><p>设 $F$ 是域, $x_1,\cdots,x_n$ 是独立的不定元, $p_1,\cdots ,p_n$ 是 $x_1,\cdots, x_n$ 的初等对称多项式, 下面计算域扩张 $F(x_1,\cdots ,x_n)/F(o_1,\cdots, p_n)$ 的伽罗瓦群.</p>
-<p>令 $g(x) = (x-x_1)(x-x_2)\cdots (x-x_n) \in F(p_1,\cdots ,p_n)[x]$, 则 $F(x_1,\cdots ,x_n)$ 是 $g(x)$ 在 $F(p_1,\cdots ,p_n)$ 上的分裂域. 这说明 $F(x_1,\cdots ,x_n) /F(p_1,\cdots ,p_n)$ 是有限伽罗瓦扩张, 记其伽罗瓦群为 $G$, 可以将其看成 $S_n$ 的子群.</p>
-<p>另一方面, $S_n$ 的任意元 $\sigma$ 都给出 $F[x_1,\cdots ,x_n]$ 的一个自同构, 即将 $x_i$ 映射为 $x_{\sigma(i)}$, $1 \le i \le n$. 从而 $\sigma$ 诱导出商域 $F(x_1,\cdots ,x_n)$ 的自同构, 且它保持 $F(p_1,\cdots ,p_n)$ 的元不动. 故 $\sigma \in G$. 这说明 $G = S_n$.</p>
-<p>进一步, 由伽罗瓦理论基本定理, $\mathrm{Inv}(S_n) = F(p_1,\cdots ,p_n)$, 即任意对称的有理函数都可以表为初等对称多项式的有理函数.</p>
+<h2 id="一般方程">一般方程</h2>
+<p>设 <span class="math inline">\(F\)</span> 是域, <span class="math inline">\(x_1,\cdots,x_n\)</span> 是独立的不定元, <span class="math inline">\(p_1,\cdots ,p_n\)</span> 是 <span class="math inline">\(x_1,\cdots, x_n\)</span> 的初等对称多项式, 下面计算域扩张 <span class="math inline">\(F(x_1,\cdots ,x_n)/F(o_1,\cdots, p_n)\)</span> 的伽罗瓦群.</p>
+<p>令 <span class="math inline">\(g(x) = (x-x_1)(x-x_2)\cdots (x-x_n) \in F(p_1,\cdots ,p_n)[x]\)</span>, 则 <span class="math inline">\(F(x_1,\cdots ,x_n)\)</span> 是 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(F(p_1,\cdots ,p_n)\)</span> 上的分裂域. 这说明 <span class="math inline">\(F(x_1,\cdots ,x_n) /F(p_1,\cdots ,p_n)\)</span> 是有限伽罗瓦扩张, 记其伽罗瓦群为 <span class="math inline">\(G\)</span>, 可以将其看成 <span class="math inline">\(S_n\)</span> 的子群.</p>
+<p>另一方面, <span class="math inline">\(S_n\)</span> 的任意元 <span class="math inline">\(\sigma\)</span> 都给出 <span class="math inline">\(F[x_1,\cdots ,x_n]\)</span> 的一个自同构, 即将 <span class="math inline">\(x_i\)</span> 映射为 <span class="math inline">\(x_{\sigma(i)}\)</span>, <span class="math inline">\(1 \le i \le n\)</span>. 从而 <span class="math inline">\(\sigma\)</span> 诱导出商域 <span class="math inline">\(F(x_1,\cdots ,x_n)\)</span> 的自同构, 且它保持 <span class="math inline">\(F(p_1,\cdots ,p_n)\)</span> 的元不动. 故 <span class="math inline">\(\sigma \in G\)</span>. 这说明 <span class="math inline">\(G = S_n\)</span>.</p>
+<p>进一步, 由伽罗瓦理论基本定理, <span class="math inline">\(\mathrm{Inv}(S_n) = F(p_1,\cdots ,p_n)\)</span>, 即任意对称的有理函数都可以表为初等对称多项式的有理函数.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/09/14/Galois-Theory-5/#more" rel="contents">
@@ -743,7 +815,6 @@
       
           <p>这是伽罗瓦群的计算的第二部分. 讨论一些特殊方程的伽罗瓦群.</p>
 <!-- vim-markdown-toc GFM -->
-
 <ul>
 <li><a href="#纯粹方程">纯粹方程</a></li>
 <li><a href="#分圆域">分圆域</a></li>
@@ -751,11 +822,16 @@
 <li><a href="#一些习题">一些习题</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h2 id="纯粹方程"><a href="#纯粹方程" class="headerlink" title="纯粹方程"></a>纯粹方程</h2><p>设 $F$ 是域. 将方程 $g(x) = x^n - a = 0, (0 \ne a \in F, n \ge 2)$ 称为 <strong>纯粹方程</strong>. 这类方程的伽罗瓦群是研究任意方程的根式可解性的重要一步. 这里假设 $F$ 特征为零, 或这为不整除 $n$ 的素数 $p$. 这等价于 $g(x)$ 无重根. 下面计算 $G_g = \mathrm{Gal}(E/F)$, 其中 $E$ 是 $g(x)$ 在 $F$ 上的分裂域.</p>
-<p><strong>引理</strong> 设整数 $n\ge 2$, 域 $F$ 的特征为零或与 $n$ 互素, $\omega$ 是一个 $n$ 次本原根.<br>$\mathrm{(i)}$ 设 $f(x)=x^n - 1 \in F[x]$. 则 $G_f$ 是 $\mathbb{Z}_n^<em>$ 的子群, 从而是 $\rm Abel$ 群. 而 $G_f = \mathbb{Z}_n^</em>$ 当且仅当分圆多项式 $\Phi_n(x)$ 是 $F$ 上的不可约多项式.<br>特别的, 分圆多项式 $\Phi_n(x)$ 在 $\mathbb{Q}$ 上的伽罗瓦群同构于 $\mathbb{Z}_n^*$.<br>$\mathrm{(ii)}$ 设 $\omega \in F$, $g(x) = x^n - a$, $0 \ne a \in F$. 则 $G_g$ 是 $m$ 阶循环群, 其中 $m \mid n$; 且 $G_g$ 是 $n$ 阶循环群当且仅当 $g(x)$ 在 $F$ 上不可约.<br>$\mathrm{(iii)}$ 设 $\omega \notin F$. 用 $GL(2,\mathbb{Z}_n)$ 表示剩余类环 $\mathbb{Z}_n$ 上的所有 $2$ 阶可逆矩阵的集合对于矩阵乘法作成的群. 则 $G_g$ 是 $H$ 的子群, 其中  </p>
-<p>$$H = \left{\begin{pmatrix} k &amp; l \ 0 &amp; 1 \end{pmatrix} \mid k \in \mathbb{Z}_n^*, l \in \mathbb{Z}_n\right}$$  </p>
-<p>是 $GL(2,\mathbb{Z}_n)$ 的子群.<br>$\mathrm{(iv)}$ 设 $p$ 为素数, $g(x) = x^p - a$ 为有理数域 $\mathbb{Q}$ 上的不可约多项式. 则 $G_g$ 同构于子群 $H = \left{<br>\begin{pmatrix}<br>k &amp; l \<br>0 &amp; 1<br>\end{pmatrix} \mid k \in \mathbb{Z}_p^*, l \in\mathbb{Z}_p<br>\right}$.<br>{:.info}</p>
+<h2 id="纯粹方程">纯粹方程</h2>
+<p>设 <span class="math inline">\(F\)</span> 是域. 将方程 <span class="math inline">\(g(x) = x^n - a = 0\, (0 \ne a \in F, n \ge 2)\)</span> 称为 <strong>纯粹方程</strong>. 这类方程的伽罗瓦群是研究任意方程的根式可解性的重要一步. 这里假设 <span class="math inline">\(F\)</span> 特征为零, 或这为不整除 <span class="math inline">\(n\)</span> 的素数 <span class="math inline">\(p\)</span>. 这等价于 <span class="math inline">\(g(x)\)</span> 无重根. 下面计算 <span class="math inline">\(G_g = \mathrm{Gal}(E/F)\)</span>, 其中 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域.</p>
+<p><strong>引理</strong> 设整数 <span class="math inline">\(n\ge 2\)</span>, 域 <span class="math inline">\(F\)</span> 的特征为零或与 <span class="math inline">\(n\)</span> 互素, <span class="math inline">\(\omega\)</span> 是一个 <span class="math inline">\(n\)</span> 次本原根.<br />
+<span class="math inline">\(\mathrm{(i)}\)</span> 设 <span class="math inline">\(f(x)=x^n - 1 \in F[x]\)</span>. 则 <span class="math inline">\(G_f\)</span> 是 <span class="math inline">\(\mathbb{Z}_n^*\)</span> 的子群, 从而是 <span class="math inline">\(\rm Abel\)</span> 群. 而 <span class="math inline">\(G_f = \mathbb{Z}_n^*\)</span> 当且仅当分圆多项式 <span class="math inline">\(\Phi_n(x)\)</span> 是 <span class="math inline">\(F\)</span> 上的不可约多项式.<br />
+特别的, 分圆多项式 <span class="math inline">\(\Phi_n(x)\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的伽罗瓦群同构于 <span class="math inline">\(\mathbb{Z}_n^*\)</span>.<br />
+<span class="math inline">\(\mathrm{(ii)}\)</span> 设 <span class="math inline">\(\omega \in F\)</span>, <span class="math inline">\(g(x) = x^n - a\)</span>, <span class="math inline">\(0 \ne a \in F\)</span>. 则 <span class="math inline">\(G_g\)</span> 是 <span class="math inline">\(m\)</span> 阶循环群, 其中 <span class="math inline">\(m \mid n\)</span>; 且 <span class="math inline">\(G_g\)</span> 是 <span class="math inline">\(n\)</span> 阶循环群当且仅当 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(F\)</span> 上不可约.<br />
+<span class="math inline">\(\mathrm{(iii)}\)</span> 设 <span class="math inline">\(\omega \notin F\)</span>. 用 <span class="math inline">\(GL(2,\mathbb{Z}_n)\)</span> 表示剩余类环 <span class="math inline">\(\mathbb{Z}_n\)</span> 上的所有 <span class="math inline">\(2\)</span> 阶可逆矩阵的集合对于矩阵乘法作成的群. 则 <span class="math inline">\(G_g\)</span> 是 <span class="math inline">\(H\)</span> 的子群, 其中</p>
+<p><span class="math display">\[H = \left\{\begin{pmatrix} k &amp; l \\ 0 &amp; 1 \end{pmatrix} \mid k \in \mathbb{Z}_n^*, l \in \mathbb{Z}_n\right\}\]</span></p>
+<p>是 <span class="math inline">\(GL(2,\mathbb{Z}_n)\)</span> 的子群.<br />
+<span class="math inline">\(\mathrm{(iv)}\)</span> 设 <span class="math inline">\(p\)</span> 为素数, <span class="math inline">\(g(x) = x^p - a\)</span> 为有理数域 <span class="math inline">\(\mathbb{Q}\)</span> 上的不可约多项式. 则 <span class="math inline">\(G_g\)</span> 同构于子群 <span class="math inline">\(H = \left\{ \begin{pmatrix} k &amp; l \\ 0 &amp; 1 \end{pmatrix} \mid k \in \mathbb{Z}_p^*, l \in\mathbb{Z}_p \right\}\)</span>. {:.info}
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/08/Galois-Theory-4/#more" rel="contents">
@@ -829,17 +905,16 @@
       
           <p><del>认真抄书(逃</del></p>
 <!-- vim-markdown-toc GFM -->
-
 <ul>
 <li><a href="#伽罗瓦的原始思想">伽罗瓦的原始思想</a></li>
-<li><a href="#判别式">判别式</a><ul>
+<li><a href="#判别式">判别式</a>
+<ul>
 <li><a href="#四次方程的伽罗瓦群">四次方程的伽罗瓦群</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h2 id="伽罗瓦的原始思想"><a href="#伽罗瓦的原始思想" class="headerlink" title="伽罗瓦的原始思想"></a>伽罗瓦的原始思想</h2><p>设 $E$ 是域 $F$ 上多项式 $f(x)$ 在域 $F$ 上的分裂域. 将伽罗瓦群 $\mathrm{Gal}(E/F)$ 称为多项式 $f(x)$ 或方程 $f(x)=0$ 在 $F$ 上的伽罗瓦群, 记为 $\mathrm{Gal}(f(x), F)$. 或简记为 $G_f$. 具体方程的伽罗瓦群的计算是伽罗瓦理论的重要课题. 这里主要讨论无重根多项式的伽罗瓦群, 这里 “无重根” 保证了 $E/F$ 是有限伽罗瓦扩张, 从而 $\mid G_f \mid = [E:F]$.</p>
+<h2 id="伽罗瓦的原始思想">伽罗瓦的原始思想</h2>
+<p>设 <span class="math inline">\(E\)</span> 是域 <span class="math inline">\(F\)</span> 上多项式 <span class="math inline">\(f(x)\)</span> 在域 <span class="math inline">\(F\)</span> 上的分裂域. 将伽罗瓦群 <span class="math inline">\(\mathrm{Gal}(E/F)\)</span> 称为多项式 <span class="math inline">\(f(x)\)</span> 或方程 <span class="math inline">\(f(x)=0\)</span> 在 <span class="math inline">\(F\)</span> 上的伽罗瓦群, 记为 <span class="math inline">\(\mathrm{Gal}(f(x), F)\)</span>. 或简记为 <span class="math inline">\(G_f\)</span>. 具体方程的伽罗瓦群的计算是伽罗瓦理论的重要课题. 这里主要讨论无重根多项式的伽罗瓦群, 这里 "无重根" 保证了 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, 从而 <span class="math inline">\(\mid G_f \mid = [E:F]\)</span>.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/17/Galois-Theory-3/#more" rel="contents">
@@ -912,18 +987,17 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#伽罗瓦理论基本定理">伽罗瓦理论基本定理</a><ul>
+<li><a href="#伽罗瓦理论基本定理">伽罗瓦理论基本定理</a>
+<ul>
 <li><a href="#伽罗瓦对应的一个例子">伽罗瓦对应的一个例子</a></li>
 <li><a href="#代数基本定理">代数基本定理</a></li>
 <li><a href="#一些例题">一些例题</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="伽罗瓦理论基本定理"><a href="#伽罗瓦理论基本定理" class="headerlink" title="伽罗瓦理论基本定理"></a>伽罗瓦理论基本定理</h1><p>伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.</p>
+<h1 id="伽罗瓦理论基本定理">伽罗瓦理论基本定理</h1>
+<p>伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/14/Galois-Theory-2/#more" rel="contents">
@@ -954,8 +1028,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -979,62 +1053,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Psi</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -1053,7 +1071,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Psi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -1071,20 +1089,13 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   

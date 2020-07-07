@@ -14,18 +14,20 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="多项式环 重根问题      这里简要记录多项式的性质和应用. 多项式环设 $R$ 是环, $x$ 是一个文字(未定元). 以 $R[x]$ 表示集合$${f(x) &#x3D; a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0}.$$$R[x]$ 的元素 $f(x) &#x3D; a_0 + a_1x + \cdots">
+  <meta name="description" content="多项式环  重根问题    这里简要记录多项式的性质和应用. 多项式环 设 \(R\) 是环, \(x\) 是一个文字(未定元). 以 \(R[x]\) 表示集合 \[\{f(x) &#x3D; a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0\}.\] \(R[x]\) 的元素 \(f(x) &#x3D; a_0 + a_1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多项式">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/poly/index.html">
 <meta property="og:site_name" content="Psi&#39;s Blog">
-<meta property="og:description" content="多项式环 重根问题      这里简要记录多项式的性质和应用. 多项式环设 $R$ 是环, $x$ 是一个文字(未定元). 以 $R[x]$ 表示集合$${f(x) &#x3D; a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0}.$$$R[x]$ 的元素 $f(x) &#x3D; a_0 + a_1x + \cdots">
+<meta property="og:description" content="多项式环  重根问题    这里简要记录多项式的性质和应用. 多项式环 设 \(R\) 是环, \(x\) 是一个文字(未定元). 以 \(R[x]\) 表示集合 \[\{f(x) &#x3D; a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0\}.\] \(R[x]\) 的元素 \(f(x) &#x3D; a_0 + a_1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-07-03T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-09-13T09:17:29.000Z">
@@ -36,7 +38,7 @@
 <link rel="canonical" href="http://yoursite.com/2019/07/04/poly/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -56,24 +58,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
@@ -83,22 +97,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Psi's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -111,41 +123,82 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式环"><span class="nav-number">1.</span> <span class="nav-text">多项式环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重根问题"><span class="nav-number">1.1.</span> <span class="nav-text">重根问题</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Psi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -210,38 +263,44 @@
 </script>
 <script type="text/javascript" src="/usr/share/mathjax/MathJax.js"></script></head>
 -->
-
 <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#多项式环">多项式环</a><ul>
+<li><a href="#多项式环">多项式环</a>
+<ul>
 <li><a href="#重根问题">重根问题</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
 <p>这里简要记录多项式的性质和应用.</p>
-<h1 id="多项式环"><a href="#多项式环" class="headerlink" title="多项式环"></a>多项式环</h1><p>设 $R$ 是环, $x$ 是一个文字(未定元). 以 $R[x]$ 表示集合<br>$${f(x) = a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0}.$$<br>$R[x]$ 的元素 $f(x) = a_0 + a_1x + \cdots + a_nx^n$ 叫做 $R$ 上关于 $x$ 的 <strong>多项式</strong>. $a_0$ 为 $f(x)$ 的 <strong>常数项</strong>. 若 $a_n \ne 0$, 称 $a_n$ 为 $f(x)$ 的 <strong>首项系数</strong>, 并且定义 $f(x)$ 的次数为 $n$, 表示为 $\deg f(x) = n$. 由技术上的原因, 我们可以定义 $\deg 0 = -\infty$. 若 $a_n = 1$, 则称 $f(x)$ 为 <strong>首一多项式</strong>. 两个多项式 $f(x)$ 和 $g(x)$ 相等, 当且仅当它们的系数对应相等.<br>{:.success}</p>
-<a id="more"></a>
-<p>设 $R$ 为环, $f(x),g(x) \in R[x]$, 则<br>(i) $\deg f(x)+g(x) \le \max(\deg f(x),\deg g(x))$;<br>(ii) $\deg f(x)g(x) \le \deg f(x) + \deg g(x)$;<br>(iii) 如果 $f(x)$ 或者 $g(x)$ 的首项系数不是 $R$ 中的零因子, 则 (ii) 中的式子取等号.<br>(iv) 若 $R$ 为整环, 则 $\mathrm{U}(R[x]) = \mathrm{U}(R)$.<br>{:.info}</p>
-<p><strong>定理(带余除法)</strong> 设 $R$ 为含幺环, $f(x),g(x) \in R[x]$, 且 $g(x)$ 的首项系数为 $R$ 中的单位. 则存在唯一的 $q(x),r(x)$, 使 $f(x) = q(x)g(x) + r(x)$ 且 $\deg r &lt; \deg g$.<br>{:.info}</p>
-<p><strong>系</strong> 若 $F$ 为域, 则 $F[x]$ 为 $\mathrm{ED}$, 进而是 $\mathrm{PID}$ 和 $\mathrm{UFD}$.<br>{:.info}</p>
-<h2 id="重根问题"><a href="#重根问题" class="headerlink" title="重根问题"></a>重根问题</h2><p>设 $D$ 为整环, $c \in D,f(x) \in D[x]$, 如果 $(x-c)^m \mid\mid f(x)$,$m \ge 2$, 则称 $c$ 是 $f(x)$ 的重数为 $m$ 的 <strong>重根</strong>, 若 $m = 1$, 则称 $c$ 为 $f(x)$ 的 <strong>单根</strong>.<br>{:.success}</p>
+<h1 id="多项式环">多项式环</h1>
+<p>设 <span class="math inline">\(R\)</span> 是环, <span class="math inline">\(x\)</span> 是一个文字(未定元). 以 <span class="math inline">\(R[x]\)</span> 表示集合<br />
+<span class="math display">\[\{f(x) = a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0\}.\]</span><br />
+<span class="math inline">\(R[x]\)</span> 的元素 <span class="math inline">\(f(x) = a_0 + a_1x + \cdots + a_nx^n\)</span> 叫做 <span class="math inline">\(R\)</span> 上关于 <span class="math inline">\(x\)</span> 的 <strong>多项式</strong>. <span class="math inline">\(a_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的 <strong>常数项</strong>. 若 <span class="math inline">\(a_n \ne 0\)</span>, 称 <span class="math inline">\(a_n\)</span> 为 <span class="math inline">\(f(x)\)</span> 的 <strong>首项系数</strong>, 并且定义 <span class="math inline">\(f(x)\)</span> 的次数为 <span class="math inline">\(n\)</span>, 表示为 <span class="math inline">\(\deg f(x) = n\)</span>. 由技术上的原因, 我们可以定义 <span class="math inline">\(\deg 0 = -\infty\)</span>. 若 <span class="math inline">\(a_n = 1\)</span>, 则称 <span class="math inline">\(f(x)\)</span> 为 <strong>首一多项式</strong>. 两个多项式 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 相等, 当且仅当它们的系数对应相等. {:.success} <a id="more"></a> 设 <span class="math inline">\(R\)</span> 为环, <span class="math inline">\(f(x),g(x) \in R[x]\)</span>, 则<br />
+(i) <span class="math inline">\(\deg f(x)+g(x) \le \max(\deg f(x),\deg g(x))\)</span>;<br />
+(ii) <span class="math inline">\(\deg f(x)g(x) \le \deg f(x) + \deg g(x)\)</span>;<br />
+(iii) 如果 <span class="math inline">\(f(x)\)</span> 或者 <span class="math inline">\(g(x)\)</span> 的首项系数不是 <span class="math inline">\(R\)</span> 中的零因子, 则 (ii) 中的式子取等号.<br />
+(iv) 若 <span class="math inline">\(R\)</span> 为整环, 则 <span class="math inline">\(\mathrm{U}(R[x]) = \mathrm{U}(R)\)</span>. {:.info}</p>
+<p><strong>定理(带余除法)</strong> 设 <span class="math inline">\(R\)</span> 为含幺环, <span class="math inline">\(f(x),g(x) \in R[x]\)</span>, 且 <span class="math inline">\(g(x)\)</span> 的首项系数为 <span class="math inline">\(R\)</span> 中的单位. 则存在唯一的 <span class="math inline">\(q(x),r(x)\)</span>, 使 <span class="math inline">\(f(x) = q(x)g(x) + r(x)\)</span> 且 <span class="math inline">\(\deg r &lt; \deg g\)</span>. {:.info}</p>
+<p><strong>系</strong> 若 <span class="math inline">\(F\)</span> 为域, 则 <span class="math inline">\(F[x]\)</span> 为 <span class="math inline">\(\mathrm{ED}\)</span>, 进而是 <span class="math inline">\(\mathrm{PID}\)</span> 和 <span class="math inline">\(\mathrm{UFD}\)</span>. {:.info}</p>
+<h2 id="重根问题">重根问题</h2>
+<p>设 <span class="math inline">\(D\)</span> 为整环, <span class="math inline">\(c \in D,f(x) \in D[x]\)</span>, 如果 <span class="math inline">\((x-c)^m \mid\mid f(x)\)</span>,<span class="math inline">\(m \ge 2\)</span>, 则称 <span class="math inline">\(c\)</span> 是 <span class="math inline">\(f(x)\)</span> 的重数为 <span class="math inline">\(m\)</span> 的 <strong>重根</strong>, 若 <span class="math inline">\(m = 1\)</span>, 则称 <span class="math inline">\(c\)</span> 为 <span class="math inline">\(f(x)\)</span> 的 <strong>单根</strong>. {:.success}</p>
 <p>重根是多项式自身的属性, 与在哪个扩域讨论无关.</p>
-<p>设 $D,E$ 为特征为零的整环, $D \subseteq E$, $f(x) \in D[x]$, $c \in E$ 是 $f(x)$ 的一个根, 则 $c$ 是 $f(x)$ 重数为 $m$ 的根 $\Leftrightarrow$ $f(x)$ 的 $m-1$ 次形式微商 $f^{(m-1)}(x)$ 有根 $c$ 且 $m$ 次形式微商 $f^{(m)}(x)$ 不以 $c$ 为根.<br>{:.info}</p>
-<p><strong>证明</strong> 记 $f(x) = (x-c)^ng(x)$, 其中 $g(x) \in E[x]$ 不以 $c$ 为根. 则 $(x-c)^{n-k} \mid\mid f^{(k)}(x)$,$k = 1,2,\cdots ,n$.</p>
-<p align="right">$\blacksquare$</p>
-
-<p>现在考虑特征不为零的域上多项式的重根问题. 记 $F$ 的特征为素数 $p$, $f(x) \in F[x]$ 在 $F$ 上不可约. 若 $f(x)$ 有重根, 则 $(f(x),f’(x)) \ne 1$. 由 $(f(x),f’(x)) \mid f(x)$, $(f(x),f’(x))$ 只能等于 $f(x)$, 但 $\deg f’(x) &lt; \deg f(x)$, 只能是 $f’(x) = 0$. 这说明 $f(x)$ 形如 $g(x^p)$. 我们证明了:</p>
-<p>若 $F$ 特征为 $p$, $f(x) \in F[x]$ 不可约, 则 $f(x)$ 有重根当且仅当 $f(x)$ 形如 $g(x^p)$, 其中 $g(x) \in F[x]$.<br>{:.info}</p>
-<p><strong>定理</strong> 设 $F$ 为特征为 $p$ 的域, $f(x)$ 是 $F[x]$ 中不可约多项式. 则 $f(x)$ 所有根有相同的重数, 且这个重数形如 $p^n(n \ge 0)$.<br>{:.info}</p>
-<p><strong>证明</strong> 不妨设 $f(x)$ 为有重根的不可约多项式, 记 $f(x) = g(x^p)$. 若 $g(x)$ 有重根, 记 $g(x) = h(x^p)$. 如此进行下去, $f(x)$ 可以记为 $f(x) = k(x^{p^{n}})$, 其中 $n \ge 1$, $k(x)$ 不可约且无重根. 设 $k(x)$ 在其分裂域上分解为</p>
-<p>$$k(x) = \prod_{i=0}^{m}(x-x_i),$$</p>
-<p>其中 $x_1,x_2,\cdots ,x_m$ 两两不同.则 $f(x)$ 在其分裂域上分解为</p>
-<p>$$f(x) = \prod_{i=0}^{m}(x^{p^n}-x_i) = \prod_{i = 0}^{m}{(x - \mu_i)^{p^n}},$$</p>
-<p>其中 $\mu_i^{p^n} = x_i$, 从而 $f(x)$ 的所有根的重数均为 $p^n$.</p>
-<p align="right">$\blacksquare$</p>
+<p>设 <span class="math inline">\(D,E\)</span> 为特征为零的整环, <span class="math inline">\(D \subseteq E\)</span>, <span class="math inline">\(f(x) \in D[x]\)</span>, <span class="math inline">\(c \in E\)</span> 是 <span class="math inline">\(f(x)\)</span> 的一个根, 则 <span class="math inline">\(c\)</span> 是 <span class="math inline">\(f(x)\)</span> 重数为 <span class="math inline">\(m\)</span> 的根 <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(f(x)\)</span> 的 <span class="math inline">\(m-1\)</span> 次形式微商 <span class="math inline">\(f^{(m-1)}(x)\)</span> 有根 <span class="math inline">\(c\)</span> 且 <span class="math inline">\(m\)</span> 次形式微商 <span class="math inline">\(f^{(m)}(x)\)</span> 不以 <span class="math inline">\(c\)</span> 为根. {:.info}</p>
+<strong>证明</strong> 记 <span class="math inline">\(f(x) = (x-c)^ng(x)\)</span>, 其中 <span class="math inline">\(g(x) \in E[x]\)</span> 不以 <span class="math inline">\(c\)</span> 为根. 则 <span class="math inline">\((x-c)^{n-k} \mid\mid f^{(k)}(x)\)</span>,<span class="math inline">\(k = 1,2,\cdots ,n\)</span>.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p>现在考虑特征不为零的域上多项式的重根问题. 记 <span class="math inline">\(F\)</span> 的特征为素数 <span class="math inline">\(p\)</span>, <span class="math inline">\(f(x) \in F[x]\)</span> 在 <span class="math inline">\(F\)</span> 上不可约. 若 <span class="math inline">\(f(x)\)</span> 有重根, 则 <span class="math inline">\((f(x),f&#39;(x)) \ne 1\)</span>. 由 <span class="math inline">\((f(x),f&#39;(x)) \mid f(x)\)</span>, <span class="math inline">\((f(x),f&#39;(x))\)</span> 只能等于 <span class="math inline">\(f(x)\)</span>, 但 <span class="math inline">\(\deg f&#39;(x) &lt; \deg f(x)\)</span>, 只能是 <span class="math inline">\(f&#39;(x) = 0\)</span>. 这说明 <span class="math inline">\(f(x)\)</span> 形如 <span class="math inline">\(g(x^p)\)</span>. 我们证明了:</p>
+<p>若 <span class="math inline">\(F\)</span> 特征为 <span class="math inline">\(p\)</span>, <span class="math inline">\(f(x) \in F[x]\)</span> 不可约, 则 <span class="math inline">\(f(x)\)</span> 有重根当且仅当 <span class="math inline">\(f(x)\)</span> 形如 <span class="math inline">\(g(x^p)\)</span>, 其中 <span class="math inline">\(g(x) \in F[x]\)</span>. {:.info}</p>
+<p><strong>定理</strong> 设 <span class="math inline">\(F\)</span> 为特征为 <span class="math inline">\(p\)</span> 的域, <span class="math inline">\(f(x)\)</span> 是 <span class="math inline">\(F[x]\)</span> 中不可约多项式. 则 <span class="math inline">\(f(x)\)</span> 所有根有相同的重数, 且这个重数形如 <span class="math inline">\(p^n(n \ge 0)\)</span>. {:.info}</p>
+<p><strong>证明</strong> 不妨设 <span class="math inline">\(f(x)\)</span> 为有重根的不可约多项式, 记 <span class="math inline">\(f(x) = g(x^p)\)</span>. 若 <span class="math inline">\(g(x)\)</span> 有重根, 记 <span class="math inline">\(g(x) = h(x^p)\)</span>. 如此进行下去, <span class="math inline">\(f(x)\)</span> 可以记为 <span class="math inline">\(f(x) = k(x^{p^{n}})\)</span>, 其中 <span class="math inline">\(n \ge 1\)</span>, <span class="math inline">\(k(x)\)</span> 不可约且无重根. 设 <span class="math inline">\(k(x)\)</span> 在其分裂域上分解为</p>
+<p><span class="math display">\[k(x) = \prod_{i=0}^{m}(x-x_i),\]</span></p>
+<p>其中 <span class="math inline">\(x_1,x_2,\cdots ,x_m\)</span> 两两不同.则 <span class="math inline">\(f(x)\)</span> 在其分裂域上分解为</p>
+<p><span class="math display">\[f(x) = \prod_{i=0}^{m}(x^{p^n}-x_i) = \prod_{i = 0}^{m}{(x - \mu_i)^{p^n}},\]</span></p>
+其中 <span class="math inline">\(\mu_i^{p^n} = x_i\)</span>, 从而 <span class="math inline">\(f(x)\)</span> 的所有根的重数均为 <span class="math inline">\(p^n\)</span>.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
 
     </div>
 
@@ -260,8 +319,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/07/03/pudding/" rel="prev" title="记一次烤布丁的经历">
-      <i class="fa fa-chevron-left"></i> 记一次烤布丁的经历
+    <a href="/2019/07/03/Hello-World/" rel="prev" title="Hello World!">
+      <i class="fa fa-chevron-left"></i> Hello World!
     </a></div>
       <div class="post-nav-item">
     <a href="/2019/07/06/normal-extension/" rel="next" title="正规扩张">
@@ -277,8 +336,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -302,63 +361,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式环"><span class="nav-number">1.</span> <span class="nav-text">多项式环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重根问题"><span class="nav-number">1.1.</span> <span class="nav-text">重根问题</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Psi</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -377,7 +379,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Psi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -395,20 +397,13 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   

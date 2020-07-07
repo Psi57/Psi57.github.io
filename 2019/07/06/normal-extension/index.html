@@ -14,18 +14,20 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="正规扩张 有限正规扩张的刻画      正规扩张设代数扩张 $E&#x2F;F$. 如果 $E$ 中任一元 $u$ 在 $F$ 上的极小多项式在 $E[x]$ 中分解为一次因子的乘积, 则称 $E&#x2F;F$ 为 正规扩张.这等价于在 $E$ 中有根的 $F$ 上的不可约多项式的根均在 $E$ 中.{:.success} 如果 $E&#x2F;F$ 既是可分扩张也是正规扩张, 则称 $E&#x2F;F$ 是 伽罗瓦扩张.如果">
+  <meta name="description" content="正规扩张  有限正规扩张的刻画    正规扩张 设代数扩张 \(E&#x2F;F\). 如果 \(E\) 中任一元 \(u\) 在 \(F\) 上的极小多项式在 \(E[x]\) 中分解为一次因子的乘积, 则称 \(E&#x2F;F\) 为 正规扩张.这等价于在 \(E\) 中有根的 \(F\) 上的不可约多项式的根均在 \(E\) 中. {:.success} 如果 \(E&#x2F;F\) 既是可分扩张也是正规扩张,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正规扩张">
 <meta property="og:url" content="http://yoursite.com/2019/07/06/normal-extension/index.html">
 <meta property="og:site_name" content="Psi&#39;s Blog">
-<meta property="og:description" content="正规扩张 有限正规扩张的刻画      正规扩张设代数扩张 $E&#x2F;F$. 如果 $E$ 中任一元 $u$ 在 $F$ 上的极小多项式在 $E[x]$ 中分解为一次因子的乘积, 则称 $E&#x2F;F$ 为 正规扩张.这等价于在 $E$ 中有根的 $F$ 上的不可约多项式的根均在 $E$ 中.{:.success} 如果 $E&#x2F;F$ 既是可分扩张也是正规扩张, 则称 $E&#x2F;F$ 是 伽罗瓦扩张.如果">
+<meta property="og:description" content="正规扩张  有限正规扩张的刻画    正规扩张 设代数扩张 \(E&#x2F;F\). 如果 \(E\) 中任一元 \(u\) 在 \(F\) 上的极小多项式在 \(E[x]\) 中分解为一次因子的乘积, 则称 \(E&#x2F;F\) 为 正规扩张.这等价于在 \(E\) 中有根的 \(F\) 上的不可约多项式的根均在 \(E\) 中. {:.success} 如果 \(E&#x2F;F\) 既是可分扩张也是正规扩张,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-07-05T16:00:00.000Z">
 <meta property="article:modified_time" content="2019-08-27T11:39:37.000Z">
@@ -36,7 +38,7 @@
 <link rel="canonical" href="http://yoursite.com/2019/07/06/normal-extension/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -56,24 +58,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
@@ -83,22 +97,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Psi's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -111,41 +123,82 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正规扩张"><span class="nav-number">1.</span> <span class="nav-text">正规扩张</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有限正规扩张的刻画"><span class="nav-number">1.1.</span> <span class="nav-text">有限正规扩张的刻画</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Psi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -196,48 +249,53 @@
 
       
         <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#正规扩张">正规扩张</a><ul>
+<li><a href="#正规扩张">正规扩张</a>
+<ul>
 <li><a href="#有限正规扩张的刻画">有限正规扩张的刻画</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="正规扩张"><a href="#正规扩张" class="headerlink" title="正规扩张"></a>正规扩张</h1><p>设代数扩张 $E/F$. 如果 $E$ 中任一元 $u$ 在 $F$ 上的极小多项式在 $E[x]$ 中分解为一次因子的乘积, 则称 $E/F$ 为 <strong>正规扩张</strong>.这等价于在 $E$ 中有根的 $F$ 上的不可约多项式的根均在 $E$ 中.<br>{:.success}</p>
-<p>如果 $E/F$ 既是可分扩张也是正规扩张, 则称 $E/F$ 是 <strong>伽罗瓦扩张</strong>.<br>如果 $E/F$ 即使有限扩张又是伽罗瓦扩张, 则称 $E/F$ 是 <strong>有限伽罗瓦扩张</strong>.<br>{:.success}</p>
-<a id="more"></a>
-
-<h2 id="有限正规扩张的刻画"><a href="#有限正规扩张的刻画" class="headerlink" title="有限正规扩张的刻画"></a>有限正规扩张的刻画</h2><p><strong>引理</strong> 设域扩张 $K/E$, $E/F$, $E$ 是 $F$ 上某一多项式在 $F$ 上的分裂域, 则任意 $F$-嵌入 $\sigma: E \rightarrow K$ 都有 $\sigma(E) = E$.<br>{:.info}</p>
-<p><strong>证明</strong> 设 $E$ 是首一不可约多项式 $f(x) \in F[x]$ 在 $F$ 上的分裂域, $f(x)$ 的根为 $$\Sigma = { u_1,u_2,\cdots ,u_n }$$. 则 $E = F(\Sigma)$. 由于 $f(x) \in F[x]$, 有</p>
-<p>$$f(x) = \sigma(f(x)) = \prod_{i=1}^{n}{(x-\sigma(u_i))}.$$</p>
-<p>$\sigma$ 是单射, 说明 $\sigma$ 可以看成 $\Sigma$ 的置换. 于是</p>
-<p>$$\sigma(E) = \sigma(F(\Sigma)) = F(\sigma(\Sigma)) = F(\Sigma) = E.$$</p>
-<p>( $\sigma(F(\Sigma)) = F(\sigma(\Sigma))$ 的理由是: $\sigma(F(\Sigma))$ 包含 $\sigma(\Sigma)$ 和 $F$, 故 $F(\sigma{(\Sigma)}) \subseteq \sigma(F(\Sigma))$. 同理 $\sigma^{-1}(F(\sigma(\Sigma))) \supseteq F(\Sigma)$, 从而 $F(\sigma(\Sigma)) \supseteq \sigma(F(\Sigma))$. 故 $F(\sigma(\Sigma)) = \sigma(F(\Sigma))$.)</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>定理</strong> 设域扩张 $E/F$, 则 $E/F$ 是有限正规扩张当且仅当 $E$ 是 $F$ 上某一多项式在 $F$ 上的分裂域.<br>{:.info}</p>
-<p><strong>证明</strong> 设 $E/F$ 是有限正规扩张, 则 $[E:F]$ 有限, 存在 $F$ 上的代数元 $u_1,u_2,\cdots,u_n$ 使 $E = F(u_1,u_2,\cdots,u_n)$. 记 $u_i$ 在 $F$ 上的极小多项式为 $f_i(x)$, $i = 1,2,\cdots,n$. 记 $f(x) = f_1(x)f_2(x)\cdots f_n(x)$. 设 $f(x)$ 在 $F$ 上的分裂域为 $F’$. 一方面, $u_1,u_2,\cdots ,u_n$ 只是 $f(x)$ 的一部分根, 从而 $E \subseteq F’$. 另一方面, 由 $E/F$ 是正规扩张, $f_i(x)$ 的所有根均在 $E$ 上, 从而 $E \supseteq F’$. 这说明 $E = F’$, 是 $F$ 上某一多项式在 $F$ 上的分裂域.  </p>
-<p>反之, 设 $E$ 是 $F$ 上某一多项式 $f(x)$ 在 $F$ 上的分裂域. 设 $g(x) \in F[x]$ 是不可约多项式且 $g(x)$ 在 $E$ 中有根 $\alpha$. 下证 $g(x)$ 的任意根都在 $E$ 中. 记 $E$ 的一个代数闭包 $\Omega$. $\beta \in \Omega$ 是 $g(x)$ 的任一个根. $\alpha,\beta$ 在 $F$ 上的极小多项式相同, 故存在$F$-同构 $\sigma: F(\alpha) \rightarrow F(\beta)$, 使 $\sigma(\alpha) = \beta$. $E$ 也可以看成 $f(x)$ 在 $F(\alpha)$ 上的分裂域, 故 $\sigma$ 可以延拓为 $F$-嵌入 $\sigma: E \rightarrow \Omega$. 由引理知 $\sigma(E) = E$, 从而 $\beta = \sigma(\alpha) \in E$. 也即 $g(x)$ 的任意根都在 $E$ 中.</p>
-<p align="right"> $\blacksquare$ </p>
-
-<p><strong>推论</strong> 设域扩张 $E/F$, 则 $E/F$ 是有限伽罗瓦扩张当且仅当 $E$ 是 $F$ 上某一可分多项式在 $F$ 上的分裂域.<br>{:.info}</p>
-<p><strong>证明</strong> 设 $E/F$ 是有限伽罗瓦扩张, 则 $E$ 是 $F$ 上某一多项式 $f(x)$ 在 $F$ 上的分裂域. 由 $E/F$ 是可分扩张知 $f(x)$ 是可分多项式.</p>
-<p>反之, 若 $E$ 是 $F$ 上某一可分多项式在 $F$ 上的分裂域, 则 $E/F$ 是可分扩张和有限正规扩张, 从而是有限伽罗瓦扩张.</p>
-<p align="right">$\blacksquare$</p>
-
+<h1 id="正规扩张">正规扩张</h1>
+<p>设代数扩张 <span class="math inline">\(E/F\)</span>. 如果 <span class="math inline">\(E\)</span> 中任一元 <span class="math inline">\(u\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式在 <span class="math inline">\(E[x]\)</span> 中分解为一次因子的乘积, 则称 <span class="math inline">\(E/F\)</span> 为 <strong>正规扩张</strong>.这等价于在 <span class="math inline">\(E\)</span> 中有根的 <span class="math inline">\(F\)</span> 上的不可约多项式的根均在 <span class="math inline">\(E\)</span> 中. {:.success}</p>
+<p>如果 <span class="math inline">\(E/F\)</span> 既是可分扩张也是正规扩张, 则称 <span class="math inline">\(E/F\)</span> 是 <strong>伽罗瓦扩张</strong>.<br />
+如果 <span class="math inline">\(E/F\)</span> 即使有限扩张又是伽罗瓦扩张, 则称 <span class="math inline">\(E/F\)</span> 是 <strong>有限伽罗瓦扩张</strong>. {:.success} <a id="more"></a></p>
+<h2 id="有限正规扩张的刻画">有限正规扩张的刻画</h2>
+<p><strong>引理</strong> 设域扩张 <span class="math inline">\(K/E\)</span>, <span class="math inline">\(E/F\)</span>, <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一多项式在 <span class="math inline">\(F\)</span> 上的分裂域, 则任意 <span class="math inline">\(F\)</span>-嵌入 <span class="math inline">\(\sigma: E \rightarrow K\)</span> 都有 <span class="math inline">\(\sigma(E) = E\)</span>. {:.info}</p>
+<p><strong>证明</strong> 设 <span class="math inline">\(E\)</span> 是首一不可约多项式 <span class="math inline">\(f(x) \in F[x]\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域, <span class="math inline">\(f(x)\)</span> 的根为 <span class="math display">\[\Sigma = \{ u_1,u_2,\cdots ,u_n \}\]</span>. 则 <span class="math inline">\(E = F(\Sigma)\)</span>. 由于 <span class="math inline">\(f(x) \in F[x]\)</span>, 有</p>
+<p><span class="math display">\[f(x) = \sigma(f(x)) = \prod_{i=1}^{n}{(x-\sigma(u_i))}.\]</span></p>
+<p><span class="math inline">\(\sigma\)</span> 是单射, 说明 <span class="math inline">\(\sigma\)</span> 可以看成 <span class="math inline">\(\Sigma\)</span> 的置换. 于是</p>
+<p><span class="math display">\[\sigma(E) = \sigma(F(\Sigma)) = F(\sigma(\Sigma)) = F(\Sigma) = E.\]</span></p>
+( <span class="math inline">\(\sigma(F(\Sigma)) = F(\sigma(\Sigma))\)</span> 的理由是: <span class="math inline">\(\sigma(F(\Sigma))\)</span> 包含 <span class="math inline">\(\sigma(\Sigma)\)</span> 和 <span class="math inline">\(F\)</span>, 故 <span class="math inline">\(F(\sigma{(\Sigma)}) \subseteq \sigma(F(\Sigma))\)</span>. 同理 <span class="math inline">\(\sigma^{-1}(F(\sigma(\Sigma))) \supseteq F(\Sigma)\)</span>, 从而 <span class="math inline">\(F(\sigma(\Sigma)) \supseteq \sigma(F(\Sigma))\)</span>. 故 <span class="math inline">\(F(\sigma(\Sigma)) = \sigma(F(\Sigma))\)</span>.)
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>定理</strong> 设域扩张 <span class="math inline">\(E/F\)</span>, 则 <span class="math inline">\(E/F\)</span> 是有限正规扩张当且仅当 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一多项式在 <span class="math inline">\(F\)</span> 上的分裂域. {:.info}</p>
+<p><strong>证明</strong> 设 <span class="math inline">\(E/F\)</span> 是有限正规扩张, 则 <span class="math inline">\([E:F]\)</span> 有限, 存在 <span class="math inline">\(F\)</span> 上的代数元 <span class="math inline">\(u_1,u_2,\cdots,u_n\)</span> 使 <span class="math inline">\(E = F(u_1,u_2,\cdots,u_n)\)</span>. 记 <span class="math inline">\(u_i\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式为 <span class="math inline">\(f_i(x)\)</span>, <span class="math inline">\(i = 1,2,\cdots,n\)</span>. 记 <span class="math inline">\(f(x) = f_1(x)f_2(x)\cdots f_n(x)\)</span>. 设 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域为 <span class="math inline">\(F&#39;\)</span>. 一方面, <span class="math inline">\(u_1,u_2,\cdots ,u_n\)</span> 只是 <span class="math inline">\(f(x)\)</span> 的一部分根, 从而 <span class="math inline">\(E \subseteq F&#39;\)</span>. 另一方面, 由 <span class="math inline">\(E/F\)</span> 是正规扩张, <span class="math inline">\(f_i(x)\)</span> 的所有根均在 <span class="math inline">\(E\)</span> 上, 从而 <span class="math inline">\(E \supseteq F&#39;\)</span>. 这说明 <span class="math inline">\(E = F&#39;\)</span>, 是 <span class="math inline">\(F\)</span> 上某一多项式在 <span class="math inline">\(F\)</span> 上的分裂域.</p>
+反之, 设 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一多项式 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域. 设 <span class="math inline">\(g(x) \in F[x]\)</span> 是不可约多项式且 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(E\)</span> 中有根 <span class="math inline">\(\alpha\)</span>. 下证 <span class="math inline">\(g(x)\)</span> 的任意根都在 <span class="math inline">\(E\)</span> 中. 记 <span class="math inline">\(E\)</span> 的一个代数闭包 <span class="math inline">\(\Omega\)</span>. <span class="math inline">\(\beta \in \Omega\)</span> 是 <span class="math inline">\(g(x)\)</span> 的任一个根. <span class="math inline">\(\alpha,\beta\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式相同, 故存在<span class="math inline">\(F\)</span>-同构 <span class="math inline">\(\sigma: F(\alpha) \rightarrow F(\beta)\)</span>, 使 <span class="math inline">\(\sigma(\alpha) = \beta\)</span>. <span class="math inline">\(E\)</span> 也可以看成 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F(\alpha)\)</span> 上的分裂域, 故 <span class="math inline">\(\sigma\)</span> 可以延拓为 <span class="math inline">\(F\)</span>-嵌入 <span class="math inline">\(\sigma: E \rightarrow \Omega\)</span>. 由引理知 <span class="math inline">\(\sigma(E) = E\)</span>, 从而 <span class="math inline">\(\beta = \sigma(\alpha) \in E\)</span>. 也即 <span class="math inline">\(g(x)\)</span> 的任意根都在 <span class="math inline">\(E\)</span> 中.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>推论</strong> 设域扩张 <span class="math inline">\(E/F\)</span>, 则 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张当且仅当 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一可分多项式在 <span class="math inline">\(F\)</span> 上的分裂域. {:.info}</p>
+<p><strong>证明</strong> 设 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, 则 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一多项式 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域. 由 <span class="math inline">\(E/F\)</span> 是可分扩张知 <span class="math inline">\(f(x)\)</span> 是可分多项式.</p>
+反之, 若 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一可分多项式在 <span class="math inline">\(F\)</span> 上的分裂域, 则 <span class="math inline">\(E/F\)</span> 是可分扩张和有限正规扩张, 从而是有限伽罗瓦扩张.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
 <p>接下来展示同构延拓定理在正规扩张中的一些应用.</p>
-<p><strong>例</strong> 设 $E/F$ 为有限代数扩张. 则 $E/F$ 为正规扩张当且仅当 $F[x]$ 中任意不可约多项式 $f(x)$ 在 $E[x]$ 中所有不可约因子的次数是相同的.<br>{:.warning}</p>
-<p><strong>证明</strong> $\Leftarrow$: 设 $f(x)$ 是 $F[x]$ 中不可约多项式且在 $E$ 中有根 $u$. 则 $f(x)$ 在 $E[x]$ 中有不可约因子 $x-u$, 从而 $f(x)$ 在 $E[x]$ 中的不可约因子都是一次的. 这说明 $f(x)$ 的所有根均在 $E$ 中, 从而 $E/F$ 是正规扩张.</p>
-<p>$\Rightarrow$: 设 $E /F$ 是有限正规扩张, 则 $E$ 是 $F$ 上某一多项式 $f(x)$ 在 $F$ 上的分裂域. 任意不可约多项式 $g(x) \in F[x]$, 设 $p(x),q(x)$ 是 $g(x)$ 在 $E[x]$ 上两个不可约因子. 记 $E$ 的一个代数闭包为 $\Omega$. 记 $\alpha,\beta$ 分别是 $p(x),q(x)$ 的一根. 则 $\alpha,\beta$ 在 $F$ 上的极小多项式都为 $f(x)$, 存在 $F$-同构 $\sigma: F(\alpha) \rightarrow F(\beta)$ 使 $\sigma(\alpha) = \beta$.</p>
-<p>$E(\alpha)$, $E(\beta)$ 分别可以看成 $f(x)$ 在 $F(\alpha),F(\beta)$ 上的分裂域. 从而 $\sigma$ 可以延拓为 $\sigma’: E(\alpha) \rightarrow E(\beta)$ 使得 $$\sigma’|_{F(\alpha)} = \sigma$$, 从而 $\sigma’(\alpha) = \beta$. 由于 $E/F$ 是正规扩张, $$\sigma’|_F = \mathrm{Id}$$, 故 $\sigma’(E) = E$. 从而 $p_1(x) = \sigma’(p(x)) \in E[x]$. 我们有 $0 =\sigma’(p(\alpha)) = p_1(\beta)$ (因为 $\sigma’(\alpha)=\beta$). 故 $p_1(x)$ 是 $\beta$ 的零化多项式. 由 $p(x)$ 不可约而 $\sigma’$ 是同构, 有 $p_1(x)$ 也不可约. 故 $p_1(x) = q(x)$, 从而 $p(x),q(x)$ 有相同的次数.</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $E /F$ 为有限正规扩张, $G = \mathrm{Gal}(E/F)$, $M$ 是 $E /F$ 的中间域. 则 $M /F$ 是正规扩张当且仅当 $\sigma(M) = M$,$\forall \sigma \in G$.<br>{:.warning}</p>
-<p><strong>证明</strong> $\Rightarrow$: 设 $M /F$ 是正规扩张, 则 $M$ 是 $F$ 上某一多项式 $f(x)$ 在 $F$ 上的分裂域. $\forall \sigma \in G$, 有 $\sigma\mid_F = \mathrm{Id}$, 从而 $\sigma(M) = M$.</p>
-<p>$\Leftarrow$: 这即是说 $\forall \sigma \in G$, $a \in M$, $\sigma(a) \in M$. 记 $f(x)$ 是 $F$ 上不可约多项式且在 $M$ 上有根 $\alpha$, 则 $f(x)$ 在 $E$ 上有根 $\alpha$. $E /F$ 是正规扩张. 故 $f(x)$ 的所有根均在 $E$ 中. 任意 $f(x)$ 的其他根 $\beta$, 有同构 $\sigma: F(\alpha) \rightarrow F(\beta)$ 使得 $$\sigma|_F = \mathrm{Id}$$, $\sigma(\alpha) = \beta$. $E$ 可看成是 $F$ 上一多项式 $g(x)$ 在 $F$ 上的分裂域, $\alpha,\beta \in E$, 于是 $E$ 也是 $f(x)$ 在 $F(\alpha),F(\beta)$ 上的分裂域. $\sigma$ 可延拓为 $\pi: E\rightarrow E$ 使得 $$\pi|_F = \mathrm{Id}$$. 故 $\pi \in G$. $\alpha \in M$, 故 $\beta = \pi(\alpha) \in M$. 故 $f(x)$ 的所有根均在 $M$ 中, 从而 $M /F$ 是正规扩张.</p>
-<p align="right">$\blacksquare$</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E/F\)</span> 为有限代数扩张. 则 <span class="math inline">\(E/F\)</span> 为正规扩张当且仅当 <span class="math inline">\(F[x]\)</span> 中任意不可约多项式 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(E[x]\)</span> 中所有不可约因子的次数是相同的. {:.warning}</p>
+<p><strong>证明</strong> <span class="math inline">\(\Leftarrow\)</span>: 设 <span class="math inline">\(f(x)\)</span> 是 <span class="math inline">\(F[x]\)</span> 中不可约多项式且在 <span class="math inline">\(E\)</span> 中有根 <span class="math inline">\(u\)</span>. 则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(E[x]\)</span> 中有不可约因子 <span class="math inline">\(x-u\)</span>, 从而 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(E[x]\)</span> 中的不可约因子都是一次的. 这说明 <span class="math inline">\(f(x)\)</span> 的所有根均在 <span class="math inline">\(E\)</span> 中, 从而 <span class="math inline">\(E/F\)</span> 是正规扩张.</p>
+<p><span class="math inline">\(\Rightarrow\)</span>: 设 <span class="math inline">\(E /F\)</span> 是有限正规扩张, 则 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 上某一多项式 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域. 任意不可约多项式 <span class="math inline">\(g(x) \in F[x]\)</span>, 设 <span class="math inline">\(p(x),q(x)\)</span> 是 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(E[x]\)</span> 上两个不可约因子. 记 <span class="math inline">\(E\)</span> 的一个代数闭包为 <span class="math inline">\(\Omega\)</span>. 记 <span class="math inline">\(\alpha,\beta\)</span> 分别是 <span class="math inline">\(p(x),q(x)\)</span> 的一根. 则 <span class="math inline">\(\alpha,\beta\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式都为 <span class="math inline">\(f(x)\)</span>, 存在 <span class="math inline">\(F\)</span>-同构 <span class="math inline">\(\sigma: F(\alpha) \rightarrow F(\beta)\)</span> 使 <span class="math inline">\(\sigma(\alpha) = \beta\)</span>.</p>
+<span class="math inline">\(E(\alpha)\)</span>, <span class="math inline">\(E(\beta)\)</span> 分别可以看成 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F(\alpha),F(\beta)\)</span> 上的分裂域. 从而 <span class="math inline">\(\sigma\)</span> 可以延拓为 <span class="math inline">\(\sigma&#39;: E(\alpha) \rightarrow E(\beta)\)</span> 使得 <span class="math display">\[\sigma&#39;|_{F(\alpha)} = \sigma\]</span>, 从而 <span class="math inline">\(\sigma&#39;(\alpha) = \beta\)</span>. 由于 <span class="math inline">\(E/F\)</span> 是正规扩张, <span class="math display">\[\sigma&#39;|_F = \mathrm{Id}\]</span>, 故 <span class="math inline">\(\sigma&#39;(E) = E\)</span>. 从而 <span class="math inline">\(p_1(x) = \sigma&#39;(p(x)) \in E[x]\)</span>. 我们有 <span class="math inline">\(0 =\sigma&#39;(p(\alpha)) = p_1(\beta)\)</span> (因为 <span class="math inline">\(\sigma&#39;(\alpha)=\beta\)</span>). 故 <span class="math inline">\(p_1(x)\)</span> 是 <span class="math inline">\(\beta\)</span> 的零化多项式. 由 <span class="math inline">\(p(x)\)</span> 不可约而 <span class="math inline">\(\sigma&#39;\)</span> 是同构, 有 <span class="math inline">\(p_1(x)\)</span> 也不可约. 故 <span class="math inline">\(p_1(x) = q(x)\)</span>, 从而 <span class="math inline">\(p(x),q(x)\)</span> 有相同的次数.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E /F\)</span> 为有限正规扩张, <span class="math inline">\(G = \mathrm{Gal}(E/F)\)</span>, <span class="math inline">\(M\)</span> 是 <span class="math inline">\(E /F\)</span> 的中间域. 则 <span class="math inline">\(M /F\)</span> 是正规扩张当且仅当 <span class="math inline">\(\sigma(M) = M\)</span>,<span class="math inline">\(\forall \sigma \in G\)</span>. {:.warning}</p>
+<p><strong>证明</strong> <span class="math inline">\(\Rightarrow\)</span>: 设 <span class="math inline">\(M /F\)</span> 是正规扩张, 则 <span class="math inline">\(M\)</span> 是 <span class="math inline">\(F\)</span> 上某一多项式 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域. <span class="math inline">\(\forall \sigma \in G\)</span>, 有 <span class="math inline">\(\sigma\mid_F = \mathrm{Id}\)</span>, 从而 <span class="math inline">\(\sigma(M) = M\)</span>.</p>
+<span class="math inline">\(\Leftarrow\)</span>: 这即是说 <span class="math inline">\(\forall \sigma \in G\)</span>, <span class="math inline">\(a \in M\)</span>, <span class="math inline">\(\sigma(a) \in M\)</span>. 记 <span class="math inline">\(f(x)\)</span> 是 <span class="math inline">\(F\)</span> 上不可约多项式且在 <span class="math inline">\(M\)</span> 上有根 <span class="math inline">\(\alpha\)</span>, 则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(E\)</span> 上有根 <span class="math inline">\(\alpha\)</span>. <span class="math inline">\(E /F\)</span> 是正规扩张. 故 <span class="math inline">\(f(x)\)</span> 的所有根均在 <span class="math inline">\(E\)</span> 中. 任意 <span class="math inline">\(f(x)\)</span> 的其他根 <span class="math inline">\(\beta\)</span>, 有同构 <span class="math inline">\(\sigma: F(\alpha) \rightarrow F(\beta)\)</span> 使得 <span class="math display">\[\sigma|_F = \mathrm{Id}\]</span>, <span class="math inline">\(\sigma(\alpha) = \beta\)</span>. <span class="math inline">\(E\)</span> 可看成是 <span class="math inline">\(F\)</span> 上一多项式 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域, <span class="math inline">\(\alpha,\beta \in E\)</span>, 于是 <span class="math inline">\(E\)</span> 也是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F(\alpha),F(\beta)\)</span> 上的分裂域. <span class="math inline">\(\sigma\)</span> 可延拓为 <span class="math inline">\(\pi: E\rightarrow E\)</span> 使得 <span class="math display">\[\pi|_F = \mathrm{Id}\]</span>. 故 <span class="math inline">\(\pi \in G\)</span>. <span class="math inline">\(\alpha \in M\)</span>, 故 <span class="math inline">\(\beta = \pi(\alpha) \in M\)</span>. 故 <span class="math inline">\(f(x)\)</span> 的所有根均在 <span class="math inline">\(M\)</span> 中, 从而 <span class="math inline">\(M /F\)</span> 是正规扩张.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
 
     </div>
 
@@ -273,8 +331,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -298,63 +356,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正规扩张"><span class="nav-number">1.</span> <span class="nav-text">正规扩张</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有限正规扩张的刻画"><span class="nav-number">1.1.</span> <span class="nav-text">有限正规扩张的刻画</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Psi</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -373,7 +374,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Psi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -391,20 +392,13 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   

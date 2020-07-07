@@ -14,10 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -31,7 +33,7 @@
 <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -51,24 +53,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
@@ -78,22 +92,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Psi's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -106,41 +118,81 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Psi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content index posts-expand">
-            
+        <div class="content index posts-expand">
+          
       
   
   
@@ -191,16 +243,15 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#bf-1">$\bf 1$</a></li>
-<li><a href="#bf-2">$\bf 2$</a></li>
+<li><a href="#bf-1"><span class="math inline">\(\bf 1\)</span></a></li>
+<li><a href="#bf-2"><span class="math inline">\(\bf 2\)</span></a></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h2 id="bf-1"><a href="#bf-1" class="headerlink" title="$\bf 1$"></a>$\bf 1$</h2><p>有限 $p$-群是指阶数为 $p$ 的幂的有限群, 其中 $p$ 是一个素数.</p>
-<p>$p$-群在集合上的置换作用可产生一个轨道分解公式, 有时在模 $p$ 的意义下这些公式可以给出一些性质.</p>
-<p><strong>定理</strong> 有限 $p$-群必有非平凡的中心.<br>{:.info}</p>
+<h2 id="bf-1"><span class="math inline">\(\bf 1\)</span></h2>
+<p>有限 <span class="math inline">\(p\)</span>-群是指阶数为 <span class="math inline">\(p\)</span> 的幂的有限群, 其中 <span class="math inline">\(p\)</span> 是一个素数.</p>
+<p><span class="math inline">\(p\)</span>-群在集合上的置换作用可产生一个轨道分解公式, 有时在模 <span class="math inline">\(p\)</span> 的意义下这些公式可以给出一些性质.</p>
+<p><strong>定理</strong> 有限 <span class="math inline">\(p\)</span>-群必有非平凡的中心. {:.info}
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/11/some-about-group/#more" rel="contents">
@@ -273,23 +324,25 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#有限伽罗瓦扩张">有限伽罗瓦扩张</a><ul>
+<li><a href="#有限伽罗瓦扩张">有限伽罗瓦扩张</a>
+<ul>
 <li><a href="#阿廷引理和戴德金无关性引理">阿廷引理和戴德金无关性引理</a></li>
 <li><a href="#正规基">正规基</a></li>
 <li><a href="#一些习题">一些习题</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="有限伽罗瓦扩张"><a href="#有限伽罗瓦扩张" class="headerlink" title="有限伽罗瓦扩张"></a>有限伽罗瓦扩张</h1><p><strong>伽罗瓦扩张</strong> 是指可分正规扩张, <strong>有限伽罗瓦扩张</strong> 是指有限可分正规扩张.<br>{:.success}</p>
-<p>设 $E/F$ 是任意域扩张, 令  </p>
-<p>$$G = \mathrm{Gal}(E/F) = {\sigma: E \rightarrow F 是域同构 \mid \sigma(a) = a, \forall a \in F}.$$</p>
-<p>则 $\mathrm{Gal}(E/F)$ 对于映射的合成作成群. 记 $$\Omega = {E/F 的中间域}$$, $$\Gamma = {G 的子群}$$. 考虑如下两个映射, 通常称之为 <strong>伽罗瓦对应</strong>:</p>
-<p>$$<br>    \mathrm{Gal}(E/-): \Omega \rightarrow \Gamma, \mathrm{Gal}(E/-)(M) = \mathrm{Gal}(E/M), \forall M \in \Omega, \<br>    \mathrm{Inv}: \Gamma \rightarrow \Omega, \mathrm{Inv}(H) = {a \in E \mid \sigma(a) = a,\forall \sigma \in H},\forall H \in \Gamma.<br>$$</p>
-<p>这里 $\mathrm{Gal}(E/M)$ 称作 $E$ 在 $M$ 上的 <strong>伽罗瓦群</strong>; $\mathrm{Inv}(H)$ 称为 $H$ 的不动点域.</p>
+<h1 id="有限伽罗瓦扩张">有限伽罗瓦扩张</h1>
+<p><strong>伽罗瓦扩张</strong> 是指可分正规扩张, <strong>有限伽罗瓦扩张</strong> 是指有限可分正规扩张. {:.success}</p>
+<p>设 <span class="math inline">\(E/F\)</span> 是任意域扩张, 令</p>
+<p><span class="math display">\[G = \mathrm{Gal}(E/F) = \{\sigma: E \rightarrow F 是域同构 \mid \sigma(a) = a, \forall a \in F\}.\]</span></p>
+<p>则 <span class="math inline">\(\mathrm{Gal}(E/F)\)</span> 对于映射的合成作成群. 记 <span class="math display">\[\Omega = \{E/F 的中间域\}\]</span>, <span class="math display">\[\Gamma = \{G 的子群\}\]</span>. 考虑如下两个映射, 通常称之为 <strong>伽罗瓦对应</strong>:</p>
+<p><span class="math display">\[
+    \mathrm{Gal}(E/-): \Omega \rightarrow \Gamma, \mathrm{Gal}(E/-)(M) = \mathrm{Gal}(E/M), \forall M \in \Omega, \\
+    \mathrm{Inv}: \Gamma \rightarrow \Omega, \mathrm{Inv}(H) = \{a \in E \mid \sigma(a) = a,\forall \sigma \in H\},\forall H \in \Gamma.
+\]</span></p>
+<p>这里 <span class="math inline">\(\mathrm{Gal}(E/M)\)</span> 称作 <span class="math inline">\(E\)</span> 在 <span class="math inline">\(M\)</span> 上的 <strong>伽罗瓦群</strong>; <span class="math inline">\(\mathrm{Inv}(H)\)</span> 称为 <span class="math inline">\(H\)</span> 的不动点域.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/07/Galois-Theory-1/#more" rel="contents">
@@ -362,17 +415,17 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#正规扩张">正规扩张</a><ul>
+<li><a href="#正规扩张">正规扩张</a>
+<ul>
 <li><a href="#有限正规扩张的刻画">有限正规扩张的刻画</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="正规扩张"><a href="#正规扩张" class="headerlink" title="正规扩张"></a>正规扩张</h1><p>设代数扩张 $E/F$. 如果 $E$ 中任一元 $u$ 在 $F$ 上的极小多项式在 $E[x]$ 中分解为一次因子的乘积, 则称 $E/F$ 为 <strong>正规扩张</strong>.这等价于在 $E$ 中有根的 $F$ 上的不可约多项式的根均在 $E$ 中.<br>{:.success}</p>
-<p>如果 $E/F$ 既是可分扩张也是正规扩张, 则称 $E/F$ 是 <strong>伽罗瓦扩张</strong>.<br>如果 $E/F$ 即使有限扩张又是伽罗瓦扩张, 则称 $E/F$ 是 <strong>有限伽罗瓦扩张</strong>.<br>{:.success}</p>
+<h1 id="正规扩张">正规扩张</h1>
+<p>设代数扩张 <span class="math inline">\(E/F\)</span>. 如果 <span class="math inline">\(E\)</span> 中任一元 <span class="math inline">\(u\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式在 <span class="math inline">\(E[x]\)</span> 中分解为一次因子的乘积, 则称 <span class="math inline">\(E/F\)</span> 为 <strong>正规扩张</strong>.这等价于在 <span class="math inline">\(E\)</span> 中有根的 <span class="math inline">\(F\)</span> 上的不可约多项式的根均在 <span class="math inline">\(E\)</span> 中. {:.success}</p>
+<p>如果 <span class="math inline">\(E/F\)</span> 既是可分扩张也是正规扩张, 则称 <span class="math inline">\(E/F\)</span> 是 <strong>伽罗瓦扩张</strong>.<br />
+如果 <span class="math inline">\(E/F\)</span> 即使有限扩张又是伽罗瓦扩张, 则称 <span class="math inline">\(E/F\)</span> 是 <strong>有限伽罗瓦扩张</strong>. {:.success}
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/06/normal-extension/#more" rel="contents">
@@ -459,94 +512,22 @@
 </script>
 <script type="text/javascript" src="/usr/share/mathjax/MathJax.js"></script></head>
 -->
-
 <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#多项式环">多项式环</a><ul>
+<li><a href="#多项式环">多项式环</a>
+<ul>
 <li><a href="#重根问题">重根问题</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
 <p>这里简要记录多项式的性质和应用.</p>
-<h1 id="多项式环"><a href="#多项式环" class="headerlink" title="多项式环"></a>多项式环</h1><p>设 $R$ 是环, $x$ 是一个文字(未定元). 以 $R[x]$ 表示集合<br>$${f(x) = a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0}.$$<br>$R[x]$ 的元素 $f(x) = a_0 + a_1x + \cdots + a_nx^n$ 叫做 $R$ 上关于 $x$ 的 <strong>多项式</strong>. $a_0$ 为 $f(x)$ 的 <strong>常数项</strong>. 若 $a_n \ne 0$, 称 $a_n$ 为 $f(x)$ 的 <strong>首项系数</strong>, 并且定义 $f(x)$ 的次数为 $n$, 表示为 $\deg f(x) = n$. 由技术上的原因, 我们可以定义 $\deg 0 = -\infty$. 若 $a_n = 1$, 则称 $f(x)$ 为 <strong>首一多项式</strong>. 两个多项式 $f(x)$ 和 $g(x)$ 相等, 当且仅当它们的系数对应相等.<br>{:.success}</p>
+<h1 id="多项式环">多项式环</h1>
+<p>设 <span class="math inline">\(R\)</span> 是环, <span class="math inline">\(x\)</span> 是一个文字(未定元). 以 <span class="math inline">\(R[x]\)</span> 表示集合<br />
+<span class="math display">\[\{f(x) = a_0 + a_1x + \cdots + a_nx^n \mid a_i \in R(0 \le i \le n), n \ge 0\}.\]</span><br />
+<span class="math inline">\(R[x]\)</span> 的元素 <span class="math inline">\(f(x) = a_0 + a_1x + \cdots + a_nx^n\)</span> 叫做 <span class="math inline">\(R\)</span> 上关于 <span class="math inline">\(x\)</span> 的 <strong>多项式</strong>. <span class="math inline">\(a_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的 <strong>常数项</strong>. 若 <span class="math inline">\(a_n \ne 0\)</span>, 称 <span class="math inline">\(a_n\)</span> 为 <span class="math inline">\(f(x)\)</span> 的 <strong>首项系数</strong>, 并且定义 <span class="math inline">\(f(x)\)</span> 的次数为 <span class="math inline">\(n\)</span>, 表示为 <span class="math inline">\(\deg f(x) = n\)</span>. 由技术上的原因, 我们可以定义 <span class="math inline">\(\deg 0 = -\infty\)</span>. 若 <span class="math inline">\(a_n = 1\)</span>, 则称 <span class="math inline">\(f(x)\)</span> 为 <strong>首一多项式</strong>. 两个多项式 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 相等, 当且仅当它们的系数对应相等. {:.success}
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/04/poly/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/pudding/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Psi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Psi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/03/pudding/" class="post-title-link" itemprop="url">记一次烤布丁的经历</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-03T00:00:00+08:00">2019-07-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 19:39:36" itemprop="dateModified" datetime="2019-08-27T19:39:36+08:00">2019-08-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>“需要烤箱”</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/03/pudding/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -616,20 +597,90 @@
 
       
           <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#hello-world">Hello World!</a><ul>
+<li><a href="#hello-world">Hello World!</a>
+<ul>
 <li><a href="#markdown">Markdown</a></li>
 <li><a href="#code">code</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1>
+<h1 id="hello-world">Hello World!</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/03/Hello-World/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/pudding/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Psi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Psi's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/03/pudding/" class="post-title-link" itemprop="url">记一次烤布丁的经历</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-03T00:00:00+08:00">2019-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-27 19:39:36" itemprop="dateModified" datetime="2019-08-27T19:39:36+08:00">2019-08-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>"需要烤箱"
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/03/pudding/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -714,19 +765,19 @@
 <script type="text/javascript" src="/usr/share/mathjax/MathJax.js"></script></head>
 -->
 <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#定义">定义</a><ul>
+<li><a href="#定义">定义</a>
+<ul>
 <li><a href="#例子">例子</a></li>
-</ul>
-</li>
+</ul></li>
 <li><a href="#完全域">完全域</a></li>
 <li><a href="#可分扩张的性质">可分扩张的性质</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>设 $E/F$ 是代数扩张, $a \in E$. 如果 $a$ 在 $F$ 上的极小多项式无重根, 则称 $a$ 是 $F$ 上的<strong>可分元</strong>, 或称 $a$ 在 $F$ 上<strong>可分</strong>. 如果 $E$ 中任一元素在 $F$ 上均可分, 则称 $E$ 是 $F$ 的<strong>可分扩张</strong>, 否则称为<strong>不可分扩张</strong>.<br>{:.success}</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>例如, $\mathbb{Q}$ 上不可约多项式均无重根, 从而任一代数扩张 $E/\mathbb{Q}$ 均为可分扩张.</p>
+<h1 id="定义">定义</h1>
+<p>设 <span class="math inline">\(E/F\)</span> 是代数扩张, <span class="math inline">\(a \in E\)</span>. 如果 <span class="math inline">\(a\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式无重根, 则称 <span class="math inline">\(a\)</span> 是 <span class="math inline">\(F\)</span> 上的<strong>可分元</strong>, 或称 <span class="math inline">\(a\)</span> 在 <span class="math inline">\(F\)</span> 上<strong>可分</strong>. 如果 <span class="math inline">\(E\)</span> 中任一元素在 <span class="math inline">\(F\)</span> 上均可分, 则称 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(F\)</span> 的<strong>可分扩张</strong>, 否则称为<strong>不可分扩张</strong>. {:.success}</p>
+<h2 id="例子">例子</h2>
+<p>例如, <span class="math inline">\(\mathbb{Q}\)</span> 上不可约多项式均无重根, 从而任一代数扩张 <span class="math inline">\(E/\mathbb{Q}\)</span> 均为可分扩张.
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/03/separable-extension/#more" rel="contents">
@@ -757,8 +808,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -782,62 +833,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Psi</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -856,7 +851,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Psi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -874,20 +869,13 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   

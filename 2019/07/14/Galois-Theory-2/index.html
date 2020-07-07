@@ -14,18 +14,20 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
 
-<script id="hexo-configurations">
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="伽罗瓦理论基本定理 伽罗瓦对应的一个例子 代数基本定理 一些例题      伽罗瓦理论基本定理伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.">
+  <meta name="description" content="伽罗瓦理论基本定理  伽罗瓦对应的一个例子 代数基本定理 一些例题    伽罗瓦理论基本定理 伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="伽罗瓦理论基本定理">
 <meta property="og:url" content="http://yoursite.com/2019/07/14/Galois-Theory-2/index.html">
 <meta property="og:site_name" content="Psi&#39;s Blog">
-<meta property="og:description" content="伽罗瓦理论基本定理 伽罗瓦对应的一个例子 代数基本定理 一些例题      伽罗瓦理论基本定理伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.">
+<meta property="og:description" content="伽罗瓦理论基本定理  伽罗瓦对应的一个例子 代数基本定理 一些例题    伽罗瓦理论基本定理 伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Galois-Theory-2.svg?sanitize=true">
 <meta property="article:published_time" content="2019-07-13T16:00:00.000Z">
@@ -38,7 +40,7 @@
 <link rel="canonical" href="http://yoursite.com/2019/07/14/Galois-Theory-2/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -58,24 +60,36 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
@@ -85,22 +99,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">Psi's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -113,41 +125,82 @@
 
 
 
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
 
 
 
 </div>
-    </header>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-    
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#伽罗瓦理论基本定理"><span class="nav-number">1.</span> <span class="nav-text">伽罗瓦理论基本定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伽罗瓦对应的一个例子"><span class="nav-number">1.1.</span> <span class="nav-text">伽罗瓦对应的一个例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代数基本定理"><span class="nav-number">1.2.</span> <span class="nav-text">代数基本定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些例题"><span class="nav-number">1.3.</span> <span class="nav-text">一些例题</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Psi</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
+
       <div class="main-inner">
-        <div class="content-wrap">
-          
+        
 
-          <div class="content post posts-expand">
-            
+        <div class="content post posts-expand">
+          
 
     
   
@@ -198,125 +251,201 @@
 
       
         <!-- vim-markdown-toc GFM -->
-
 <ul>
-<li><a href="#伽罗瓦理论基本定理">伽罗瓦理论基本定理</a><ul>
+<li><a href="#伽罗瓦理论基本定理">伽罗瓦理论基本定理</a>
+<ul>
 <li><a href="#伽罗瓦对应的一个例子">伽罗瓦对应的一个例子</a></li>
 <li><a href="#代数基本定理">代数基本定理</a></li>
 <li><a href="#一些例题">一些例题</a></li>
-</ul>
-</li>
+</ul></li>
 </ul>
 <!-- vim-markdown-toc -->
-
-<h1 id="伽罗瓦理论基本定理"><a href="#伽罗瓦理论基本定理" class="headerlink" title="伽罗瓦理论基本定理"></a>伽罗瓦理论基本定理</h1><p>伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性.</p>
-<a id="more"></a>
-<p>设 $E/F$ 是有限伽罗瓦扩张, $G  =\mathrm{Gal}(E/F)$. 令 </p>
-<p>$$\Omega = {E/F 的中间域}, \Gamma = {G 的子群}.<br>$$</p>
+<h1 id="伽罗瓦理论基本定理">伽罗瓦理论基本定理</h1>
+<p>伽罗瓦理论基本定理是说: 对于有限伽罗瓦扩张, 伽罗瓦对应是反序的一一对应, 且保持共轭性. <a id="more"></a> 设 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\(G =\mathrm{Gal}(E/F)\)</span>. 令</p>
+<p><span class="math display">\[\Omega = \{E/F 的中间域\}, \Gamma = \{G 的子群\}.
+\]</span></p>
 <p>有伽罗瓦对应:</p>
-<p>$$<br>\mathrm{Gal}(E/-): \Omega \rightarrow \Gamma, \mathrm{Gal}(E/-)M = \mathrm{Gal}(E/M),\<br>\mathrm{Inv}: \Gamma \rightarrow \Omega, \mathrm{Inv}(H) = {a \in E \mid \sigma(a) = a,\forall \sigma \in H}.<br>$$</p>
-<p>由定义, 对任意中间域 $M \in \Omega$, $E/M$ 也是有限伽罗瓦扩张. 于是</p>
-<p>$$<br>[E:M] = \mid \mathrm{Gal}(E/M)\mid, [M:F] = [E :  F]/[E:M] = \frac{\mid G\mid}{\mid\mathrm{Gal}(E/M)\mid}.<br>$$</p>
-<p>对 $M,M’ \in \Omega$, 如果存在 $\sigma \in G$ 使得 $M’ = \sigma(M)$, 则称 $M,M’$ 是 <strong>共轭</strong> 的. 由 $G$ 是群, 知共轭是 $\Omega$ 上的等价关系.</p>
-<p><strong>定理</strong> (<strong>伽罗瓦理论基本定理</strong>) 设 $E/F$ 是有限伽罗瓦扩张, $\mathrm{Gal}(E/-)$,$\mathrm{Inv}$,$\Omega$ 和 $\Gamma$ 的定义同上, 则<br>$\mathrm{(i)}$: $\mathrm{Gal}(E/-)$ 和 $\mathrm{Inv}$ 是互逆反序的映射, 既:<br>$\mathrm{Inv}(\mathrm{Gal}(E/M)) = M$, $\mathrm{Gal}(E/\mathrm{Inv}(H)) = H$, $\forall M\in \Omega,H \in \Gamma$.<br>$\mathrm{(ii)}$: $G$ 的子群 $H$ 和 $H’$ 共轭, 当且仅当 $\mathrm{Inv}(H)$ 和 $\mathrm{Inv}(H’)$ 是共轭的. $G$ 的子群 $H$ 是正规子群当且仅当 $\mathrm{Inv}(H)/F$ 是正规扩张. 在这种情况下, 有 $\mathrm{Gal}(\mathrm{Inv}(H)/F) \cong G/H$.<br>{:.info}</p>
-<p>利用 $\mathrm{(i)}$ 将 $\mathrm{(ii)}$ 的话倒过来说, 就得到:</p>
-<p>$\mathrm{(ii’)}$: $E/F$ 的中间域 $M$ 和 $M’$ 共轭当且仅当 $\mathrm{Gal}(E/M)$ 和 $\mathrm{Gal}(E/M’)$ 是共轭的.<br>设 $M \in \Omega$. 则 $M/F$ 是正规扩张当且仅当 $\mathrm{Gal}(E/M)$ 是 $G$ 的正规子群. 在这种情况下, 有 $\mathrm{Gal}(M/F) \cong \mathrm{Gal}(E/F) /\mathrm{Gal}(E/M)$.<br>{:.info}</p>
-<p><strong>证明</strong> $\mathrm{(i)}$ $\forall M \in \Omega$, $E/M$ 是有限伽罗瓦扩张, 从而 $\mathrm{Inv}(\mathrm{Gal}(E/M)) = M$. 任意 $H \in \Gamma$,  由阿廷定理, $E/\mathrm{Inv}(H)$ 是有限伽罗瓦扩张, 且 $\mathrm{Gal}(E/\mathrm{Inv}(H)) = H$.</p>
-<p>由 $\mathrm{(i)}$, $\sigma \in G$ 使 $H’ = \sigma H\sigma^{-1}$  当且仅当 $\mathrm{Inv}(\sigma H\sigma^{-1}) = \mathrm{Inv}(H’)$, 其中</p>
-<p>$$<br>\begin{split}<br>\mathrm{Inv}(\sigma H\sigma^{-1}) &amp;= {a \in E\mid \sigma\pi\sigma^{-1}(a) = a ,\forall \pi \in H} \<br>&amp;= {a \in E \mid \pi\sigma^{-1}(a) = \sigma^{-1}(a),\forall \pi \in H} \<br>&amp;= {a \in E \mid \sigma^{-1}(a) \in \mathrm{Inv}(H)} = \sigma(\mathrm{Inv}(H)).<br>\end{split}<br>$$</p>
-<p>这说明 $\mathrm{Inv}(\sigma H\sigma^{-1}) = \mathrm{Inv}(H’)$ 当且仅当 $\sigma(\mathrm{Inv}(H)) = \mathrm{Inv}(H’)$. 故 $H$ 和 $H’$ 共轭当且仅当 $\mathrm{Inv}(H)$ 和 $\mathrm{Inv}(H’)$ 共轭.</p>
-<p>这也说明 $H$ 是 $G$ 的正规子群当且仅当 $\mathrm{Inv(H)}/F$ 是正规扩张 (见<a href="https://wuxiangdong.github.io/2019/07/06/normal-extension.html#%E6%9C%89%E9%99%90%E6%AD%A3%E8%A7%84%E6%89%A9%E5%BC%A0%E7%9A%84%E5%88%BB%E7%94%BB" target="_blank" rel="noopener">正规扩张</a>的例). 这个情况下有 $\sigma(\mathrm{Inv}(H)) = \mathrm{Inv(H)},\forall \sigma \in G$, 于是可以记</p>
-<p>$$<br>\pi: G \rightarrow \mathrm{Gal}(\mathrm{Inv}(H)/F), \sigma \mapsto \sigma\mid_{\mathrm{Inv}(H)}.<br>$$</p>
-<p>则 $\pi$ 是同态, 且</p>
-<p>$$\ker \pi = {\sigma\in G \mid \sigma(a) = a,\forall a \in \mathrm{Inv}(H)} = \mathrm{Gal}(E/\mathrm{Inv}(H)) = H.$$</p>
-<p>故 $\pi$ 诱导出单同态 $G/H \rightarrow \mathrm{Gal}(\mathrm{Inv}(H)/F)$.  又</p>
-<p>$$<br>\begin{split}<br>|G/H| &amp;= |G|/|H| = [E:F]/[E:\mathrm{Inv(H)}] \<br>&amp;= [\mathrm{Inv}(H):F] = |\mathrm{Gal(\mathrm{Inv}(H)/F)}|.<br>\end{split}<br>$$ </p>
-<p>故上述单同态是同构, 从而 $\mathrm{Gal(\mathrm{Inv(H)}/F)} \cong G/H$.</p>
-<p align="right">$\blacksquare$</p>
-
+<p><span class="math display">\[
+\mathrm{Gal}(E/-): \Omega \rightarrow \Gamma, \mathrm{Gal}(E/-)M = \mathrm{Gal}(E/M),\\
+\mathrm{Inv}: \Gamma \rightarrow \Omega, \mathrm{Inv}(H) = \{a \in E \mid \sigma(a) = a,\forall \sigma \in H\}.
+\]</span></p>
+<p>由定义, 对任意中间域 <span class="math inline">\(M \in \Omega\)</span>, <span class="math inline">\(E/M\)</span> 也是有限伽罗瓦扩张. 于是</p>
+<p><span class="math display">\[
+[E:M] = \mid \mathrm{Gal}(E/M)\mid, [M:F] = [E :  F]/[E:M] = \frac{\mid G\mid}{\mid\mathrm{Gal}(E/M)\mid}.
+\]</span></p>
+<p>对 <span class="math inline">\(M,M&#39; \in \Omega\)</span>, 如果存在 <span class="math inline">\(\sigma \in G\)</span> 使得 <span class="math inline">\(M&#39; = \sigma(M)\)</span>, 则称 <span class="math inline">\(M,M&#39;\)</span> 是 <strong>共轭</strong> 的. 由 <span class="math inline">\(G\)</span> 是群, 知共轭是 <span class="math inline">\(\Omega\)</span> 上的等价关系.</p>
+<p><strong>定理</strong> (<strong>伽罗瓦理论基本定理</strong>) 设 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\(\mathrm{Gal}(E/-)\)</span>,<span class="math inline">\(\mathrm{Inv}\)</span>,<span class="math inline">\(\Omega\)</span> 和 <span class="math inline">\(\Gamma\)</span> 的定义同上, 则<br />
+<span class="math inline">\(\mathrm{(i)}\)</span>: <span class="math inline">\(\mathrm{Gal}(E/-)\)</span> 和 <span class="math inline">\(\mathrm{Inv}\)</span> 是互逆反序的映射, 既:<br />
+<span class="math inline">\(\mathrm{Inv}(\mathrm{Gal}(E/M)) = M\)</span>, <span class="math inline">\(\mathrm{Gal}(E/\mathrm{Inv}(H)) = H\)</span>, <span class="math inline">\(\forall M\in \Omega,H \in \Gamma\)</span>.<br />
+<span class="math inline">\(\mathrm{(ii)}\)</span>: <span class="math inline">\(G\)</span> 的子群 <span class="math inline">\(H\)</span> 和 <span class="math inline">\(H&#39;\)</span> 共轭, 当且仅当 <span class="math inline">\(\mathrm{Inv}(H)\)</span> 和 <span class="math inline">\(\mathrm{Inv}(H&#39;)\)</span> 是共轭的. <span class="math inline">\(G\)</span> 的子群 <span class="math inline">\(H\)</span> 是正规子群当且仅当 <span class="math inline">\(\mathrm{Inv}(H)/F\)</span> 是正规扩张. 在这种情况下, 有 <span class="math inline">\(\mathrm{Gal}(\mathrm{Inv}(H)/F) \cong G/H\)</span>. {:.info}</p>
+<p>利用 <span class="math inline">\(\mathrm{(i)}\)</span> 将 <span class="math inline">\(\mathrm{(ii)}\)</span> 的话倒过来说, 就得到:</p>
+<p><span class="math inline">\(\mathrm{(ii&#39;)}\)</span>: <span class="math inline">\(E/F\)</span> 的中间域 <span class="math inline">\(M\)</span> 和 <span class="math inline">\(M&#39;\)</span> 共轭当且仅当 <span class="math inline">\(\mathrm{Gal}(E/M)\)</span> 和 <span class="math inline">\(\mathrm{Gal}(E/M&#39;)\)</span> 是共轭的.<br />
+设 <span class="math inline">\(M \in \Omega\)</span>. 则 <span class="math inline">\(M/F\)</span> 是正规扩张当且仅当 <span class="math inline">\(\mathrm{Gal}(E/M)\)</span> 是 <span class="math inline">\(G\)</span> 的正规子群. 在这种情况下, 有 <span class="math inline">\(\mathrm{Gal}(M/F) \cong \mathrm{Gal}(E/F) /\mathrm{Gal}(E/M)\)</span>. {:.info}</p>
+<p><strong>证明</strong> <span class="math inline">\(\mathrm{(i)}\)</span> <span class="math inline">\(\forall M \in \Omega\)</span>, <span class="math inline">\(E/M\)</span> 是有限伽罗瓦扩张, 从而 <span class="math inline">\(\mathrm{Inv}(\mathrm{Gal}(E/M)) = M\)</span>. 任意 <span class="math inline">\(H \in \Gamma\)</span>, 由阿廷定理, <span class="math inline">\(E/\mathrm{Inv}(H)\)</span> 是有限伽罗瓦扩张, 且 <span class="math inline">\(\mathrm{Gal}(E/\mathrm{Inv}(H)) = H\)</span>.</p>
+<p>由 <span class="math inline">\(\mathrm{(i)}\)</span>, <span class="math inline">\(\sigma \in G\)</span> 使 <span class="math inline">\(H&#39; = \sigma H\sigma^{-1}\)</span> 当且仅当 <span class="math inline">\(\mathrm{Inv}(\sigma H\sigma^{-1}) = \mathrm{Inv}(H&#39;)\)</span>, 其中</p>
+<p><span class="math display">\[
+\begin{split}
+\mathrm{Inv}(\sigma H\sigma^{-1}) &amp;= \{a \in E\mid \sigma\pi\sigma^{-1}(a) = a ,\forall \pi \in H\} \\
+&amp;= \{a \in E \mid \pi\sigma^{-1}(a) = \sigma^{-1}(a),\forall \pi \in H\} \\
+&amp;= \{a \in E \mid \sigma^{-1}(a) \in \mathrm{Inv}(H)\} = \sigma(\mathrm{Inv}(H)).
+\end{split}
+\]</span></p>
+<p>这说明 <span class="math inline">\(\mathrm{Inv}(\sigma H\sigma^{-1}) = \mathrm{Inv}(H&#39;)\)</span> 当且仅当 <span class="math inline">\(\sigma(\mathrm{Inv}(H)) = \mathrm{Inv}(H&#39;)\)</span>. 故 <span class="math inline">\(H\)</span> 和 <span class="math inline">\(H&#39;\)</span> 共轭当且仅当 <span class="math inline">\(\mathrm{Inv}(H)\)</span> 和 <span class="math inline">\(\mathrm{Inv}(H&#39;)\)</span> 共轭.</p>
+<p>这也说明 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的正规子群当且仅当 <span class="math inline">\(\mathrm{Inv(H)}/F\)</span> 是正规扩张 (见<a href="https://wuxiangdong.github.io/2019/07/06/normal-extension.html#%E6%9C%89%E9%99%90%E6%AD%A3%E8%A7%84%E6%89%A9%E5%BC%A0%E7%9A%84%E5%88%BB%E7%94%BB" target="_blank" rel="noopener">正规扩张</a>的例). 这个情况下有 <span class="math inline">\(\sigma(\mathrm{Inv}(H)) = \mathrm{Inv(H)},\forall \sigma \in G\)</span>, 于是可以记</p>
+<p><span class="math display">\[
+\pi: G \rightarrow \mathrm{Gal}(\mathrm{Inv}(H)/F), \sigma \mapsto \sigma\mid_{\mathrm{Inv}(H)}.
+\]</span></p>
+<p>则 <span class="math inline">\(\pi\)</span> 是同态, 且</p>
+<p><span class="math display">\[\ker \pi = \{\sigma\in G \mid \sigma(a) = a,\forall a \in \mathrm{Inv}(H)\} = \mathrm{Gal}(E/\mathrm{Inv}(H)) = H.\]</span></p>
+<p>故 <span class="math inline">\(\pi\)</span> 诱导出单同态 <span class="math inline">\(G/H \rightarrow \mathrm{Gal}(\mathrm{Inv}(H)/F)\)</span>. 又</p>
+<p><span class="math display">\[
+\begin{split}
+|G/H| &amp;= |G|/|H| = [E:F]/[E:\mathrm{Inv(H)}] \\
+&amp;= [\mathrm{Inv}(H):F] = |\mathrm{Gal(\mathrm{Inv}(H)/F)}|.
+\end{split}
+\]</span></p>
+故上述单同态是同构, 从而 <span class="math inline">\(\mathrm{Gal(\mathrm{Inv(H)}/F)} \cong G/H\)</span>.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
 <p>伽罗瓦理论基本定理在群和域之间建立了优美的一一对应关系. 利用这种对应, 我们可以将许多域的问题转换为有限群的问题并得到解决. 下面的例子和习题大部分都是将域的问题化归为群的问题, 利用群论的工具加以解决.</p>
-<h2 id="伽罗瓦对应的一个例子"><a href="#伽罗瓦对应的一个例子" class="headerlink" title="伽罗瓦对应的一个例子"></a>伽罗瓦对应的一个例子</h2><p>下面以 $\mathbb{Q}\left(\sqrt[3]{3}, \omega\right)/\mathbb{Q}$ 为例, 展示伽罗瓦对应. 其中 $\omega = e^{\frac{2\pi i}{3}}$.</p>
-<p>记 $E = \mathbb{Q}\left(\sqrt[3]{3}, \omega\right)$. $E$ 是 $x^3-3$ 在 $\mathbb{Q}$ 上的分裂域, 且 $[E :\mathbb{Q}] = 6$. 于是 $G = \mathrm{Gal}(E /\mathbb{Q})$ 是 $6$ 阶群, 它的元素必将 $x^3 - 3$ 的根变到 $x^3 - 3$ 的根, 也必将 $x^2 + x + 1$ 的根变到 $x^2+x+1$ 的根. 因此 $G$ 的 $6$ 个元为:</p>
-<p>$$<br>\begin{split}<br>\sigma_1 &amp;= \mathrm{Id};\<br>\sigma_{2}&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega, \omega \mapsto \omega; \<br>\sigma_3&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega^2, \omega \mapsto \omega;\<br>\sigma_4&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}, \omega \mapsto \omega^2; \<br>\sigma_5&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega, \omega \mapsto \omega^2;\<br>\sigma_6&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega^2, \omega \mapsto \omega^2.<br>\end{split}<br>$$</p>
-<p>则 $\sigma_2$ 是 $3$ 阶元, $\sigma_4$ 是 $2$ 阶元, 且 $\sigma_4\sigma_2\sigma_4^{-1} = \sigma_2^{-1}$, $\sigma_4,\sigma_2$ 生成 $G$. 故 $G \cong D_3 \cong S_3$.</p>
-<p>将 $x^3 - 3$ 的 $3$ 个根记为 $r_1 = \sqrt[3]{3}$, $r_2 = \sqrt[3]{3}\omega$, $r_3 = \sqrt[3]{3}\omega^2$. 则将 $G$ 作用于 ${r_1,r_2 ,r_3}$, 得到一个同态 $G \rightarrow S_3$. 这个群同态是单射, 可知这个同态是同构. 在这个意义下, $G$ 等同于</p>
-<p>$$\begin{split}<br>S_3 = {<br>    &amp;\sigma_1 = (1),\sigma_2 = (123),\sigma_3 = (132),\<br>    &amp;\sigma_4 = (23),\sigma_5 = (12),\sigma_6 = (13)<br>}.<br>\end{split}$$</p>
-<p>其中 $(13)$ 表示 $(r_1r_3)$, 诸如此类. $S_3$ 的全部子群为</p>
-<p>$$\begin{split}<br>A_3 &amp;= {(1),(123),(132)}, \<br>H_1 &amp;= {(1),(12)},\<br>H_2 &amp;= {(1),(13)},\<br>H_3 &amp;= {(1),(23)}.<br>\end{split}$$</p>
-<p>其中 $A_3 \triangleleft S_3$, 而 $H_1,H_2,H_3$ 是一个共轭类. 我们首先计算 $\mathrm{Inv}(H_1)$. $E$ 的一组 $\mathbb{Q}$-基为 $1,\sqrt[3]{3},\sqrt[3]{6},\omega,\sqrt[3]{3}\omega,\sqrt[3]{6}\omega$. 记 $\alpha \in \mathrm{Inv}(H_1)$, 设</p>
-<p>$$<br>\alpha = a_1+ a_2\sqrt[3]{3}+ a_3\sqrt[3]{6}+ a_4\omega+ a_5\sqrt[3]{3}\omega+ a_6\sqrt[3]{6}\omega, \<br>$$</p>
-<p>其中 $a_1,a_2,a_3,a_4,a_6,a_6 \in \mathbb{Q}$. 则</p>
-<p>$$<br>\sigma_5(\alpha) = a_1-a_4 + a_5\sqrt[3]{3} - a_3\sqrt[3]{6} -a_4\omega + a_2\sqrt[3]{3}\omega + (a_6-a_3)\sqrt[3]{6}\omega.<br>$$</p>
-<p>比较系数, 得 $a_3 = a_4 = 0,a_2 = a_5$. 故 $\alpha = a_1 + a_2\sqrt[3]{3} + a_2\sqrt[3]{3}\omega + a_6\sqrt[3]{6}\omega = a_1 - a_2\sqrt[3]{3}\omega^2 + a_6\sqrt[3]{6}\omega$. 这说明 $\alpha \in \mathrm{Inv}(H_1)$ 当且仅当 $\alpha \in \mathbb{Q}(\sqrt[3]{3}\omega^2)$. 故 $\mathrm{Inv}(H_1) = \mathbb{Q}(\sqrt[3]{3}\omega^2)$. 由 $\sigma_6 = \sigma_4\sigma_5\sigma_4^{-1}$, 知 $H_2 = \sigma_4 H_1 \sigma_4^{-1}$. 故 $\mathrm{Inv}(H_2) = \sigma_4(\mathrm{Inv}(H_1)) = \mathbb{Q}(\sqrt[3]{3}\omega)$. 同理, 由 $H_3 = \sigma_6H_1 \sigma_6^{-1}$ 知 $\mathrm{Inv}(H_3) = \sigma_6(\mathrm{Inv}(H_1)) = \mathbb{Q}(\sqrt[3]{3})$.</p>
-<p>下面决定 $\mathrm{Inv}(A_3)$. $S_3$ 的 $3$ 阶子群只有 $A_3$. 故满足 $M/\mathbb{Q}$ 是 $2$ 次扩张的中间域 $M$ 一定是 $\mathrm{Inv}(A_3)$. 考虑 $\mathbb{Q}(\omega)/\mathbb{Q}$, $\omega$ 在 $\mathbb{Q}$ 上的极小多项式是 $2$ 次的, 故 $[\mathbb{Q}(\omega) : \mathbb{Q}] = 2$, 从而 $\mathrm{Inv}(A_3) = \mathbb{Q}(\omega)$.</p>
+<h2 id="伽罗瓦对应的一个例子">伽罗瓦对应的一个例子</h2>
+<p>下面以 <span class="math inline">\(\mathbb{Q}\left(\sqrt[3]{3}, \omega\right)/\mathbb{Q}\)</span> 为例, 展示伽罗瓦对应. 其中 <span class="math inline">\(\omega = e^{\frac{2\pi i}{3}}\)</span>.</p>
+<p>记 <span class="math inline">\(E = \mathbb{Q}\left(\sqrt[3]{3}, \omega\right)\)</span>. <span class="math inline">\(E\)</span> 是 <span class="math inline">\(x^3-3\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的分裂域, 且 <span class="math inline">\([E :\mathbb{Q}] = 6\)</span>. 于是 <span class="math inline">\(G = \mathrm{Gal}(E /\mathbb{Q})\)</span> 是 <span class="math inline">\(6\)</span> 阶群, 它的元素必将 <span class="math inline">\(x^3 - 3\)</span> 的根变到 <span class="math inline">\(x^3 - 3\)</span> 的根, 也必将 <span class="math inline">\(x^2 + x + 1\)</span> 的根变到 <span class="math inline">\(x^2+x+1\)</span> 的根. 因此 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(6\)</span> 个元为:</p>
+<p><span class="math display">\[
+\begin{split}
+\sigma_1 &amp;= \mathrm{Id};\\ 
+\sigma_{2}&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega, \omega \mapsto \omega; \\
+\sigma_3&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega^2, \omega \mapsto \omega;\\
+\sigma_4&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}, \omega \mapsto \omega^2; \\
+\sigma_5&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega, \omega \mapsto \omega^2;\\
+\sigma_6&amp;: \sqrt[3]{3} \mapsto \sqrt[3]{3}\omega^2, \omega \mapsto \omega^2.
+\end{split}
+\]</span></p>
+<p>则 <span class="math inline">\(\sigma_2\)</span> 是 <span class="math inline">\(3\)</span> 阶元, <span class="math inline">\(\sigma_4\)</span> 是 <span class="math inline">\(2\)</span> 阶元, 且 <span class="math inline">\(\sigma_4\sigma_2\sigma_4^{-1} = \sigma_2^{-1}\)</span>, <span class="math inline">\(\sigma_4,\sigma_2\)</span> 生成 <span class="math inline">\(G\)</span>. 故 <span class="math inline">\(G \cong D_3 \cong S_3\)</span>.</p>
+<p>将 <span class="math inline">\(x^3 - 3\)</span> 的 <span class="math inline">\(3\)</span> 个根记为 <span class="math inline">\(r_1 = \sqrt[3]{3}\)</span>, <span class="math inline">\(r_2 = \sqrt[3]{3}\omega\)</span>, <span class="math inline">\(r_3 = \sqrt[3]{3}\omega^2\)</span>. 则将 <span class="math inline">\(G\)</span> 作用于 <span class="math inline">\(\{r_1,r_2 ,r_3\}\)</span>, 得到一个同态 <span class="math inline">\(G \rightarrow S_3\)</span>. 这个群同态是单射, 可知这个同态是同构. 在这个意义下, <span class="math inline">\(G\)</span> 等同于</p>
+<p><span class="math display">\[\begin{split}
+S_3 = \{
+    &amp;\sigma_1 = (1),\sigma_2 = (123),\sigma_3 = (132),\\
+    &amp;\sigma_4 = (23),\sigma_5 = (12),\sigma_6 = (13)
+\}.
+\end{split}\]</span></p>
+<p>其中 <span class="math inline">\((13)\)</span> 表示 <span class="math inline">\((r_1r_3)\)</span>, 诸如此类. <span class="math inline">\(S_3\)</span> 的全部子群为</p>
+<p><span class="math display">\[\begin{split}
+A_3 &amp;= \{(1),(123),(132)\}, \\
+H_1 &amp;= \{(1),(12)\},\\
+H_2 &amp;= \{(1),(13)\},\\
+H_3 &amp;= \{(1),(23)\}.
+\end{split}\]</span></p>
+<p>其中 <span class="math inline">\(A_3 \triangleleft S_3\)</span>, 而 <span class="math inline">\(H_1,H_2,H_3\)</span> 是一个共轭类. 我们首先计算 <span class="math inline">\(\mathrm{Inv}(H_1)\)</span>. <span class="math inline">\(E\)</span> 的一组 <span class="math inline">\(\mathbb{Q}\)</span>-基为 <span class="math inline">\(1,\sqrt[3]{3},\sqrt[3]{6},\omega,\sqrt[3]{3}\omega,\sqrt[3]{6}\omega\)</span>. 记 <span class="math inline">\(\alpha \in \mathrm{Inv}(H_1)\)</span>, 设</p>
+<p><span class="math display">\[
+\alpha = a_1+ a_2\sqrt[3]{3}+ a_3\sqrt[3]{6}+ a_4\omega+ a_5\sqrt[3]{3}\omega+ a_6\sqrt[3]{6}\omega, \\
+\]</span></p>
+<p>其中 <span class="math inline">\(a_1,a_2,a_3,a_4,a_6,a_6 \in \mathbb{Q}\)</span>. 则</p>
+<p><span class="math display">\[
+\sigma_5(\alpha) = a_1-a_4 + a_5\sqrt[3]{3} - a_3\sqrt[3]{6} -a_4\omega + a_2\sqrt[3]{3}\omega + (a_6-a_3)\sqrt[3]{6}\omega.
+\]</span></p>
+<p>比较系数, 得 <span class="math inline">\(a_3 = a_4 = 0,a_2 = a_5\)</span>. 故 <span class="math inline">\(\alpha = a_1 + a_2\sqrt[3]{3} + a_2\sqrt[3]{3}\omega + a_6\sqrt[3]{6}\omega = a_1 - a_2\sqrt[3]{3}\omega^2 + a_6\sqrt[3]{6}\omega\)</span>. 这说明 <span class="math inline">\(\alpha \in \mathrm{Inv}(H_1)\)</span> 当且仅当 <span class="math inline">\(\alpha \in \mathbb{Q}(\sqrt[3]{3}\omega^2)\)</span>. 故 <span class="math inline">\(\mathrm{Inv}(H_1) = \mathbb{Q}(\sqrt[3]{3}\omega^2)\)</span>. 由 <span class="math inline">\(\sigma_6 = \sigma_4\sigma_5\sigma_4^{-1}\)</span>, 知 <span class="math inline">\(H_2 = \sigma_4 H_1 \sigma_4^{-1}\)</span>. 故 <span class="math inline">\(\mathrm{Inv}(H_2) = \sigma_4(\mathrm{Inv}(H_1)) = \mathbb{Q}(\sqrt[3]{3}\omega)\)</span>. 同理, 由 <span class="math inline">\(H_3 = \sigma_6H_1 \sigma_6^{-1}\)</span> 知 <span class="math inline">\(\mathrm{Inv}(H_3) = \sigma_6(\mathrm{Inv}(H_1)) = \mathbb{Q}(\sqrt[3]{3})\)</span>.</p>
+<p>下面决定 <span class="math inline">\(\mathrm{Inv}(A_3)\)</span>. <span class="math inline">\(S_3\)</span> 的 <span class="math inline">\(3\)</span> 阶子群只有 <span class="math inline">\(A_3\)</span>. 故满足 <span class="math inline">\(M/\mathbb{Q}\)</span> 是 <span class="math inline">\(2\)</span> 次扩张的中间域 <span class="math inline">\(M\)</span> 一定是 <span class="math inline">\(\mathrm{Inv}(A_3)\)</span>. 考虑 <span class="math inline">\(\mathbb{Q}(\omega)/\mathbb{Q}\)</span>, <span class="math inline">\(\omega\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的极小多项式是 <span class="math inline">\(2\)</span> 次的, 故 <span class="math inline">\([\mathbb{Q}(\omega) : \mathbb{Q}] = 2\)</span>, 从而 <span class="math inline">\(\mathrm{Inv}(A_3) = \mathbb{Q}(\omega)\)</span>.</p>
 <p>我们得到</p>
-<img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Galois-Theory-2.svg?sanitize=true" width="90%" height="90%">
-
-<h2 id="代数基本定理"><a href="#代数基本定理" class="headerlink" title="代数基本定理"></a>代数基本定理</h2><p>作为伽罗瓦理论基本定理的一个应用, 我们证明代数基本定理. 代数基本定理指出 $\mathbb{C}[x]$ 中任意多项式在 $\mathbb{C}$ 中均有根. 即</p>
-<p><strong>定理</strong> (<strong>代数基本定理</strong>) 复数域 $\mathbb{C}$ 是代数闭域.<br>{:.info}</p>
-<p><strong>证明</strong> 设 $f(x) \in \mathbb{C}[x]$, $E$ 是其在 $\mathbb{C}$ 上的分裂域. 则 $E/\mathbb{C}$ 是有限扩张, $E/\mathbb{R}$ 也是有限扩张. 记 $E = \mathbb{R}(a_1,a_2,\cdots a_n)$. 其中 $a_1,a_2,\cdots a_n$ 在 $\mathbb{R}$ 上代数. 记 $a_i$ 在 $\mathbb{R}$ 上的极小多项式为 $g_i(x)$, $N$ 是 $g(x)=g_1(x)g_2(x)\cdots g_n(x)$ 在 $\mathbb{R}$ 上的分裂域. 则 $\mathbb{C} \subseteq E \subseteq N$. $N/\mathbb{R}$ 和 $N/\mathbb{C}$ 都是有限伽罗瓦扩张. 下证 $N = \mathbb{C}$  (等价的, $\mid\mathrm{Gal}(N/\mathbb{C})\mid = 1$), 从而 $E = \mathbb{C}$, $f(x)$ 的根均在 $\mathbb{C}$ 中.</p>
-<p>(反证) 若不然. 记 $G =\mathrm{Gal}(N/\mathbb{R})$. 则 </p>
-<p>$$\mid G\mid = [N : \mathbb{R}] = [N:\mathbb{C}][\mathbb{C}:\mathbb{R}] = 2[N: \mathbb{C}].$$</p>
-<p>这说明 $\mid G\mid$ 含素因子 $2$. 设 $H$ 是 $G$ 的 Sylow-2 子群. 对 $N/\mathbb{R}$ 使用伽罗瓦理论基本定理. $ L = \mathrm{Inv}(H) $ . 则 $[L:\mathbb{R}] = [G:H]$ 是奇数. 而 $L/\mathbb{R}$ 是有限可分扩张, 从而是单扩张. 记 $L = \mathbb{R}(b)$, 其中 $b$ 在 $\mathbb{R}$ 上的极小多项式的次数为奇数. 实数域上奇次多项式必有实根. 因此 $[L:\mathbb{R}] = 1$, 从而 $G = H$. 这说明 $G$ 是 $2$-群. 由 $\mid\mathrm{Gal}(N/\mathbb{C})\mid \ne 1$ 知 $\mathrm{Gal}(N/\mathbb{C})$ 也是 $2$-群. 从而 $\mathrm{Gal}(N/\mathbb{C})$ 有指数为 $2$ 的极大子群 $P$ (<a href="https://wuxiangdong.github.io/2019/07/11/some-about-group.html" target="_blank" rel="noopener">详见</a>). 现在对 $N/\mathbb{C}$ 使用伽罗瓦理论基本定理. 设 $M= \mathrm{Inv}({P})$. 则</p>
-<p>$$<br>[M:\mathbb{C}] = [\mathrm{Gal}(N/\mathbb{C}): P] = 2.<br>$$</p>
-<p>但复数域无 $2$ 次扩张(<a href="https://wuxiangdong.github.io/2019/07/07/Galois-Theory-1.html#%E4%B8%80%E4%BA%9B%E4%B9%A0%E9%A2%98" target="_blank" rel="noopener">习题</a>), 矛盾!</p>
-<p align="right">$\blacksquare$</p>
-
-<h2 id="一些例题"><a href="#一些例题" class="headerlink" title="一些例题"></a>一些例题</h2><p><strong>例</strong> 设 $N$ 和 $M$ 均是有限伽罗瓦扩张 $E/F$ 的中间域, 且 $N$ 是 $M$ 在 $F$ 上的正规闭包. (即 $N$ 是包含 $M$ 的 $F$ 的最小正规扩域). 求证:</p>
-<p>$$<br>\mathrm{Gal}(E/N) = \bigcap_{\sigma \in \mathrm{Gal}(E/F)} \sigma\mathrm{Gal}(E/M)\sigma^{-1}.<br>$$</p>
+<p><img src="https://raw.githubusercontent.com/Wuxiangdong/Wuxiangdong.github.io/master/_posts/pictures/Galois-Theory-2.svg?sanitize=true" width="90%" height="90%"></p>
+<h2 id="代数基本定理">代数基本定理</h2>
+<p>作为伽罗瓦理论基本定理的一个应用, 我们证明代数基本定理. 代数基本定理指出 <span class="math inline">\(\mathbb{C}[x]\)</span> 中任意多项式在 <span class="math inline">\(\mathbb{C}\)</span> 中均有根. 即</p>
+<p><strong>定理</strong> (<strong>代数基本定理</strong>) 复数域 <span class="math inline">\(\mathbb{C}\)</span> 是代数闭域. {:.info}</p>
+<p><strong>证明</strong> 设 <span class="math inline">\(f(x) \in \mathbb{C}[x]\)</span>, <span class="math inline">\(E\)</span> 是其在 <span class="math inline">\(\mathbb{C}\)</span> 上的分裂域. 则 <span class="math inline">\(E/\mathbb{C}\)</span> 是有限扩张, <span class="math inline">\(E/\mathbb{R}\)</span> 也是有限扩张. 记 <span class="math inline">\(E = \mathbb{R}(a_1,a_2,\cdots a_n)\)</span>. 其中 <span class="math inline">\(a_1,a_2,\cdots a_n\)</span> 在 <span class="math inline">\(\mathbb{R}\)</span> 上代数. 记 <span class="math inline">\(a_i\)</span> 在 <span class="math inline">\(\mathbb{R}\)</span> 上的极小多项式为 <span class="math inline">\(g_i(x)\)</span>, <span class="math inline">\(N\)</span> 是 <span class="math inline">\(g(x)=g_1(x)g_2(x)\cdots g_n(x)\)</span> 在 <span class="math inline">\(\mathbb{R}\)</span> 上的分裂域. 则 <span class="math inline">\(\mathbb{C} \subseteq E \subseteq N\)</span>. <span class="math inline">\(N/\mathbb{R}\)</span> 和 <span class="math inline">\(N/\mathbb{C}\)</span> 都是有限伽罗瓦扩张. 下证 <span class="math inline">\(N = \mathbb{C}\)</span> (等价的, <span class="math inline">\(\mid\mathrm{Gal}(N/\mathbb{C})\mid = 1\)</span>), 从而 <span class="math inline">\(E = \mathbb{C}\)</span>, <span class="math inline">\(f(x)\)</span> 的根均在 <span class="math inline">\(\mathbb{C}\)</span> 中.</p>
+<p>(反证) 若不然. 记 <span class="math inline">\(G =\mathrm{Gal}(N/\mathbb{R})\)</span>. 则</p>
+<p><span class="math display">\[\mid G\mid = [N : \mathbb{R}] = [N:\mathbb{C}][\mathbb{C}:\mathbb{R}] = 2[N: \mathbb{C}].\]</span></p>
+<p>这说明 <span class="math inline">\(\mid G\mid\)</span> 含素因子 <span class="math inline">\(2\)</span>. 设 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的 Sylow-2 子群. 对 <span class="math inline">\(N/\mathbb{R}\)</span> 使用伽罗瓦理论基本定理. $ L = (H) $ . 则 <span class="math inline">\([L:\mathbb{R}] = [G:H]\)</span> 是奇数. 而 <span class="math inline">\(L/\mathbb{R}\)</span> 是有限可分扩张, 从而是单扩张. 记 <span class="math inline">\(L = \mathbb{R}(b)\)</span>, 其中 <span class="math inline">\(b\)</span> 在 <span class="math inline">\(\mathbb{R}\)</span> 上的极小多项式的次数为奇数. 实数域上奇次多项式必有实根. 因此 <span class="math inline">\([L:\mathbb{R}] = 1\)</span>, 从而 <span class="math inline">\(G = H\)</span>. 这说明 <span class="math inline">\(G\)</span> 是 <span class="math inline">\(2\)</span>-群. 由 <span class="math inline">\(\mid\mathrm{Gal}(N/\mathbb{C})\mid \ne 1\)</span> 知 <span class="math inline">\(\mathrm{Gal}(N/\mathbb{C})\)</span> 也是 <span class="math inline">\(2\)</span>-群. 从而 <span class="math inline">\(\mathrm{Gal}(N/\mathbb{C})\)</span> 有指数为 <span class="math inline">\(2\)</span> 的极大子群 <span class="math inline">\(P\)</span> (<a href="https://wuxiangdong.github.io/2019/07/11/some-about-group.html" target="_blank" rel="noopener">详见</a>). 现在对 <span class="math inline">\(N/\mathbb{C}\)</span> 使用伽罗瓦理论基本定理. 设 <span class="math inline">\(M= \mathrm{Inv}({P})\)</span>. 则</p>
+<p><span class="math display">\[
+[M:\mathbb{C}] = [\mathrm{Gal}(N/\mathbb{C}): P] = 2.
+\]</span></p>
+但复数域无 <span class="math inline">\(2\)</span> 次扩张(<a href="https://wuxiangdong.github.io/2019/07/07/Galois-Theory-1.html#%E4%B8%80%E4%BA%9B%E4%B9%A0%E9%A2%98" target="_blank" rel="noopener">习题</a>), 矛盾!
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<h2 id="一些例题">一些例题</h2>
+<p><strong>例</strong> 设 <span class="math inline">\(N\)</span> 和 <span class="math inline">\(M\)</span> 均是有限伽罗瓦扩张 <span class="math inline">\(E/F\)</span> 的中间域, 且 <span class="math inline">\(N\)</span> 是 <span class="math inline">\(M\)</span> 在 <span class="math inline">\(F\)</span> 上的正规闭包. (即 <span class="math inline">\(N\)</span> 是包含 <span class="math inline">\(M\)</span> 的 <span class="math inline">\(F\)</span> 的最小正规扩域). 求证:</p>
+<p><span class="math display">\[
+\mathrm{Gal}(E/N) = \bigcap_{\sigma \in \mathrm{Gal}(E/F)} \sigma\mathrm{Gal}(E/M)\sigma^{-1}.
+\]</span></p>
 <p>{:.warning}</p>
-<p>记 $G = \mathrm{Gal}(E/F)$, 对 $E/F$ 使用伽罗瓦理论基本定理.</p>
-<p>记 $N’ = \mathrm{Inv}\left(\bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1}\right)$. 由于 $\bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1} \triangleleft G$, 有 $N’/F$ 是正规扩张. $\bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1}$ 是 $\mathrm{Gal}(E/M)$ 的子群, 从而 $N’ \supseteq M$.  这说明 $N \subseteq N’$. 又 $N/F$ 是正规扩张, 从而 $\mathrm{Gal}(E/N) \triangleleft G$. 而 $N \supseteq M$, 从而 $\mathrm{Gal}(E/N) \leqslant \mathrm{Gal}(E/M)$. 于是 $\mathrm{Gal}(E/N) \leqslant \bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1}$, 所以 $N \supseteq N’$. 这导致 $N = N’$, 即</p>
-<p>$$<br>\mathrm{Gal}(E/N) = \mathrm{Gal}(E/N’) = \bigcap_{\sigma \in \mathrm{Gal}(E/F)} \sigma\mathrm{Gal}(E/M)\sigma^{-1}.<br>$$</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $\alpha$ 在 $\mathbb{Q}$ 上代数, $F$ 是 $\mathbb{Q}(\alpha)$ 的伽罗瓦闭包 (即包含 $\mathbb{Q}(\alpha)$ 的最小的 $\mathbb{Q}$ 的伽罗瓦扩张). 若 $\mid\mathrm{Gal}(F/\mathbb{Q})\mid$ 含素因子 $p$, 求证: 存在 $F/\mathbb{Q}$ 的中间域 $L$ 使 $[F : L] = p$ 且 $F = L(\alpha)$.<br>{:.warning}</p>
-<p><strong>证明</strong> 设 $\alpha$ 在 $\mathbb{Q}$ 上的极小多项式为 $f(x)$. 记 $f(x)$ 在 $\mathbb{Q}$ 上的分裂域为 $F’$. 一方面 $f(x)$ 的根都在 $F$ 中, 从而 $F \supseteq F’$. 另一方面 $F’/\mathbb{Q}$ 是域的伽罗瓦扩张且 $F’$ 包含 $\mathbb{Q}(\alpha)$, 从而 $F \subseteq F’$. 这导致 $F’ = F$, $F$ 是 $f(x)$ 在 $\mathbb{Q}$ 上的分裂域.</p>
-<p>记 $G = \mathrm{Gal}(F /\mathbb{Q})$, $f(x)$ 在 $\mathbb{Q}$ 上不可约, 故 $f(x)$ 的全部根恰为 $G\alpha = {\sigma(\alpha) \mid \sigma \in G}$. 记 $\alpha_1 = \alpha, \alpha_2, \alpha_3,\cdots ,\alpha_n$ 为 $f(x)$ 的全部根, 并记 $\alpha_i = \sigma_i(\alpha)$, $\sigma_i \in G$, $i = 1,2,\cdots ,n$.</p>
-<p>$\mid G\mid$ 含素因子 $p$, 由 Sylow 定理, $G$ 存在 $p$ 阶元 $\pi$. $F = \mathbb{Q}(\alpha_1,\alpha_2 ,\cdots ,\alpha_n)$, 故 $\pi$ 由 $\pi(\alpha_1),\pi(\alpha_2),\cdots ,\pi(\alpha_n)$ 决定. $\pi \ne \mathrm{Id}$, 故 $\pi$ 一定变换某一个 $\alpha_i$. $\pi$ 将 $f(x)$ 的根变换到 $f(x)$ 的根, 记 $\pi(\alpha_i) = \alpha_j$, $i\ne j$. 于是 $\pi’ = \sigma_i^{-1}\pi\sigma_i$ 也是 $p$ 阶元, 且 $\pi’(\alpha) = \sigma_i^{-1}(\alpha_j)$. $\alpha_i \ne \alpha_j$, 故 $\pi’(\alpha) \ne \alpha$. 这样 $\pi’$ 是 $p$ 阶元且变换 $\alpha$.</p>
-<p>现在对 $F /\mathbb{Q}$ 使用伽罗瓦理论基本定理. 记 $H = \langle \pi’ \rangle$, $L = \mathrm{Inv}(H)$. 有 $[F:L] = \mid H\mid = p$. $\pi’$ 变换 $\alpha$, 故 $\alpha \notin L$. 有</p>
-<p>$$<br>p = [F:L] = [F:L(\alpha)][L(\alpha):L],<br>$$</p>
-<p>其中 $[L(\alpha):L] \ne 1$, 于是只能是 $[L(\alpha):L] = p$ 和 $[F: L(\alpha)] = 1$. 这说明 $F = L(\alpha)$, 说明 $L$ 符合题意.</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $E/F$ 是有限伽罗瓦扩张, $F$ 的特征不为 $2$, $\mathrm{Gal}(E/F) \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2$. 则 $E = F(\sqrt{a},\sqrt{b})$. 其中 $a,b \in F$.<br>{:.warning}</p>
-<p><strong>证明</strong> 对 $E/F$ 使用伽罗瓦理论基本定理. $\mathbb{Z}_2 \oplus \mathbb{Z}_2$ 的全部子群为 ${0}, H_1 = {0} \oplus \mathbb{Z}_2 , H_2 = \mathbb{Z}_2 \oplus {0}, \mathbb{Z}_2 \oplus \mathbb{Z}_2$. 记 $M_1 = \mathrm{Inv}(H_1)$, 则 $H_1/F$ 是二次扩张, 存在 $a \in F$ 使 $H_1 = F(\sqrt{a})$ (<a href="https://wuxiangdong.github.io/2019/07/07/Galois-Theory-1.html#%E4%B8%80%E4%BA%9B%E4%B9%A0%E9%A2%98" target="_blank" rel="noopener">例题</a>). 同理记 $M_2 = \mathrm{Inv}(H_2)$, 则 $H_2 = F(\sqrt{b}), b\in F$. 有 $\sqrt{b} \notin F(\sqrt{a})$ (否则 $F(\sqrt{b}) \subseteq F(\sqrt{a})$, 这导致 $H_1 \leqslant H_2$), 从而 $[F(\sqrt{a},\sqrt{b}) : F(\sqrt{a})] = 2$ ($\sqrt{b}$ 在 $F(\sqrt{a})$ 上极小多项式为 $x^2 - b$). 从而 $[F(\sqrt{a},\sqrt{b}) :F] = 4 = [E:F]$. 而 $F(\sqrt{a},\sqrt{b}) \subseteq E$, 这说明 $E = F(\sqrt{a},\sqrt{b})$.</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $E = \mathbb{C}(t)$ (复数域上有理函数域), $F = \mathbb{C}(t^3 + t^{-3})$. 求 $E/F$ 的全部中间域.<br>{:.warning}</p>
-<p><strong>解</strong> $t$ 是多项式 $x^6-(t^3+t^{-3})x^3 + 1$ 的一根,  而这个多项式的全部根为 $t,t\omega, t\omega^2 ,t^{-1}, t^{-1}\omega ,t^{-1}\omega^{2} \in \mathbb{C}(t)$, 其中 $\omega = e^{\frac{2\pi i}{3}}$. 这说明 $E$ 是 $f(x) = x^6 - (t^3+t^{-3})x^3 + 1$ 在 $F$ 上的分裂域, 从而 $E/F$ 是有限伽罗瓦扩张.  在 $\mathbb{C}(t^3)$ 中 $f(x)$ 被分解为不可约多项式的积 $(x^3-t^3)(x^{-3}-t^{-3})$. 而 $t^3, t^{-3} \notin F$. 这说明 $f(x)$ 在 $F$ 上不可约, 从而 $[E:F] = \deg f(x) = 6$, $G = \mathrm{Gal}(E/F)$ 是 $6$ 阶群. $G$ 的六个元分别为</p>
-<p>$$<br>\begin{split}<br>\pi_1 &amp;= \mathrm{Id}; \<br>\pi_2 &amp;:  t\mapsto t\omega; \<br>\pi_3 &amp;: t \mapsto t\omega^2; \<br>\pi_4 &amp;: t \mapsto t^{-1}; \<br>\pi_5&amp;: t \mapsto t^{-1}\omega; \<br>\pi_6&amp;: t \mapsto t^{-1}\omega^2.<br>\end{split}<br>$$</p>
-<p>其中 $\pi_2$ 是 $3$ 阶元, $\pi_4$ 是 $2$ 阶元. 且 $\pi_2 ,\pi_4$ 生成 $G$, $\pi_4\pi_2\pi_4^{-1} = \pi_2^{-1}$. 这说明 $G \cong S_3$. 其所有真子群为</p>
-<p>$$\begin{split}<br>A_3 &amp;= {\pi_1 ,\pi_2 ,\pi_3}, \<br>H_1 &amp;= {\pi_1, \pi_4}, \<br>H_2 &amp;= {\pi_1, \pi_5}, \<br>H_3 &amp;= {\pi_1,\pi_6}.<br>\end{split}$$  </p>
-<p>$S_3$ 只有一个 $3$ 阶子群, 从而 $E/F$ 只有一个中间域 $M$ 使 $M/F$ 是二次扩张. 记 $M = \mathbb{C}(t^3)$, $t^3$ 在 $F$ 上的极小多项式为 $x^2 - (t^3+t^{-3})x + 1$. 从而 $M/F$ 是二次扩张, 这说明 $M = \mathrm{Inv}(A_3) = \mathbb{C}(t^3)$.</p>
-<p>下面计算 $L_1 = \mathrm{Inv}(H_1)$. $1, t, t^{2}, t^{-1}, t^{-2}, t^{-3} $ 是 $E$ 的一组基. 记 $\alpha \in L_1$, 设 $\alpha = a_1 + a_2 t + a_3 t^2 + a_4 t^{-1} + a_5 t^{-2} + a_6 t^{-3}$, $a_i \in F$, $t^3 = (t^3+t^{-3}) - t^{-3}$. 因此 </p>
-<p>$$<br>\pi_4(\alpha) = a_1 + a_6(t^3+t^{-3}) + a_4t + a_5t^2 + a_2t^{-1} + a_3t^{-2} - a_6t^{-3}.<br>$$</p>
-<p>比较系数, 得 $a_6 = 0,a_4 = a_2, a_3 = a_5$. 这说明 $\alpha \in M_1 \Leftrightarrow \alpha \in \mathbb{C}(t+t^{-1})$. 从而 $M_1 = \mathbb{C}(t+t^{-1})$.</p>
-<p>$H_1,H_2,H_3$ 共轭, 我们可以算出 $\mathrm{Inv}(H_2) = \mathbb{C}(t\omega + (t\omega)^{-1})$, $\mathrm{Inv}(H_3) = \mathbb{C}(t\omega^2 + (t\omega^2)^{-1})$.</p>
-<p>于是 $E/F$ 的全部中间域为 $\mathbb{C}(t+t^{-1}),\mathbb{C}(t\omega + (t\omega)^{-1}), \mathbb{C}(t\omega^2 + (t\omega^2)^{-1}), \mathbb{C}(t^3)$.</p>
-<p><strong>例</strong> 设 $L$ 和 $M$ 均是 $E$ 的子域且 $L / (L\cap M)$ 为有限伽罗瓦扩张. 求证 $LM/M$ 也为有限伽罗瓦扩张, 且 $\mathrm{Gal}(LM/M)\cong \mathrm{Gal}(L/(L\cap M))$.<br>{:.warning}</p>
-<p><strong>证明</strong> $L / (L\cap M)$ 是有限伽罗瓦扩张, 从而是 $L \cap M$ 上某一可分多项式在 $L / (L\cap M)$ 上的分裂域. 设这个多项式为 $f(x)$, 则 $f(x) \in L[x]$. 设 $F$ 是 $f(x)$ 在 $M$ 上的分裂域. 一方面, $f(x)$ 的所有根都在 $L$ 中, 从而 $ML \supseteq F$. 另一方面, $M \supseteq L \cap M$, 从而 $F \supseteq L$ ($F$ 和 $L$ 分别是 $f(x)$ 在 $M$ 和 $L \cap M$ 上的分裂域), 又有 $F\supseteq M$, 从而 $F \supseteq LM$. 这说明 $F = LM$, 从而 $LM$ 是 $f(x)$ 在 $M$ 上的分裂域, $LM/M$ 是有限伽罗瓦扩张.</p>
-<p>记 $f(x)$ 的全部根为 $\alpha_1,\cdots ,\alpha_n \in L$, 则 $L = (L\cap M)(\alpha_1,\cdots ,\alpha_n)$. 任意 $\sigma \in \mathrm{Gal}(LM/M)$, $\sigma$ 给出 $\alpha_1,\cdots ,\alpha_n$ 的置换, 故 $\sigma(L) = \sigma((L\cap M)(\alpha_1 ,\cdots ,\alpha_n) )= L$. 于是可以给出映射 </p>
-<p>$$\pi: \mathrm{Gal}(LM/M) \rightarrow \mathrm{Gal}(L/L\cap M), \sigma \mapsto \sigma\mid_L.$$</p>
-<p>任意 $\sigma \in \mathrm{Gal}(LM/M)$, $\sigma \in \ker \pi \Rightarrow \sigma(a) = a,\forall a \in L$, 这导致 $\sigma$ 保持 $\alpha_1,\cdots ,\alpha_n$ 不变, 从而 $\sigma$ 保持 $LM = M(\alpha_1,\cdots ,\alpha_n)$ 的元素不变. 这说明 $\sigma = \mathrm{Id}$, 从而 $\pi$ 是单同态.</p>
-<p>接下来, 我们只需证明 $[LM:M] = [L:L\cap M]$. $L/L\cap M$ 是有限可分扩张, 故是单扩张. 设 $L= L\cap M(\beta)$. 设 $\beta$ 在 $L\cap M$ 上的极小多项式为 $g(x)$. 因 $LM = M(L\cap M)(\beta) = M(\beta)$, 我们只需证明 $g(x)$ 在 $M[x]$ 中不可约, 从而 $g(x)$ 也是 $\beta$ 在 $M$ 上的极小多项式, 有 $[LM:M] = \deg g(x) = [L:L \cap M]$.</p>
-<p>设 $g(x)$ 在 $M[x]$ 中有分解 $g(x) = h(x)l(x)$. 因 $L /L\cap M$ 是正规扩张, 故 $L$ 包含 $g(x)$ 的全部根 $\beta_1,\cdots ,\beta_n$. 而 $h(x)$ 和 $l(x)$ 的系数是这些根的系数为 $\pm 1$ 的多项式, 故 $h(x), l(x) \in L[x]$, 从而 $h(x), l(x)\in L\cap M[x]$. 由 $g(x)$ 在 $L \cap M$ 上不可约知 $g(x)$ 在 $M[x]$ 中不可约, 从而证明了结论.</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $E /F$ 是有限伽罗瓦扩张, $\mathrm{Gal}(E /F) = A_n$ (交错群), $n \ge 4$. 则不存在 $E /F$ 的中间域 $L$ 使 $[L:F] = 2$.<br>{:.warning}</p>
-<p><strong>证明</strong> 使 $[L:F] = 2$ 的中间域 $L$ 导致 $\mathrm{Gal}(E /L)$ 的对 $A_n$ 的指数为 $2$, 从而是 $A_n$ 的正规子群. $n \ge 5$ 时 $A_n$ 是单群, 而 $n= 4$ 时 $A_4$ 无 $6$ 阶子群. 从而不存在这样的中间域 $L$ 满足题意.</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $E/F$ 是有限伽罗瓦扩张. 如果对任一域 $K$ ($F \subsetneqq K \subseteq E$), $K$ 对 $F$ 均有相同的扩张次数 $[K:F]$. 则 $[E:F]$ 是素数.<br>{:.warning}</p>
-<p><strong>证明</strong> 这即是说任一 $G = \mathrm{Gal}(E/F)$ 的真子群 $H$, $[G:H]$ 都是相同的. 若 $\mid G\mid$ 含有两个以上的素因子, 设素数 $p_1,p_2$ 是它的因子, 则 $G$ 的 Sylow-$p_1$ 子群 $H_1$ 和 Sylow-$p_2$ 子群的指数是不同的. 因为 $H_1$ 的指数是 $p_2$ 的倍数, 而 $H_2$ 的指数不是. 这说明 $G$ 是 $p$-群. 若 $\mid G \mid = p^n$, $n \ge 2$. 则 $G$ 有指数为 $p^{n-1}$ 的子群 (阶数为 $p$) 和指数为 $p$ 的极大子群. 这说明 $n$ 只能为 $1$, 从而 $G$ 是素数阶群, $[E:F]$ 是素数.</p>
-<p align="right">$\blacksquare$</p>
-
-<p><strong>例</strong> 设 $E/F$ 是有限伽罗瓦扩张, $\mathrm{Gal}(E/F)$ 是 $2p$ 阶非阿贝尔群, 其中 $p$ 是奇素数, $L$ 是满足 $[E:L] = 2$ 的中间域. 则 $L/F$ 不是有限伽罗瓦扩张.<br>{:.warning}</p>
-<p><strong>证明</strong> $[E:L]=2$, 说明 $H = \mathrm{Gal}(E/L)$ 是 $G = \mathrm{Gal}(E/F)$ 的 $2$ 阶子群. 取 $P$ 是 $G$ 的 Sylow-$p$ 子群. $P$ 的指数为 $2$, 从而 $P$ 是正规子群. $L/F$ 是有限伽罗瓦扩张等价于 $H \triangleleft G$. 若 $H \triangleleft G$, 由 $H \cap P = {1}$ 知 $G = HP \cong \mathbb{Z_2} \oplus \mathbb{Z_p} \cong \mathbb{Z}_{2p}$. 这与 $G$ 非 Abel 矛盾.</p>
-<p align="right">$\blacksquare$</p>
-
-
-
+<p>记 <span class="math inline">\(G = \mathrm{Gal}(E/F)\)</span>, 对 <span class="math inline">\(E/F\)</span> 使用伽罗瓦理论基本定理.</p>
+<p>记 <span class="math inline">\(N&#39; = \mathrm{Inv}\left(\bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1}\right)\)</span>. 由于 <span class="math inline">\(\bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1} \triangleleft G\)</span>, 有 <span class="math inline">\(N&#39;/F\)</span> 是正规扩张. <span class="math inline">\(\bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1}\)</span> 是 <span class="math inline">\(\mathrm{Gal}(E/M)\)</span> 的子群, 从而 <span class="math inline">\(N&#39; \supseteq M\)</span>. 这说明 <span class="math inline">\(N \subseteq N&#39;\)</span>. 又 <span class="math inline">\(N/F\)</span> 是正规扩张, 从而 <span class="math inline">\(\mathrm{Gal}(E/N) \triangleleft G\)</span>. 而 <span class="math inline">\(N \supseteq M\)</span>, 从而 <span class="math inline">\(\mathrm{Gal}(E/N) \leqslant \mathrm{Gal}(E/M)\)</span>. 于是 <span class="math inline">\(\mathrm{Gal}(E/N) \leqslant \bigcap_{\sigma \in G} \sigma\mathrm{Gal}(E/M)\sigma^{-1}\)</span>, 所以 <span class="math inline">\(N \supseteq N&#39;\)</span>. 这导致 <span class="math inline">\(N = N&#39;\)</span>, 即</p>
+<p><span class="math display">\[
+\mathrm{Gal}(E/N) = \mathrm{Gal}(E/N&#39;) = \bigcap_{\sigma \in \mathrm{Gal}(E/F)} \sigma\mathrm{Gal}(E/M)\sigma^{-1}.
+\]</span></p>
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(\alpha\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上代数, <span class="math inline">\(F\)</span> 是 <span class="math inline">\(\mathbb{Q}(\alpha)\)</span> 的伽罗瓦闭包 (即包含 <span class="math inline">\(\mathbb{Q}(\alpha)\)</span> 的最小的 <span class="math inline">\(\mathbb{Q}\)</span> 的伽罗瓦扩张). 若 <span class="math inline">\(\mid\mathrm{Gal}(F/\mathbb{Q})\mid\)</span> 含素因子 <span class="math inline">\(p\)</span>, 求证: 存在 <span class="math inline">\(F/\mathbb{Q}\)</span> 的中间域 <span class="math inline">\(L\)</span> 使 <span class="math inline">\([F : L] = p\)</span> 且 <span class="math inline">\(F = L(\alpha)\)</span>. {:.warning}</p>
+<p><strong>证明</strong> 设 <span class="math inline">\(\alpha\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的极小多项式为 <span class="math inline">\(f(x)\)</span>. 记 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的分裂域为 <span class="math inline">\(F&#39;\)</span>. 一方面 <span class="math inline">\(f(x)\)</span> 的根都在 <span class="math inline">\(F\)</span> 中, 从而 <span class="math inline">\(F \supseteq F&#39;\)</span>. 另一方面 <span class="math inline">\(F&#39;/\mathbb{Q}\)</span> 是域的伽罗瓦扩张且 <span class="math inline">\(F&#39;\)</span> 包含 <span class="math inline">\(\mathbb{Q}(\alpha)\)</span>, 从而 <span class="math inline">\(F \subseteq F&#39;\)</span>. 这导致 <span class="math inline">\(F&#39; = F\)</span>, <span class="math inline">\(F\)</span> 是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的分裂域.</p>
+<p>记 <span class="math inline">\(G = \mathrm{Gal}(F /\mathbb{Q})\)</span>, <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上不可约, 故 <span class="math inline">\(f(x)\)</span> 的全部根恰为 <span class="math inline">\(G\alpha = \{\sigma(\alpha) \mid \sigma \in G\}\)</span>. 记 <span class="math inline">\(\alpha_1 = \alpha, \alpha_2, \alpha_3,\cdots ,\alpha_n\)</span> 为 <span class="math inline">\(f(x)\)</span> 的全部根, 并记 <span class="math inline">\(\alpha_i = \sigma_i(\alpha)\)</span>, <span class="math inline">\(\sigma_i \in G\)</span>, <span class="math inline">\(i = 1,2,\cdots ,n\)</span>.</p>
+<p><span class="math inline">\(\mid G\mid\)</span> 含素因子 <span class="math inline">\(p\)</span>, 由 Sylow 定理, <span class="math inline">\(G\)</span> 存在 <span class="math inline">\(p\)</span> 阶元 <span class="math inline">\(\pi\)</span>. <span class="math inline">\(F = \mathbb{Q}(\alpha_1,\alpha_2 ,\cdots ,\alpha_n)\)</span>, 故 <span class="math inline">\(\pi\)</span> 由 <span class="math inline">\(\pi(\alpha_1),\pi(\alpha_2),\cdots ,\pi(\alpha_n)\)</span> 决定. <span class="math inline">\(\pi \ne \mathrm{Id}\)</span>, 故 <span class="math inline">\(\pi\)</span> 一定变换某一个 <span class="math inline">\(\alpha_i\)</span>. <span class="math inline">\(\pi\)</span> 将 <span class="math inline">\(f(x)\)</span> 的根变换到 <span class="math inline">\(f(x)\)</span> 的根, 记 <span class="math inline">\(\pi(\alpha_i) = \alpha_j\)</span>, <span class="math inline">\(i\ne j\)</span>. 于是 <span class="math inline">\(\pi&#39; = \sigma_i^{-1}\pi\sigma_i\)</span> 也是 <span class="math inline">\(p\)</span> 阶元, 且 <span class="math inline">\(\pi&#39;(\alpha) = \sigma_i^{-1}(\alpha_j)\)</span>. <span class="math inline">\(\alpha_i \ne \alpha_j\)</span>, 故 <span class="math inline">\(\pi&#39;(\alpha) \ne \alpha\)</span>. 这样 <span class="math inline">\(\pi&#39;\)</span> 是 <span class="math inline">\(p\)</span> 阶元且变换 <span class="math inline">\(\alpha\)</span>.</p>
+<p>现在对 <span class="math inline">\(F /\mathbb{Q}\)</span> 使用伽罗瓦理论基本定理. 记 <span class="math inline">\(H = \langle \pi&#39; \rangle\)</span>, <span class="math inline">\(L = \mathrm{Inv}(H)\)</span>. 有 <span class="math inline">\([F:L] = \mid H\mid = p\)</span>. <span class="math inline">\(\pi&#39;\)</span> 变换 <span class="math inline">\(\alpha\)</span>, 故 <span class="math inline">\(\alpha \notin L\)</span>. 有</p>
+<p><span class="math display">\[
+p = [F:L] = [F:L(\alpha)][L(\alpha):L],
+\]</span></p>
+其中 <span class="math inline">\([L(\alpha):L] \ne 1\)</span>, 于是只能是 <span class="math inline">\([L(\alpha):L] = p\)</span> 和 <span class="math inline">\([F: L(\alpha)] = 1\)</span>. 这说明 <span class="math inline">\(F = L(\alpha)\)</span>, 说明 <span class="math inline">\(L\)</span> 符合题意.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\(F\)</span> 的特征不为 <span class="math inline">\(2\)</span>, <span class="math inline">\(\mathrm{Gal}(E/F) \cong \mathbb{Z}_2 \oplus \mathbb{Z}_2\)</span>. 则 <span class="math inline">\(E = F(\sqrt{a},\sqrt{b})\)</span>. 其中 <span class="math inline">\(a,b \in F\)</span>. {:.warning}</p>
+<strong>证明</strong> 对 <span class="math inline">\(E/F\)</span> 使用伽罗瓦理论基本定理. <span class="math inline">\(\mathbb{Z}_2 \oplus \mathbb{Z}_2\)</span> 的全部子群为 <span class="math inline">\(\{0\}, H_1 = \{0\} \oplus \mathbb{Z}_2 , H_2 = \mathbb{Z}_2 \oplus \{0\}, \mathbb{Z}_2 \oplus \mathbb{Z}_2\)</span>. 记 <span class="math inline">\(M_1 = \mathrm{Inv}(H_1)\)</span>, 则 <span class="math inline">\(H_1/F\)</span> 是二次扩张, 存在 <span class="math inline">\(a \in F\)</span> 使 <span class="math inline">\(H_1 = F(\sqrt{a})\)</span> (<a href="https://wuxiangdong.github.io/2019/07/07/Galois-Theory-1.html#%E4%B8%80%E4%BA%9B%E4%B9%A0%E9%A2%98" target="_blank" rel="noopener">例题</a>). 同理记 <span class="math inline">\(M_2 = \mathrm{Inv}(H_2)\)</span>, 则 <span class="math inline">\(H_2 = F(\sqrt{b}), b\in F\)</span>. 有 <span class="math inline">\(\sqrt{b} \notin F(\sqrt{a})\)</span> (否则 <span class="math inline">\(F(\sqrt{b}) \subseteq F(\sqrt{a})\)</span>, 这导致 <span class="math inline">\(H_1 \leqslant H_2\)</span>), 从而 <span class="math inline">\([F(\sqrt{a},\sqrt{b}) : F(\sqrt{a})] = 2\)</span> (<span class="math inline">\(\sqrt{b}\)</span> 在 <span class="math inline">\(F(\sqrt{a})\)</span> 上极小多项式为 <span class="math inline">\(x^2 - b\)</span>). 从而 <span class="math inline">\([F(\sqrt{a},\sqrt{b}) :F] = 4 = [E:F]\)</span>. 而 <span class="math inline">\(F(\sqrt{a},\sqrt{b}) \subseteq E\)</span>, 这说明 <span class="math inline">\(E = F(\sqrt{a},\sqrt{b})\)</span>.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E = \mathbb{C}(t)\)</span> (复数域上有理函数域), <span class="math inline">\(F = \mathbb{C}(t^3 + t^{-3})\)</span>. 求 <span class="math inline">\(E/F\)</span> 的全部中间域. {:.warning}</p>
+<p><strong>解</strong> <span class="math inline">\(t\)</span> 是多项式 <span class="math inline">\(x^6-(t^3+t^{-3})x^3 + 1\)</span> 的一根, 而这个多项式的全部根为 <span class="math inline">\(t,t\omega, t\omega^2 ,t^{-1}, t^{-1}\omega ,t^{-1}\omega^{2} \in \mathbb{C}(t)\)</span>, 其中 <span class="math inline">\(\omega = e^{\frac{2\pi i}{3}}\)</span>. 这说明 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(f(x) = x^6 - (t^3+t^{-3})x^3 + 1\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域, 从而 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张. 在 <span class="math inline">\(\mathbb{C}(t^3)\)</span> 中 <span class="math inline">\(f(x)\)</span> 被分解为不可约多项式的积 <span class="math inline">\((x^3-t^3)(x^{-3}-t^{-3})\)</span>. 而 <span class="math inline">\(t^3, t^{-3} \notin F\)</span>. 这说明 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(F\)</span> 上不可约, 从而 <span class="math inline">\([E:F] = \deg f(x) = 6\)</span>, <span class="math inline">\(G = \mathrm{Gal}(E/F)\)</span> 是 <span class="math inline">\(6\)</span> 阶群. <span class="math inline">\(G\)</span> 的六个元分别为</p>
+<p><span class="math display">\[
+\begin{split}
+\pi_1 &amp;= \mathrm{Id}; \\
+\pi_2 &amp;:  t\mapsto t\omega; \\
+\pi_3 &amp;: t \mapsto t\omega^2; \\
+\pi_4 &amp;: t \mapsto t^{-1}; \\
+\pi_5&amp;: t \mapsto t^{-1}\omega; \\
+\pi_6&amp;: t \mapsto t^{-1}\omega^2.
+\end{split}
+\]</span></p>
+<p>其中 <span class="math inline">\(\pi_2\)</span> 是 <span class="math inline">\(3\)</span> 阶元, <span class="math inline">\(\pi_4\)</span> 是 <span class="math inline">\(2\)</span> 阶元. 且 <span class="math inline">\(\pi_2 ,\pi_4\)</span> 生成 <span class="math inline">\(G\)</span>, <span class="math inline">\(\pi_4\pi_2\pi_4^{-1} = \pi_2^{-1}\)</span>. 这说明 <span class="math inline">\(G \cong S_3\)</span>. 其所有真子群为</p>
+<p><span class="math display">\[\begin{split}
+A_3 &amp;= \{\pi_1 ,\pi_2 ,\pi_3\}, \\
+H_1 &amp;= \{\pi_1, \pi_4\}, \\
+H_2 &amp;= \{\pi_1, \pi_5\}, \\
+H_3 &amp;= \{\pi_1,\pi_6\}.
+\end{split}\]</span></p>
+<p><span class="math inline">\(S_3\)</span> 只有一个 <span class="math inline">\(3\)</span> 阶子群, 从而 <span class="math inline">\(E/F\)</span> 只有一个中间域 <span class="math inline">\(M\)</span> 使 <span class="math inline">\(M/F\)</span> 是二次扩张. 记 <span class="math inline">\(M = \mathbb{C}(t^3)\)</span>, <span class="math inline">\(t^3\)</span> 在 <span class="math inline">\(F\)</span> 上的极小多项式为 <span class="math inline">\(x^2 - (t^3+t^{-3})x + 1\)</span>. 从而 <span class="math inline">\(M/F\)</span> 是二次扩张, 这说明 <span class="math inline">\(M = \mathrm{Inv}(A_3) = \mathbb{C}(t^3)\)</span>.</p>
+<p>下面计算 <span class="math inline">\(L_1 = \mathrm{Inv}(H_1)\)</span>. $1, t, t^{2}, t^{-1}, t^{-2}, t^{-3} $ 是 <span class="math inline">\(E\)</span> 的一组基. 记 <span class="math inline">\(\alpha \in L_1\)</span>, 设 <span class="math inline">\(\alpha = a_1 + a_2 t + a_3 t^2 + a_4 t^{-1} + a_5 t^{-2} + a_6 t^{-3}\)</span>, <span class="math inline">\(a_i \in F\)</span>, <span class="math inline">\(t^3 = (t^3+t^{-3}) - t^{-3}\)</span>. 因此</p>
+<p><span class="math display">\[
+\pi_4(\alpha) = a_1 + a_6(t^3+t^{-3}) + a_4t + a_5t^2 + a_2t^{-1} + a_3t^{-2} - a_6t^{-3}.
+\]</span></p>
+<p>比较系数, 得 <span class="math inline">\(a_6 = 0,a_4 = a_2, a_3 = a_5\)</span>. 这说明 <span class="math inline">\(\alpha \in M_1 \Leftrightarrow \alpha \in \mathbb{C}(t+t^{-1})\)</span>. 从而 <span class="math inline">\(M_1 = \mathbb{C}(t+t^{-1})\)</span>.</p>
+<p><span class="math inline">\(H_1,H_2,H_3\)</span> 共轭, 我们可以算出 <span class="math inline">\(\mathrm{Inv}(H_2) = \mathbb{C}(t\omega + (t\omega)^{-1})\)</span>, <span class="math inline">\(\mathrm{Inv}(H_3) = \mathbb{C}(t\omega^2 + (t\omega^2)^{-1})\)</span>.</p>
+<p>于是 <span class="math inline">\(E/F\)</span> 的全部中间域为 <span class="math inline">\(\mathbb{C}(t+t^{-1}),\mathbb{C}(t\omega + (t\omega)^{-1}), \mathbb{C}(t\omega^2 + (t\omega^2)^{-1}), \mathbb{C}(t^3)\)</span>.</p>
+<p><strong>例</strong> 设 <span class="math inline">\(L\)</span> 和 <span class="math inline">\(M\)</span> 均是 <span class="math inline">\(E\)</span> 的子域且 <span class="math inline">\(L / (L\cap M)\)</span> 为有限伽罗瓦扩张. 求证 <span class="math inline">\(LM/M\)</span> 也为有限伽罗瓦扩张, 且 <span class="math inline">\(\mathrm{Gal}(LM/M)\cong \mathrm{Gal}(L/(L\cap M))\)</span>. {:.warning}</p>
+<p><strong>证明</strong> <span class="math inline">\(L / (L\cap M)\)</span> 是有限伽罗瓦扩张, 从而是 <span class="math inline">\(L \cap M\)</span> 上某一可分多项式在 <span class="math inline">\(L / (L\cap M)\)</span> 上的分裂域. 设这个多项式为 <span class="math inline">\(f(x)\)</span>, 则 <span class="math inline">\(f(x) \in L[x]\)</span>. 设 <span class="math inline">\(F\)</span> 是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(M\)</span> 上的分裂域. 一方面, <span class="math inline">\(f(x)\)</span> 的所有根都在 <span class="math inline">\(L\)</span> 中, 从而 <span class="math inline">\(ML \supseteq F\)</span>. 另一方面, <span class="math inline">\(M \supseteq L \cap M\)</span>, 从而 <span class="math inline">\(F \supseteq L\)</span> (<span class="math inline">\(F\)</span> 和 <span class="math inline">\(L\)</span> 分别是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(M\)</span> 和 <span class="math inline">\(L \cap M\)</span> 上的分裂域), 又有 <span class="math inline">\(F\supseteq M\)</span>, 从而 <span class="math inline">\(F \supseteq LM\)</span>. 这说明 <span class="math inline">\(F = LM\)</span>, 从而 <span class="math inline">\(LM\)</span> 是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(M\)</span> 上的分裂域, <span class="math inline">\(LM/M\)</span> 是有限伽罗瓦扩张.</p>
+<p>记 <span class="math inline">\(f(x)\)</span> 的全部根为 <span class="math inline">\(\alpha_1,\cdots ,\alpha_n \in L\)</span>, 则 <span class="math inline">\(L = (L\cap M)(\alpha_1,\cdots ,\alpha_n)\)</span>. 任意 <span class="math inline">\(\sigma \in \mathrm{Gal}(LM/M)\)</span>, <span class="math inline">\(\sigma\)</span> 给出 <span class="math inline">\(\alpha_1,\cdots ,\alpha_n\)</span> 的置换, 故 <span class="math inline">\(\sigma(L) = \sigma((L\cap M)(\alpha_1 ,\cdots ,\alpha_n) )= L\)</span>. 于是可以给出映射</p>
+<p><span class="math display">\[\pi: \mathrm{Gal}(LM/M) \rightarrow \mathrm{Gal}(L/L\cap M), \sigma \mapsto \sigma\mid_L.\]</span></p>
+<p>任意 <span class="math inline">\(\sigma \in \mathrm{Gal}(LM/M)\)</span>, <span class="math inline">\(\sigma \in \ker \pi \Rightarrow \sigma(a) = a,\forall a \in L\)</span>, 这导致 <span class="math inline">\(\sigma\)</span> 保持 <span class="math inline">\(\alpha_1,\cdots ,\alpha_n\)</span> 不变, 从而 <span class="math inline">\(\sigma\)</span> 保持 <span class="math inline">\(LM = M(\alpha_1,\cdots ,\alpha_n)\)</span> 的元素不变. 这说明 <span class="math inline">\(\sigma = \mathrm{Id}\)</span>, 从而 <span class="math inline">\(\pi\)</span> 是单同态.</p>
+<p>接下来, 我们只需证明 <span class="math inline">\([LM:M] = [L:L\cap M]\)</span>. <span class="math inline">\(L/L\cap M\)</span> 是有限可分扩张, 故是单扩张. 设 <span class="math inline">\(L= L\cap M(\beta)\)</span>. 设 <span class="math inline">\(\beta\)</span> 在 <span class="math inline">\(L\cap M\)</span> 上的极小多项式为 <span class="math inline">\(g(x)\)</span>. 因 <span class="math inline">\(LM = M(L\cap M)(\beta) = M(\beta)\)</span>, 我们只需证明 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(M[x]\)</span> 中不可约, 从而 <span class="math inline">\(g(x)\)</span> 也是 <span class="math inline">\(\beta\)</span> 在 <span class="math inline">\(M\)</span> 上的极小多项式, 有 <span class="math inline">\([LM:M] = \deg g(x) = [L:L \cap M]\)</span>.</p>
+设 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(M[x]\)</span> 中有分解 <span class="math inline">\(g(x) = h(x)l(x)\)</span>. 因 <span class="math inline">\(L /L\cap M\)</span> 是正规扩张, 故 <span class="math inline">\(L\)</span> 包含 <span class="math inline">\(g(x)\)</span> 的全部根 <span class="math inline">\(\beta_1,\cdots ,\beta_n\)</span>. 而 <span class="math inline">\(h(x)\)</span> 和 <span class="math inline">\(l(x)\)</span> 的系数是这些根的系数为 <span class="math inline">\(\pm 1\)</span> 的多项式, 故 <span class="math inline">\(h(x), l(x) \in L[x]\)</span>, 从而 <span class="math inline">\(h(x), l(x)\in L\cap M[x]\)</span>. 由 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(L \cap M\)</span> 上不可约知 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(M[x]\)</span> 中不可约, 从而证明了结论.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E /F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\(\mathrm{Gal}(E /F) = A_n\)</span> (交错群), <span class="math inline">\(n \ge 4\)</span>. 则不存在 <span class="math inline">\(E /F\)</span> 的中间域 <span class="math inline">\(L\)</span> 使 <span class="math inline">\([L:F] = 2\)</span>. {:.warning}</p>
+<strong>证明</strong> 使 <span class="math inline">\([L:F] = 2\)</span> 的中间域 <span class="math inline">\(L\)</span> 导致 <span class="math inline">\(\mathrm{Gal}(E /L)\)</span> 的对 <span class="math inline">\(A_n\)</span> 的指数为 <span class="math inline">\(2\)</span>, 从而是 <span class="math inline">\(A_n\)</span> 的正规子群. <span class="math inline">\(n \ge 5\)</span> 时 <span class="math inline">\(A_n\)</span> 是单群, 而 <span class="math inline">\(n= 4\)</span> 时 <span class="math inline">\(A_4\)</span> 无 <span class="math inline">\(6\)</span> 阶子群. 从而不存在这样的中间域 <span class="math inline">\(L\)</span> 满足题意.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张. 如果对任一域 <span class="math inline">\(K\)</span> (<span class="math inline">\(F \subsetneqq K \subseteq E\)</span>), <span class="math inline">\(K\)</span> 对 <span class="math inline">\(F\)</span> 均有相同的扩张次数 <span class="math inline">\([K:F]\)</span>. 则 <span class="math inline">\([E:F]\)</span> 是素数. {:.warning}</p>
+<strong>证明</strong> 这即是说任一 <span class="math inline">\(G = \mathrm{Gal}(E/F)\)</span> 的真子群 <span class="math inline">\(H\)</span>, <span class="math inline">\([G:H]\)</span> 都是相同的. 若 <span class="math inline">\(\mid G\mid\)</span> 含有两个以上的素因子, 设素数 <span class="math inline">\(p_1,p_2\)</span> 是它的因子, 则 <span class="math inline">\(G\)</span> 的 Sylow-<span class="math inline">\(p_1\)</span> 子群 <span class="math inline">\(H_1\)</span> 和 Sylow-<span class="math inline">\(p_2\)</span> 子群的指数是不同的. 因为 <span class="math inline">\(H_1\)</span> 的指数是 <span class="math inline">\(p_2\)</span> 的倍数, 而 <span class="math inline">\(H_2\)</span> 的指数不是. 这说明 <span class="math inline">\(G\)</span> 是 <span class="math inline">\(p\)</span>-群. 若 <span class="math inline">\(\mid G \mid = p^n\)</span>, <span class="math inline">\(n \ge 2\)</span>. 则 <span class="math inline">\(G\)</span> 有指数为 <span class="math inline">\(p^{n-1}\)</span> 的子群 (阶数为 <span class="math inline">\(p\)</span>) 和指数为 <span class="math inline">\(p\)</span> 的极大子群. 这说明 <span class="math inline">\(n\)</span> 只能为 <span class="math inline">\(1\)</span>, 从而 <span class="math inline">\(G\)</span> 是素数阶群, <span class="math inline">\([E:F]\)</span> 是素数.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
+<p><strong>例</strong> 设 <span class="math inline">\(E/F\)</span> 是有限伽罗瓦扩张, <span class="math inline">\(\mathrm{Gal}(E/F)\)</span> 是 <span class="math inline">\(2p\)</span> 阶非阿贝尔群, 其中 <span class="math inline">\(p\)</span> 是奇素数, <span class="math inline">\(L\)</span> 是满足 <span class="math inline">\([E:L] = 2\)</span> 的中间域. 则 <span class="math inline">\(L/F\)</span> 不是有限伽罗瓦扩张. {:.warning}</p>
+<strong>证明</strong> <span class="math inline">\([E:L]=2\)</span>, 说明 <span class="math inline">\(H = \mathrm{Gal}(E/L)\)</span> 是 <span class="math inline">\(G = \mathrm{Gal}(E/F)\)</span> 的 <span class="math inline">\(2\)</span> 阶子群. 取 <span class="math inline">\(P\)</span> 是 <span class="math inline">\(G\)</span> 的 Sylow-<span class="math inline">\(p\)</span> 子群. <span class="math inline">\(P\)</span> 的指数为 <span class="math inline">\(2\)</span>, 从而 <span class="math inline">\(P\)</span> 是正规子群. <span class="math inline">\(L/F\)</span> 是有限伽罗瓦扩张等价于 <span class="math inline">\(H \triangleleft G\)</span>. 若 <span class="math inline">\(H \triangleleft G\)</span>, 由 <span class="math inline">\(H \cap P = \{1\}\)</span> 知 <span class="math inline">\(G = HP \cong \mathbb{Z_2} \oplus \mathbb{Z_p} \cong \mathbb{Z}_{2p}\)</span>. 这与 <span class="math inline">\(G\)</span> 非 Abel 矛盾.
+<p align="right">
+<span class="math inline">\(\blacksquare\)</span>
+</p>
 
     </div>
 
@@ -352,8 +481,8 @@
 
 
 
-          </div>
-          
+        </div>
+        
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -377,63 +506,6 @@
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#伽罗瓦理论基本定理"><span class="nav-number">1.</span> <span class="nav-text">伽罗瓦理论基本定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伽罗瓦对应的一个例子"><span class="nav-number">1.1.</span> <span class="nav-text">伽罗瓦对应的一个例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代数基本定理"><span class="nav-number">1.2.</span> <span class="nav-text">代数基本定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些例题"><span class="nav-number">1.3.</span> <span class="nav-text">一些例题</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Psi</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
 
@@ -452,7 +524,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Psi</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -470,20 +542,13 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
-
-
 <script src="/js/next-boot.js"></script>
-
-
 
 
   
