@@ -20,15 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="主要是习题整理.    Sylow Theorems Fusion in the normalizer of a $\bm p$-Sylow subgroup Local conjugacy and Alperin’s Theorem Exercises    Sylow TheoremsDefinition. 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sylow 定理">
+<meta property="og:url" content="http://yoursite.com/2020/07/07/2020-2-19-Sylow-Theory/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="主要是习题整理.    Sylow Theorems Fusion in the normalizer of a $\bm p$-Sylow subgroup Local conjugacy and Alperin’s Theorem Exercises    Sylow TheoremsDefinition. 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-07T11:28:27.502Z">
+<meta property="article:modified_time" content="2020-02-19T15:09:14.000Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Math Algebra">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/">
+<link rel="canonical" href="http://yoursite.com/2020/07/07/2020-2-19-Sylow-Theory/">
 
 
 <script id="page-configurations">
@@ -36,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Hexo</title>
+  <title>Sylow 定理 | Hexo</title>
   
 
 
@@ -139,110 +144,116 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 17 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/07/2020-2-19-Sylow-Theory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Sylow 定理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-07 19:28:27" itemprop="dateCreated datePublished" datetime="2020-07-07T19:28:27+08:00">2020-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-19 23:09:14" itemprop="dateModified" datetime="2020-02-19T23:09:14+08:00">2020-02-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <p>主要是习题整理.</p>
+<!-- vim-markdown-toc GFM -->
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<ul>
+<li><a href="#sylow-theorems">Sylow Theorems</a></li>
+<li><a href="#fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a $\bm p$-Sylow subgroup</a></li>
+<li><a href="#local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin’s Theorem</a></li>
+<li><a href="#exercises">Exercises</a></li>
+</ul>
+<!-- vim-markdown-toc -->
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-07T19:28:27+08:00"
-              content="2020-07-07">
-          07-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/07/2019-11-2-Night-Question-Poly/" itemprop="url">
-            <span itemprop="name">证明 $x^6+x^3+1$ 在 $\mathbb{F}_2$ 上不可约</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-07T19:28:27+08:00"
-              content="2020-07-07">
-          07-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/07/2020-2-19-Sylow-Theory/" itemprop="url">
-            <span itemprop="name">Sylow 定理</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-07-07T17:36:29+08:00"
-              content="2020-07-07">
-          07-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/07/07/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-26T00:00:00+08:00"
-              content="2020-03-26">
-          03-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/26/Primtive-Element/" itemprop="url">
-            <span itemprop="name">Primtive-Element</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<h2 id="Sylow-Theorems"><a href="#Sylow-Theorems" class="headerlink" title="Sylow Theorems"></a>Sylow Theorems</h2><p><strong>Definition.</strong> 设有限群 $G$,设 $p^n$ 为 $\mid G \mid$ 的因子中最大的 $p$ 的幂次.$G$ 的子群 $H$ 被称为 $p$-Sylow 子群,如果 $\mid H\mid = p^n$.<br>{:.success}</p>
+<p><strong>Proposition.</strong> i) 每个有限群都有 $p$-Sylow 子群,其中 $p \mid ,\mid!G!\mid$.<br>ii) (1) $G$ 的每个 $p$-子群都被含于某一 $p$-Sylow 子群.<br>(2) $G$ 的 $p$-Sylow 子群彼此共轭.<br>(3) $G$ 的 $p$-Sylow 子群的个数 $\equiv 1 \pmod{p}$.<br>{:.warning}</p>
+<p><strong>Proposition.(Frattini)</strong> 设 $H$ 是 $G$ 的正规子群, $Q$ 是 $H$ 的一个 $p$-Sylow 子群,则 $HN_G(Q) = G$.<br>{:.warning}</p>
+<p><strong>Corollary.</strong> 令 $S$ 是 $G$ 的一个 $p$-Sylow 子群,令 $H$ 为 $G$ 的子群,且 $N_G(S) \subset H$.则 $N_G(H) = H$. 特别地, $N_G(N_G(S)) = N_G(S)$.<br>{:.warning}</p>
+<p><em>Proof.</em> 记 $K = N_G(H)$, 则 $H$ 正规于 $K$. 由 Frattini 论断,有 $K = HN_K(S)$. 但是 $N_K(S) \subset N_G(S) \subset H$, 有 $K = H$.</p>
+<h2 id="Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup"><a href="#Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup" class="headerlink" title="Fusion in the normalizer of a $\bm p$-Sylow subgroup"></a>Fusion in the normalizer of a $\bm p$-Sylow subgroup</h2><p>若 $S \subset K$, 都是 $G$ 的子群. $H$ 的两个元素被称为在 $K$ 中融合,如果它们是 $K$-共轭的.</p>
+<p><strong>Proposition.</strong> 设 $S$ 是 $G$ 的 $p$-Sylow 子群.令 $(A_i,B_i)_{i \in I}$ 为两族 $S$-正规的子集(即 $gA_ig^{-1} = A_i, gB_ig^{-1} = B_i \forall i \in I, g \in S$). 若 $g \in G$ 使 $gA_ig^{-1} = B_i, \forall i \in I$,则存在 $n \in N_G(S)$ 使得 $nA_in^{-1} = B_i, \forall i \in I$.<br>{:.warning}</p>
+<p><em>proof.</em> 令 $N_A = \bigcap_{i \in I} N_G(A_i)$ 和 $N_B = \bigcap_{i \in I} N_G(B_i)$. 则 $gN_Ag^{-1} = N_B$. 由 $A_i,B_i$ 是 $S$-正规的,知道 $S \subset N_A \cap N_B$, 从而 $gSg^{-1} \subset N_B$. $S$, $gSg^{-1}$ 是 $N_B$ 的 $p$-Sylow 子群, 从而存在 $z \in N_B$, 使得 $zSz^{-1} = gSg^{-1}$. 因此 $n = z^{-1}g \in N_G(B)$, 且 $nA_in^{-1} = z^{-1}gA_ig^{-1}z = z^{-1}Bz = B_i, \forall i \in I$.</p>
+<p><strong>Corollary.</strong> $S$ 的两个正规子群如果是 $G$-共轭的,则是 $N_G(S)$-共轭的.<br>{:.warning}</p>
+<p><strong>Theorem.(Burnside)</strong> 设 $X,Y$ 是 $S$ 的中心的子集, 且 $g \in G$ 使 $gXg^{-1} = Y$.则存在 $n \in N_G(S)$ 使 $nxn^{-1} = gxg^{-1}, \forall x \in X$.</p>
+<h2 id="Local-conjugacy-and-Alperin’s-Theorem"><a href="#Local-conjugacy-and-Alperin’s-Theorem" class="headerlink" title="Local conjugacy and Alperin’s Theorem"></a>Local conjugacy and Alperin’s Theorem</h2><p>设 $S$ 是 $G$ 的一个 $p$-Sylow 子群.</p>
+<p><strong>Theorem.</strong> 设 $A \subset S$, 设 $g \in G$ 使得 $A^g \subset S$. 则存在整数 $n \ge 1$, 和 $S$ 的子群 $U_1,\ldots ,U_n$, 以及 $g_1,\ldots ,g_n \in G$,使得<br>(1) $g = g_1\cdots g_n$.<br>(2) $g_i \in N_G(U_i)$, 对 $1 \le i \le n$.<br>(3) $A^{g_1\cdots g_{i-1}} \subset U_i$, 对 $1 \le i \le n$.<br>{:.warning}</p>
+<h2 id="Exercises"><a href="#Exercises" class="headerlink" title="Exercises"></a>Exercises</h2><p><em>(Construction of subgroups of index 2)</em> 令 $S$ 是一有限群 $G$ 的 $2$-Sylow 子群. 令 $H$ 是 $S$ 的子群.则 $G$ 作用于 $G /H$,令 $\varepsilon_H$ 是映射的合成</p>
+<p>$$<br>    G \longrightarrow \mathcal{S}_{G /H} \xrightarrow{\varepsilon} {\pm 1}.<br>$$</p>
+<p>其中 $\varepsilon(\sigma)$ 给出 $\sigma$ 的符号.</p>
+<p>令 $C$ 是 $S$ 的一个非平凡循环群.且 $\mid C\mid \times  \mid H \mid =  \mid S \mid$, 对每一个 $g \in G$,$C \cap gHg^{-1} = 1$.</p>
+<p>a) $C$ 在 $G /H$ 上的作用作用自由,它的轨道数是奇数.<br>b) $\varepsilon_H(C) = {1,-1}$.从而 $\ker \varepsilon_H$ 是 $G$ 的一个指数为 $2$ 的子群,并且不包含 $C$.</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Math-Algebra/" rel="tag"># Math Algebra</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/07/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/07/2019-11-2-Night-Question-Poly/" rel="next" title="证明 $x^6+x^3+1$ 在 $\mathbb{F}_2$ 上不可约">
+      证明 $x^6+x^3+1$ 在 $\mathbb{F}_2$ 上不可约 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -295,6 +306,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sylow-Theorems"><span class="nav-number">1.</span> <span class="nav-text">Sylow Theorems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fusion-in-the-normalizer-of-a-bm-p-Sylow-subgroup"><span class="nav-number">2.</span> <span class="nav-text">Fusion in the normalizer of a $\bm p$-Sylow subgroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-conjugacy-and-Alperin’s-Theorem"><span class="nav-number">3.</span> <span class="nav-text">Local conjugacy and Alperin’s Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exercises"><span class="nav-number">4.</span> <span class="nav-text">Exercises</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
