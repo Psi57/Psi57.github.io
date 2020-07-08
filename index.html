@@ -289,7 +289,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-08 02:29:31 / 修改时间：03:04:32" itemprop="dateCreated datePublished" datetime="2020-07-08T02:29:31+08:00">2020-07-08</time>
+              <time title="创建时间：2020-07-08 02:29:31 / 修改时间：08:05:07" itemprop="dateCreated datePublished" datetime="2020-07-08T02:29:31+08:00">2020-07-08</time>
             </span>
 
           
@@ -305,8 +305,14 @@
       
           <!-- vim-markdown-toc GFM -->
 <ul>
-<li><a href="#group-algebra">Group algebra</a></li>
-<li><a href="#characters">Characters</a></li>
+<li><a href="#group-algebra">Group algebra</a>
+<ul>
+<li><a href="#mathrmhom-和-otimes-的表示"><span class="math inline">\(\mathrm{Hom}\)</span> 和 <span class="math inline">\(\otimes\)</span> 的表示</a></li>
+</ul></li>
+<li><a href="#characters">Characters</a>
+<ul>
+<li><a href="#regular-representation">Regular representation</a></li>
+</ul></li>
 <li><a href="#the-space-of-class-functions">The space of class functions</a></li>
 <li><a href="#orthognality-relations">Orthognality relations</a></li>
 <li><a href="#the-center-of-group-algebra">The center of group algebra</a></li>
@@ -314,43 +320,14 @@
 <li><a href="#参考文献">参考文献</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-<h2 id="group-algebra">Group algebra</h2>
-<p>设 <span class="math inline">\(k\)</span> 是一个域, 设 <span class="math inline">\(G\)</span> 是一个有限群.我们有群代数 <span class="math inline">\(k[G]\)</span>. 有</p>
-<div class="note "><p><strong>Theorem. (Maschke).</strong> 设 <span class="math inline">\(G\)</span> 是阶为 <span class="math inline">\(n\)</span> 的有限群, 令 <span class="math inline">\(k\)</span> 是特征为 <span class="math inline">\(p &gt; 0\)</span> 的域.则 <span class="math inline">\(k[G]\)</span> 是半单的当且仅当 <span class="math inline">\(p \nmid n\)</span>. 若 <span class="math inline">\(k\)</span> 特征为零, 则 <span class="math inline">\(k[G]\)</span> 半单.</p>
-</div>
-<p><em>proof.</em> 见 [1] Chapter XVIII, Section 1. 和 [2] Chapter 6, Exercise 6.1.</p>
-<p>设 <span class="math inline">\(V\)</span> 是 <span class="math inline">\(k\)</span>-线性空间, 我们将以下对象都称为 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(k\)</span>-线性表示:</p>
-<p><span class="math display">\[\begin{aligned}
-    \text{Homormophism }\rho\colon G \to \mathrm{GL}(V);\\
-    \text{Algebra-homomorphism } k[G] \to \mathrm{End}_k(V);\\
-    k[G]\text{-module } V.
-\end{aligned}\]</span></p>
-<p>现在令 <span class="math inline">\(k\)</span> 的特征不整除 <span class="math inline">\(G\)</span> 的阶,于是 <span class="math inline">\(k[G]\)</span> 是半单代数,于是有分解</p>
-<p><span class="math display">\[
-\begin{equation}\label{semiprod}
-    k[G] = \prod_{i=1}^{s} R_i.
-\end{equation}
-\]</span></p>
-<p>其中 <span class="math inline">\(R_i\)</span> 单,我们有</p>
-<p><span class="math display">\[
-    1 = e_1+ \ldots +e_s, e_i \in R_i.
-\]</span></p>
-<p>其中 <span class="math inline">\(e_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的幺元且若 <span class="math inline">\(i \ne j\)</span> 则 <span class="math inline">\(e_ie_j = 0, R_iR_j = 0\)</span>. 由半单代数的性质(见 [1] Chapter XVII), <span class="math inline">\(k[G]\)</span> 只有有限个单模. 若令 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单左理想(simple left ideal), 则 <span class="math inline">\(\{L_i\}\)</span> 两两不同构且是有限维 <span class="math inline">\(k\)</span>-线性空间 (<span class="math inline">\(k[G]\)</span> 有限维). 任何 <span class="math inline">\(k[G]\)</span> 模 <span class="math inline">\(V\)</span> 都可以写成 <span class="math inline">\(L_i\)</span> 的直和. 当 <span class="math inline">\(V\)</span> 是有限维 <span class="math inline">\(k\)</span>-线性空间时直和有限.</p>
-<h2 id="characters">Characters</h2>
-<p>设 <span class="math inline">\(\rho\colon k[G] \to \mathrm{End}_k(V)\)</span> 是一个表示. 其特征标 <span class="math inline">\(\chi_\rho\)</span> 是函数</p>
-<p><span class="math display">\[
-    \chi_\rho\colon k[G] \to k, \alpha \mapsto \mathrm{\operatorname{tr}\rho(\alpha)}.
-\]</span></p>
-<p>显然直和的特征标是特征标的和, 张量积的特征标是特征标的积.(见 [1])</p>
-<p>在 <span class="math inline">\(\eqref{semiprod}\)</span> 中记 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单左理想, 令 <span class="math inline">\(\chi_i\)</span> 是 <span class="math inline">\(L_i\)</span> 的特征标. 则看到每个特征标都是 <span class="math inline">\(\{\chi_i\}\)</span> 的 <span class="math inline">\(\mathbb{Z}\)</span>-线性组合.称 <span class="math inline">\(\chi_i\)</span> 为不可约特征标. 清晰看见只有有限个不可约特征标.</p>
-<h2 id="the-space-of-class-functions">The space of class functions</h2>
-<h2 id="orthognality-relations">Orthognality relations</h2>
-<h2 id="the-center-of-group-algebra">The center of group algebra</h2>
-<h2 id="induced-representations">Induced representations</h2>
-<h2 id="参考文献">参考文献</h2>
-<p>[1] Serge Lang, <em>Algebra</em>, Springer-Verlag, thrid edition, GTM 211, 2002.</p>
-<p>[2] Jean-Pierre Serre, <em>Linear Representations of Finite Groups</em>, Springer-Verlag, GTM 42, 1977.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/08/LinearRep-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
