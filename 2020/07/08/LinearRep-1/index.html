@@ -28,7 +28,7 @@
 <meta property="og:description" content="Group algebra  \(\mathrm{Hom}\) 和 \(\otimes\) 的表示  Characters  Regular representation  The center of group algebra and the class function Orthognality relations Induced representations 参考文献">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-07T18:29:31.000Z">
-<meta property="article:modified_time" content="2020-07-08T01:03:17.415Z">
+<meta property="article:modified_time" content="2020-07-08T01:40:31.092Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math Algebra">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-08 02:29:31 / 修改时间：09:03:17" itemprop="dateCreated datePublished" datetime="2020-07-08T02:29:31+08:00">2020-07-08</time>
+              <time title="创建时间：2020-07-08 02:29:31 / 修改时间：09:40:31" itemprop="dateCreated datePublished" datetime="2020-07-08T02:29:31+08:00">2020-07-08</time>
             </span>
 
           
@@ -259,12 +259,18 @@
 <p>设 <span class="math inline">\(k\)</span> 是一个域, 设 <span class="math inline">\(G\)</span> 是一个有限群.我们有群代数 <span class="math inline">\(k[G]\)</span>. 有</p>
 <div class="note "><p><strong>Theorem. (Maschke).</strong> 设 <span class="math inline">\(G\)</span> 是阶为 <span class="math inline">\(n\)</span> 的有限群, 令 <span class="math inline">\(k\)</span> 是域. 若特征为 <span class="math inline">\(p &gt; 0\)</span> 的域.则 <span class="math inline">\(k[G]\)</span> 是半单的当且仅当 <span class="math inline">\(p \nmid n\)</span>. 若 <span class="math inline">\(k\)</span> 特征为零, 则 <span class="math inline">\(k[G]\)</span> 半单.</p>
 </div>
-<p><em>proof.</em> 设 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(k[G]\)</span>-模, 令 <span class="math inline">\(F\)</span> 是其子模. 看成 <span class="math inline">\(k\)</span>-线性空间时 <span class="math inline">\(F\)</span> 是 <span class="math inline">\(E\)</span> 的直和项, 存在 <span class="math inline">\(E\)</span> 的 <span class="math inline">\(k\)</span>-子空间 <span class="math inline">\(F&#39;\)</span> 使得 <span class="math inline">\(E = F \oplus F&#39;\)</span>. 令 <span class="math inline">\(\pi\colon E \to F\)</span> 为相应的投射, 于是 <span class="math inline">\(\pi\)</span> 是 <span class="math inline">\(k\)</span>-线性映射且 <span class="math inline">\(\pi(x) = x\)</span> 对 <span class="math inline">\(x \in F\)</span> 成立. 令</p>
+<p><em>proof.</em> 设 <span class="math inline">\(n\)</span> 不被 <span class="math inline">\(k\)</span> 的特征整除或 <span class="math inline">\(k\)</span> 特征为零, 则 <span class="math inline">\(1/n\)</span> 在 <span class="math inline">\(k\)</span> 中存在. <span class="math inline">\(E\)</span> 是 <span class="math inline">\(k[G]\)</span>-模, 令 <span class="math inline">\(F\)</span> 是其子模. 看成 <span class="math inline">\(k\)</span>-线性空间时 <span class="math inline">\(F\)</span> 是 <span class="math inline">\(E\)</span> 的直和项, 存在 <span class="math inline">\(E\)</span> 的 <span class="math inline">\(k\)</span>-子空间 <span class="math inline">\(F&#39;\)</span> 使得 <span class="math inline">\(E = F \oplus F&#39;\)</span>. 令 <span class="math inline">\(\pi\colon E \to F\)</span> 为相应的投射, 于是 <span class="math inline">\(\pi\)</span> 是 <span class="math inline">\(k\)</span>-线性映射且 <span class="math inline">\(\pi(x) = x\)</span> 对 <span class="math inline">\(x \in F\)</span> 成立. 令</p>
 <p><span class="math display">\[
     \varphi = \frac{1}{n}\sum_{\sigma \in G} \sigma\pi\sigma^{-1}
 \]</span></p>
 <p>则 <span class="math inline">\(\tau\varphi = \frac{1}{n} \sum_{\sigma \in G} \tau\sigma\pi\sigma^{-1} = \frac{1}{n}\sum_{\sigma \in G} \sigma\pi\sigma^{-1}\tau = \varphi\tau\)</span> 对任意 <span class="math inline">\(\tau \in G\)</span> 成立.于是 <span class="math inline">\(\varphi\in \mathrm{Hom}_G(E,F)\)</span>.</p>
-<p>记 <span class="math inline">\(j\colon F \to E\)</span> 是嵌入, 则 <span class="math inline">\(\varphi j(x) = \frac{1}{n} \sum_{\sigma \in G} \sigma \pi\sigma^{-1}(x) = \frac{1}{n} \sum_{\sigma \in G} \sigma\sigma^{-1}(x) = x, \forall x \in F\)</span>. 于是 <span class="math inline">\(\varphi j = \mathrm{id}_F\)</span>, 故 <span class="math inline">\(F\)</span> 是 <span class="math inline">\(E\)</span> 的直和项. 于是 <span class="math inline">\(k[G]\)</span> 半单. 证完.</p>
+<p>记 <span class="math inline">\(j\colon F \to E\)</span> 是嵌入, 则 <span class="math inline">\(\varphi j(x) = \frac{1}{n} \sum_{\sigma \in G} \sigma \pi\sigma^{-1}(x) = \frac{1}{n} \sum_{\sigma \in G} \sigma\sigma^{-1}(x) = x, \forall x \in F\)</span>. 于是 <span class="math inline">\(\varphi j = \mathrm{id}_F\)</span>, 故 <span class="math inline">\(F\)</span> 是 <span class="math inline">\(E\)</span> 的直和项. 于是 <span class="math inline">\(k[G]\)</span> 半单.</p>
+<p>若 <span class="math inline">\(k\)</span> 的特征整除 <span class="math inline">\(n\)</span>. 令 <span class="math inline">\(I = \{\sum_{\sigma \in G}a_{\sigma}\sigma \in k[G] \mid \sum_{\sigma \in G} a_{\sigma} = 0\}\)</span>, 则 <span class="math inline">\(I\)</span> 是 <span class="math inline">\(k[G]\)</span> 的(左)理想. 反设 <span class="math inline">\(k[G]\)</span> 半单, 则 <span class="math inline">\(I\)</span> 是 <span class="math inline">\(k[G]\)</span> 的直和项. 设 <span class="math inline">\(k[G] = I \oplus I&#39;\)</span>. 记 <span class="math inline">\(\pi\colon k[G] \to I\)</span> 是投射, <span class="math inline">\(\pi\)</span> 是 <span class="math inline">\(k[G]\)</span>-同态, 从而 <span class="math inline">\(x\pi = \pi x\)</span>, <span class="math inline">\(\forall x\in k[G]\)</span>. 有</p>
+<p><span class="math display">\[
+    \left(\sum_{\sigma \in G}\sigma\right)\pi (1)= \pi\sum_{\sigma \in G}\sigma = \sum_{\sigma \in G} \sigma \Rightarrow \left(\sum_{\sigma \in G} \sigma\right)(\pi (1)-1) = 0.
+\]</span></p>
+<p>易得 <span class="math inline">\((\sum_{\sigma \in G}\sigma) x = 0\)</span> 当且仅当 <span class="math inline">\(x \in I\)</span>(把 <span class="math inline">\(x\)</span> 展开). 于是 <span class="math inline">\(\pi(1) - 1 \in I\)</span>. 但是 <span class="math inline">\(\pi(1) \in I\)</span>, 这导致 <span class="math inline">\(1 \in I\)</span>, 导致 <span class="math inline">\(I = k[G]\)</span>, 矛盾.</p>
+<p>证完.</p>
 <p>设 <span class="math inline">\(V\)</span> 是 <span class="math inline">\(k\)</span>-线性空间, 我们将以下对象都称为 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(k\)</span>-线性表示:</p>
 <p><span class="math display">\[\begin{aligned}
     \text{Homormophism }\rho\colon G \to \mathrm{GL}(V);\\
@@ -281,18 +287,23 @@
 <p><span class="math display">\[
     1 = e_1+ \ldots +e_s, e_i \in R_i.
 \]</span></p>
-<p>其中 <span class="math inline">\(e_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的幺元且若 <span class="math inline">\(i \ne j\)</span> 则 <span class="math inline">\(e_ie_j = 0, R_iR_j = 0\)</span>. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单模(例如 <span class="math inline">\(R_i\)</span> 的一个极小左理想(simple left ideal)), 则每个 <span class="math inline">\(k[G]\)</span> 模 <span class="math inline">\(V\)</span> 都同构于 <span class="math inline">\(L_i\)</span> 的直和. 若 <span class="math inline">\(\dim_K V\)</span> 有限则直和有限.</p>
+<p>其中 <span class="math inline">\(e_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的幺元且若 <span class="math inline">\(i \ne j\)</span> 则 <span class="math inline">\(e_ie_j = 0, R_iR_j = 0\)</span>. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单模(例如 <span class="math inline">\(R_i\)</span> 的一个极小左理想(simple left ideal)), 则 <span class="math inline">\(L_i\)</span> 是单 <span class="math inline">\(k[G]\)</span>-模(不可约表示). 每个 <span class="math inline">\(k[G]\)</span> 模 <span class="math inline">\(V\)</span> 都同构于 <span class="math inline">\(L_i\)</span> 的直和. 若 <span class="math inline">\(\dim_K V\)</span> 有限则直和有限.</p>
 <h3 id="mathrmhom-和-otimes-的表示"><span class="math inline">\(\mathrm{Hom}\)</span> 和 <span class="math inline">\(\otimes\)</span> 的表示</h3>
 <p>设 <span class="math inline">\(E,F\)</span> 是 <span class="math inline">\(G\)</span>-模, 定义 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(\mathrm{Hom}_k(E,F)\)</span> 上的作用为</p>
 <p><span class="math display">\[
     [g]f = gfg^{-1}.
 \]</span></p>
-<p>则令 <span class="math inline">\(\mathrm{Hom}_k(E,F)\)</span> 成为一个 <span class="math inline">\(G\)</span>-模.</p>
+<p>则令 <span class="math inline">\(\mathrm{Hom}_k(E,F)\)</span> 成为一个 <span class="math inline">\(G\)</span>-模. 于是 <span class="math inline">\(\mathrm{Hom}_G(E,F) = \mathrm{Hom}_k(E,F)^G\)</span>.</p>
 <p>定义 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(E \otimes_k F\)</span> 上的作用为</p>
 <p><span class="math display">\[
     g(a \otimes b) = ga \otimes gb.
 \]</span></p>
 <p>则令 <span class="math inline">\(E \otimes_k F\)</span> 成为一个 <span class="math inline">\(G\)</span>-模.</p>
+<p>令 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(k\)</span> 上平凡作用, 则 <span class="math inline">\(k\)</span> 成为 <span class="math inline">\(G\)</span>-模. 记 <span class="math inline">\(E^{\lor} = \mathrm{Hom}_k(E,k)\)</span>, 则 <span class="math inline">\(E^{\lor}\)</span> 是 <span class="math inline">\(G\)</span>-模. 设 <span class="math inline">\(E,F\)</span> 是有限维 <span class="math inline">\(k\)</span>-线性空间, 有自然的同构</p>
+<p><span class="math display">\[
+    E^{\lor} \otimes F \simeq \mathrm{Hom}_{k}(E,F).
+\]</span></p>
+<p>从而 <span class="math inline">\((E^{\lor} \otimes F)^G \simeq \mathrm{Hom}_G(E,F)\)</span>.</p>
 <h2 id="characters">Characters</h2>
 <p>设 <span class="math inline">\(\rho\colon k[G] \to \mathrm{End}_k(V)\)</span> 是一个表示. 其特征标 <span class="math inline">\(\chi_\rho\)</span> 是函数</p>
 <p><span class="math display">\[
@@ -335,7 +346,7 @@
 <h2 id="the-center-of-group-algebra-and-the-class-function">The center of group algebra and the class function</h2>
 <p>类函数(class function) <span class="math inline">\(f\colon G \to k\)</span> 即 <span class="math inline">\(f(\sigma\tau\sigma^{-1}) = f(\sigma)\)</span>, <span class="math inline">\(\forall \sigma,\tau \in G\)</span>, 即 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(G\)</span> 的一个共轭类中取同一值. 特征标是类函数. 全体类函数构成 <span class="math inline">\(k\)</span>-线性空间.</p>
 <p><span class="math inline">\(\operatorname{Cent.}k[G]\)</span> 即与 <span class="math inline">\(k[G]\)</span> 所有元素交换的元素组成的集合. 易见 <span class="math inline">\(x \in \operatorname{Cent.}k[G]\)</span> 当且仅当 <span class="math inline">\(gxg^{-1} = x, \forall g\in G\)</span>. 设 <span class="math inline">\(G\)</span> 的所有共轭类为 <span class="math inline">\(\{c_i\}_i\)</span>, 记 <span class="math inline">\(\gamma_{c_i} = \sum_{\sigma \in c_i} \sigma\)</span>. 易见 <span class="math inline">\(\gamma_{c_i}\)</span> 组成了 <span class="math inline">\(\operatorname{Cent.} k[G]\)</span> 的一组 <span class="math inline">\(k\)</span>-基(利用 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(c_i\)</span> 上共轭作用传递得到相应系数相等). 有 <span class="math inline">\(x \in \operatorname{Cent.}k[G]\)</span> 当且仅当 <span class="math inline">\(x = \sum_{\sigma \in G} f(\sigma)\sigma\)</span>, 其中 <span class="math inline">\(f\)</span> 是 <span class="math inline">\(G\)</span> 的类函数(class function).</p>
-<p>接下来我们继续考虑 <span class="math inline">\(k\)</span> 是代数闭域. 则分解 <span class="math inline">\(\eqref{semiprod}\)</span> 的每个 <span class="math inline">\(R_i\)</span> 是 <span class="math inline">\(k\)</span> 上的矩阵环. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个极小左理想, 记 <span class="math inline">\(d_i = \dim_kL_i\)</span>, 则 <span class="math inline">\(R_i \simeq \mathrm{Mat}_{d_i}(k)\)</span>. 易见</p>
+<p>接下来我们继续考虑 <span class="math inline">\(k\)</span> 是代数闭域. 分解 <span class="math inline">\(\eqref{semiprod}\)</span> 的每个 <span class="math inline">\(R_i\)</span> 是 <span class="math inline">\(k\)</span> 上的矩阵环. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个极小左理想, 记 <span class="math inline">\(d_i = \dim_kL_i\)</span>, 则 <span class="math inline">\(R_i \simeq \mathrm{Mat}_{d_i}(k)\)</span>. 易见</p>
 <p><span class="math display">\[
     \operatorname{Cent.}k[G] = \prod_{i=1}^{s} k.
 \]</span></p>
@@ -366,8 +377,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/08/sample/" rel="prev" title="sample">
-      <i class="fa fa-chevron-left"></i> sample
+    <a href="/2020/07/08/2020-2-19-Sylow-Theory/" rel="prev" title="Sylow 定理">
+      <i class="fa fa-chevron-left"></i> Sylow 定理
     </a></div>
       <div class="post-nav-item">
     <a href="/2999/12/31/Collection/" rel="next" title="$\bf\text{收集}$">
