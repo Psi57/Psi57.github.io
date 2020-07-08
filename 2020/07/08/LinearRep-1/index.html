@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Group algebra  \(\mathrm{Hom}\) 和 \(\otimes\) 的表示  Characters  Regular representation  The space of class functions Orthognality relations The center of group algebra Induced representations 参考文献">
+  <meta name="description" content="Group algebra  \(\mathrm{Hom}\) 和 \(\otimes\) 的表示  Characters  Regular representation  The center of group algebra The space of class functions Orthognality relations Induced representations 参考文献">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有限群的线性表示-1">
 <meta property="og:url" content="http://yoursite.com/2020/07/08/LinearRep-1/index.html">
 <meta property="og:site_name" content="Psi&#39;s Blog">
-<meta property="og:description" content="Group algebra  \(\mathrm{Hom}\) 和 \(\otimes\) 的表示  Characters  Regular representation  The space of class functions Orthognality relations The center of group algebra Induced representations 参考文献">
+<meta property="og:description" content="Group algebra  \(\mathrm{Hom}\) 和 \(\otimes\) 的表示  Characters  Regular representation  The center of group algebra The space of class functions Orthognality relations Induced representations 参考文献">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-07T18:29:31.000Z">
-<meta property="article:modified_time" content="2020-07-08T00:05:07.697Z">
+<meta property="article:modified_time" content="2020-07-08T00:19:00.588Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math Algebra">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#group-algebra"><span class="nav-number">1.</span> <span class="nav-text">Group algebra</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathrmhom-和-otimes-的表示"><span class="nav-number">1.1.</span> <span class="nav-text">\(\mathrm{Hom}\) 和 \(\otimes\) 的表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#characters"><span class="nav-number">2.</span> <span class="nav-text">Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#regular-representation"><span class="nav-number">2.1.</span> <span class="nav-text">Regular representation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-space-of-class-functions"><span class="nav-number">3.</span> <span class="nav-text">The space of class functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orthognality-relations"><span class="nav-number">4.</span> <span class="nav-text">Orthognality relations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-center-of-group-algebra"><span class="nav-number">5.</span> <span class="nav-text">The center of group algebra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#induced-representations"><span class="nav-number">6.</span> <span class="nav-text">Induced representations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#group-algebra"><span class="nav-number">1.</span> <span class="nav-text">Group algebra</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathrmhom-和-otimes-的表示"><span class="nav-number">1.1.</span> <span class="nav-text">\(\mathrm{Hom}\) 和 \(\otimes\) 的表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#characters"><span class="nav-number">2.</span> <span class="nav-text">Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#regular-representation"><span class="nav-number">2.1.</span> <span class="nav-text">Regular representation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-center-of-group-algebra"><span class="nav-number">3.</span> <span class="nav-text">The center of group algebra</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-space-of-class-functions"><span class="nav-number">4.</span> <span class="nav-text">The space of class functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orthognality-relations"><span class="nav-number">5.</span> <span class="nav-text">Orthognality relations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#induced-representations"><span class="nav-number">6.</span> <span class="nav-text">Induced representations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-08 02:29:31 / 修改时间：08:05:07" itemprop="dateCreated datePublished" datetime="2020-07-08T02:29:31+08:00">2020-07-08</time>
+              <time title="创建时间：2020-07-08 02:29:31 / 修改时间：08:19:00" itemprop="dateCreated datePublished" datetime="2020-07-08T02:29:31+08:00">2020-07-08</time>
             </span>
 
           
@@ -247,9 +247,9 @@
 <ul>
 <li><a href="#regular-representation">Regular representation</a></li>
 </ul></li>
+<li><a href="#the-center-of-group-algebra">The center of group algebra</a></li>
 <li><a href="#the-space-of-class-functions">The space of class functions</a></li>
 <li><a href="#orthognality-relations">Orthognality relations</a></li>
-<li><a href="#the-center-of-group-algebra">The center of group algebra</a></li>
 <li><a href="#induced-representations">Induced representations</a></li>
 <li><a href="#参考文献">参考文献</a></li>
 </ul>
@@ -272,7 +272,7 @@
     \text{Algebra-homomorphism } k[G] \to \mathrm{End}_k(V);\\
     k[G]\text{-module } V.
 \end{aligned}\]</span></p>
-<p>现在令 <span class="math inline">\(k\)</span> 的特征不整除 <span class="math inline">\(G\)</span> 的阶,于是 <span class="math inline">\(k[G]\)</span> 是半单代数, 且作为 <span class="math inline">\(k\)</span>-线性空间是有限维的, 从而有分解</p>
+<p>从现在起我们都令 <span class="math inline">\(k\)</span> 的特征不整除 <span class="math inline">\(G\)</span> 的阶,于是 <span class="math inline">\(k[G]\)</span> 是半单代数, 且作为 <span class="math inline">\(k\)</span>-线性空间是有限维的, 从而有分解</p>
 <p><span class="math display">\[
 \begin{equation}\label{semiprod}
     k[G] = \prod_{i=1}^{s} R_i.
@@ -282,7 +282,7 @@
 <p><span class="math display">\[
     1 = e_1+ \ldots +e_s, e_i \in R_i.
 \]</span></p>
-<p>其中 <span class="math inline">\(e_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的幺元且若 <span class="math inline">\(i \ne j\)</span> 则 <span class="math inline">\(e_ie_j = 0, R_iR_j = 0\)</span>. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单模(例如 <span class="math inline">\(R_i\)</span> 的一个极小左理想(simple left ideal)), 则每个 <span class="math inline">\(k[G]\)</span> 模都同构于 <span class="math inline">\(L_i\)</span> 的直和.</p>
+<p>其中 <span class="math inline">\(e_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的幺元且若 <span class="math inline">\(i \ne j\)</span> 则 <span class="math inline">\(e_ie_j = 0, R_iR_j = 0\)</span>. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单模(例如 <span class="math inline">\(R_i\)</span> 的一个极小左理想(simple left ideal)), 则每个 <span class="math inline">\(k[G]\)</span> 模 <span class="math inline">\(V\)</span> 都同构于 <span class="math inline">\(L_i\)</span> 的直和. 若 <span class="math inline">\(\dim_K V\)</span> 有限则直和有限.</p>
 <h3 id="mathrmhom-和-otimes-的表示"><span class="math inline">\(\mathrm{Hom}\)</span> 和 <span class="math inline">\(\otimes\)</span> 的表示</h3>
 <p>设 <span class="math inline">\(E,F\)</span> 是 <span class="math inline">\(G\)</span>-模, 定义 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(\mathrm{Hom}_k(E,F)\)</span> 上的作用为</p>
 <p><span class="math display">\[
@@ -300,16 +300,16 @@
     \chi_\rho\colon k[G] \to k, \alpha \mapsto \mathrm{\operatorname{tr}\rho(\alpha)}.
 \]</span></p>
 <p>显然直和的特征标是特征标的和, 张量积的特征标是特征标的积.(见 [1])</p>
-<p>在 <span class="math inline">\(\eqref{semiprod}\)</span> 中记 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单左理想, 令 <span class="math inline">\(\chi_i\)</span> 是 <span class="math inline">\(L_i\)</span> 的特征标. 则看到每个特征标都是 <span class="math inline">\(\{\chi_i\}\)</span> 的 <span class="math inline">\(\mathbb{Z}\)</span>-线性组合.称 <span class="math inline">\(\chi_i\)</span> 为不可约特征标. 于是 <span class="math inline">\(G\)</span> 恰有 <span class="math inline">\(s\)</span> 个特征标(注意 <span class="math inline">\(s\)</span> 和 <span class="math inline">\(k\)</span> 有关).</p>
+<p>在 <span class="math inline">\(\eqref{semiprod}\)</span> 中记 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个极小左理想, 令 <span class="math inline">\(\chi_i\)</span> 是 <span class="math inline">\(L_i\)</span> 的特征标. 则看到每个特征标都是 <span class="math inline">\(\{\chi_i\}\)</span> 的 <span class="math inline">\(\mathbb{Z}\)</span>-线性组合.我们称 <span class="math inline">\(\chi_i\)</span> 为不可约特征标. 于是 <span class="math inline">\(G\)</span> 恰有 <span class="math inline">\(s\)</span> 个不可约特征标(注意 <span class="math inline">\(s\)</span> 和 <span class="math inline">\(k\)</span> 有关).</p>
 <h3 id="regular-representation">Regular representation</h3>
-<p>将 <span class="math inline">\(k[G]\)</span> 本身看成 <span class="math inline">\(G\)</span>-模, 我们得到 <span class="math inline">\(G\)</span> 的正则表示. 其特征标记为 <span class="math inline">\(\chi_{\mathrm{reg}}\)</span> <span class="math inline">\(k[G]\)</span> 作为 <span class="math inline">\(k\)</span>-线性空间有基 <span class="math inline">\(\{g\}_{g\in G}\)</span>. 设 <span class="math inline">\(\sigma \in g\)</span>, 则 <span class="math inline">\(\sigma g= g \Leftrightarrow \sigma = 1\)</span>. 易见 <span class="math inline">\(\chi_{\mathrm{reg}}(\sigma) = \begin{cases}  |G| &amp; \sigma = 1\\  0 &amp; \sigma \ne 1 \end{cases}\)</span>.</p>
+<p>将 <span class="math inline">\(k[G]\)</span> 本身看成 <span class="math inline">\(G\)</span>-模, 我们得到 <span class="math inline">\(G\)</span> 的正则表示. 其特征标记为 <span class="math inline">\(\chi_{\mathrm{reg}}\)</span>. <span class="math inline">\(k[G]\)</span> 作为 <span class="math inline">\(k\)</span>-线性空间有基 <span class="math inline">\(\{g\}_{g\in G}\)</span>. 设 <span class="math inline">\(\sigma \in g\)</span>, 则 <span class="math inline">\(\sigma g= g \Leftrightarrow \sigma = 1\)</span>. 易见 <span class="math inline">\(\chi_{\mathrm{reg}}(\sigma) = \begin{cases}  |G| &amp; \sigma = 1\\  0 &amp; \sigma \ne 1 \end{cases}\)</span>.</p>
 <p>设 <span class="math inline">\(k\)</span> 是<strong>代数闭域</strong>, 则在 <span class="math inline">\(\eqref{semiprod}\)</span> 中 <span class="math inline">\(R_i\)</span> 是 <span class="math inline">\(k\)</span> 上的矩阵环. 设 <span class="math inline">\(L_i\)</span> 是 <span class="math inline">\(R_i\)</span> 的一个单模, 则 <span class="math inline">\(R_i \simeq \mathrm{End}_k(L_i)\)</span>. 从而 <span class="math inline">\(\dim_k R_i = (\dim_k L_i)^2\)</span>. 我们得到</p>
 <p><span class="math display">\[
     \sum_{i=1}^{s} (\dim_k L_i)^2 = |G|.
 \]</span></p>
 <p>也就是说 <span class="math inline">\(G\)</span> 的不可约表示的维数的平方和等于 <span class="math inline">\(|G|\)</span>.</p>
 <p>同时, 有 <span class="math inline">\(G\)</span>-模同构 <span class="math inline">\(R_i \simeq (\dim_kL_i )L_i\)</span>(见 [1] Chapter XVII, Theorem 5.6), 于是 <span class="math inline">\(\chi_{\mathrm{reg}} = \sum_{i=1}^{s} \dim_k L_i \chi_i\)</span>.</p>
-<div class="note "><p><strong>Proposition.</strong> 分解 <span class="math inline">\(\eqref{simeq}\)</span> 中的 <span class="math inline">\(e_i\)</span> 为</p>
+<div class="note "><p><strong>Proposition.</strong> 分解 <span class="math inline">\(\eqref{semiprod}\)</span> 中的 <span class="math inline">\(e_i\)</span> 为</p>
 <p><span class="math display">\[
     e_i = \frac{\dim_k L_i}{|G|} \sum_{\sigma \in G} \chi_i(\sigma^{-1})\sigma.
 \]</span></p>
@@ -326,9 +326,9 @@
 <div class="note "><p><strong>Corollary.</strong> 不可约表示 <span class="math inline">\(L_i\)</span> 的维数 <span class="math inline">\(\dim_{k}L_i\)</span> 不被 <span class="math inline">\(k\)</span> 的特征整除.</p>
 </div>
 <p><em>proof.</em> 否则, <span class="math inline">\(e_i = 0\)</span>.</p>
+<h2 id="the-center-of-group-algebra">The center of group algebra</h2>
 <h2 id="the-space-of-class-functions">The space of class functions</h2>
 <h2 id="orthognality-relations">Orthognality relations</h2>
-<h2 id="the-center-of-group-algebra">The center of group algebra</h2>
 <h2 id="induced-representations">Induced representations</h2>
 <h2 id="参考文献">参考文献</h2>
 <p>[1] Serge Lang, <em>Algebra</em>, Springer-Verlag, thrid edition, GTM 211, 2002.</p>
