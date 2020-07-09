@@ -382,7 +382,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-19 23:09:14" itemprop="dateModified" datetime="2020-02-19T23:09:14+08:00">2020-02-19</time>
+                <time title="修改时间：2020-07-09 11:56:50" itemprop="dateModified" datetime="2020-07-09T11:56:50+08:00">2020-07-09</time>
               </span>
 
           
@@ -405,40 +405,14 @@
 <li><a href="#exercises">Exercises</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-<h2 id="sylow-theorems">Sylow Theorems</h2>
-<p><strong>Definition.</strong> 设有限群 <span class="math inline">\(G\)</span>,设 <span class="math inline">\(p^n\)</span> 为 <span class="math inline">\(\mid G \mid\)</span> 的因子中最大的 <span class="math inline">\(p\)</span> 的幂次.<span class="math inline">\(G\)</span> 的子群 <span class="math inline">\(H\)</span> 被称为 <span class="math inline">\(p\)</span>-Sylow 子群,如果 <span class="math inline">\(\mid H\mid = p^n\)</span>. {:.success}</p>
-<p><strong>Proposition.</strong> i) 每个有限群都有 <span class="math inline">\(p\)</span>-Sylow 子群,其中 <span class="math inline">\(p \mid \,\mid\!G\!\mid\)</span>.<br />
-ii) (1) <span class="math inline">\(G\)</span> 的每个 <span class="math inline">\(p\)</span>-子群都被含于某一 <span class="math inline">\(p\)</span>-Sylow 子群.<br />
-(2) <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群彼此共轭.<br />
-(3) <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群的个数 <span class="math inline">\(\equiv 1 \pmod{p}\)</span>. {:.warning}</p>
-<p><strong>Proposition.(Frattini)</strong> 设 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的正规子群, <span class="math inline">\(Q\)</span> 是 <span class="math inline">\(H\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群,则 <span class="math inline">\(HN_G(Q) = G\)</span>. {:.warning}</p>
-<p><strong>Corollary.</strong> 令 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群,令 <span class="math inline">\(H\)</span> 为 <span class="math inline">\(G\)</span> 的子群,且 <span class="math inline">\(N_G(S) \subset H\)</span>.则 <span class="math inline">\(N_G(H) = H\)</span>. 特别地, <span class="math inline">\(N_G(N_G(S)) = N_G(S)\)</span>. {:.warning}</p>
-<p><em>Proof.</em> 记 <span class="math inline">\(K = N_G(H)\)</span>, 则 <span class="math inline">\(H\)</span> 正规于 <span class="math inline">\(K\)</span>. 由 Frattini 论断,有 <span class="math inline">\(K = HN_K(S)\)</span>. 但是 <span class="math inline">\(N_K(S) \subset N_G(S) \subset H\)</span>, 有 <span class="math inline">\(K = H\)</span>.</p>
-<h2 id="fusion-in-the-normalizer-of-a-bm-p-sylow-subgroup">Fusion in the normalizer of a <span class="math inline">\(\bm p\)</span>-Sylow subgroup</h2>
-<p>若 <span class="math inline">\(S \subset K\)</span>, 都是 <span class="math inline">\(G\)</span> 的子群. <span class="math inline">\(H\)</span> 的两个元素被称为在 <span class="math inline">\(K\)</span> 中融合,如果它们是 <span class="math inline">\(K\)</span>-共轭的.</p>
-<p><strong>Proposition.</strong> 设 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群.令 <span class="math inline">\((A_i,B_i)_{i \in I}\)</span> 为两族 <span class="math inline">\(S\)</span>-正规的子集(即 <span class="math inline">\(gA_ig^{-1} = A_i, gB_ig^{-1} = B_i \forall i \in I, g \in S\)</span>). 若 <span class="math inline">\(g \in G\)</span> 使 <span class="math inline">\(gA_ig^{-1} = B_i, \forall i \in I\)</span>,则存在 <span class="math inline">\(n \in N_G(S)\)</span> 使得 <span class="math inline">\(nA_in^{-1} = B_i, \forall i \in I\)</span>. {:.warning}</p>
-<p><em>proof.</em> 令 <span class="math inline">\(N_A = \bigcap_{i \in I} N_G(A_i)\)</span> 和 <span class="math inline">\(N_B = \bigcap_{i \in I} N_G(B_i)\)</span>. 则 <span class="math inline">\(gN_Ag^{-1} = N_B\)</span>. 由 <span class="math inline">\(A_i,B_i\)</span> 是 <span class="math inline">\(S\)</span>-正规的,知道 <span class="math inline">\(S \subset N_A \cap N_B\)</span>, 从而 <span class="math inline">\(gSg^{-1} \subset N_B\)</span>. <span class="math inline">\(S\)</span>, <span class="math inline">\(gSg^{-1}\)</span> 是 <span class="math inline">\(N_B\)</span> 的 <span class="math inline">\(p\)</span>-Sylow 子群, 从而存在 <span class="math inline">\(z \in N_B\)</span>, 使得 <span class="math inline">\(zSz^{-1} = gSg^{-1}\)</span>. 因此 <span class="math inline">\(n = z^{-1}g \in N_G(B)\)</span>, 且 <span class="math inline">\(nA_in^{-1} = z^{-1}gA_ig^{-1}z = z^{-1}Bz = B_i, \forall i \in I\)</span>.</p>
-<p><strong>Corollary.</strong> <span class="math inline">\(S\)</span> 的两个正规子群如果是 <span class="math inline">\(G\)</span>-共轭的,则是 <span class="math inline">\(N_G(S)\)</span>-共轭的. {:.warning}</p>
-<p><strong>Theorem.(Burnside)</strong> 设 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(S\)</span> 的中心的子集, 且 <span class="math inline">\(g \in G\)</span> 使 <span class="math inline">\(gXg^{-1} = Y\)</span>.则存在 <span class="math inline">\(n \in N_G(S)\)</span> 使 <span class="math inline">\(nxn^{-1} = gxg^{-1}, \forall x \in X\)</span>.</p>
-<h2 id="local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin's Theorem</h2>
-<p>设 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span> 的一个 <span class="math inline">\(p\)</span>-Sylow 子群.</p>
-<p><strong>Theorem.</strong> 设 <span class="math inline">\(A \subset S\)</span>, 设 <span class="math inline">\(g \in G\)</span> 使得 <span class="math inline">\(A^g \subset S\)</span>. 则存在整数 <span class="math inline">\(n \ge 1\)</span>, 和 <span class="math inline">\(S\)</span> 的子群 <span class="math inline">\(U_1,\ldots ,U_n\)</span>, 以及 <span class="math inline">\(g_1,\ldots ,g_n \in G\)</span>,使得<br />
-(1) <span class="math inline">\(g = g_1\cdots g_n\)</span>.<br />
-(2) <span class="math inline">\(g_i \in N_G(U_i)\)</span>, 对 <span class="math inline">\(1 \le i \le n\)</span>.<br />
-(3) <span class="math inline">\(A^{g_1\cdots g_{i-1}} \subset U_i\)</span>, 对 <span class="math inline">\(1 \le i \le n\)</span>. {:.warning}</p>
-<h2 id="exercises">Exercises</h2>
-<p><em>(Construction of subgroups of index 2)</em> 令 <span class="math inline">\(S\)</span> 是一有限群 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(2\)</span>-Sylow 子群. 令 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(S\)</span> 的子群.则 <span class="math inline">\(G\)</span> 作用于 <span class="math inline">\(G /H\)</span>,令 <span class="math inline">\(\varepsilon_H\)</span> 是映射的合成</p>
-<p><span class="math display">\[
-    G \longrightarrow \mathcal{S}_{G /H} \xrightarrow{\varepsilon} \{\pm 1\}.
-\]</span></p>
-<p>其中 <span class="math inline">\(\varepsilon(\sigma)\)</span> 给出 <span class="math inline">\(\sigma\)</span> 的符号.</p>
-<p>令 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(S\)</span> 的一个非平凡循环群.且 <span class="math inline">\(\mid C\mid \times \mid H \mid = \mid S \mid\)</span>, 对每一个 <span class="math inline">\(g \in G\)</span>,<span class="math inline">\(C \cap gHg^{-1} = 1\)</span>.</p>
-<ol type="a">
-<li><span class="math inline">\(C\)</span> 在 <span class="math inline">\(G /H\)</span> 上的作用作用自由,它的轨道数是奇数.<br />
-</li>
-<li><span class="math inline">\(\varepsilon_H(C) = \{1,-1\}\)</span>.从而 <span class="math inline">\(\ker \varepsilon_H\)</span> 是 <span class="math inline">\(G\)</span> 的一个指数为 <span class="math inline">\(2\)</span> 的子群,并且不包含 <span class="math inline">\(C\)</span>.</li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/08/2020-2-19-Sylow-Theory/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
