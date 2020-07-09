@@ -151,7 +151,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -188,6 +188,96 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/Galois-Theory-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Psi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Psi's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/08/Galois-Theory-4/" class="post-title-link" itemprop="url">伽罗瓦群的计算-2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-08 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-08T00:00:00+08:00">2019-08-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-08 02:13:09" itemprop="dateModified" datetime="2020-07-08T02:13:09+08:00">2020-07-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这是伽罗瓦群的计算的第二部分. 讨论一些特殊方程的伽罗瓦群.</p>
+<!-- vim-markdown-toc GFM -->
+<ul>
+<li><a href="#纯粹方程">纯粹方程</a></li>
+<li><a href="#分圆域">分圆域</a></li>
+<li><a href="#素数次对称群">素数次对称群</a></li>
+<li><a href="#一些习题">一些习题</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+<h2 id="纯粹方程">纯粹方程</h2>
+<p>设 <span class="math inline">\(F\)</span> 是域. 将方程 <span class="math inline">\(g(x) = x^n - a = 0\, (0 \ne a \in F, n \ge 2)\)</span> 称为 <strong>纯粹方程</strong>. 这类方程的伽罗瓦群是研究任意方程的根式可解性的重要一步. 这里假设 <span class="math inline">\(F\)</span> 特征为零, 或这为不整除 <span class="math inline">\(n\)</span> 的素数 <span class="math inline">\(p\)</span>. 这等价于 <span class="math inline">\(g(x)\)</span> 无重根. 下面计算 <span class="math inline">\(G_g = \mathrm{Gal}(E/F)\)</span>, 其中 <span class="math inline">\(E\)</span> 是 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(F\)</span> 上的分裂域.</p>
+<p><strong>引理</strong> 设整数 <span class="math inline">\(n\ge 2\)</span>, 域 <span class="math inline">\(F\)</span> 的特征为零或与 <span class="math inline">\(n\)</span> 互素, <span class="math inline">\(\omega\)</span> 是一个 <span class="math inline">\(n\)</span> 次本原根.<br />
+<span class="math inline">\(\mathrm{(i)}\)</span> 设 <span class="math inline">\(f(x)=x^n - 1 \in F[x]\)</span>. 则 <span class="math inline">\(G_f\)</span> 是 <span class="math inline">\(\mathbb{Z}_n^*\)</span> 的子群, 从而是 <span class="math inline">\(\rm Abel\)</span> 群. 而 <span class="math inline">\(G_f = \mathbb{Z}_n^*\)</span> 当且仅当分圆多项式 <span class="math inline">\(\Phi_n(x)\)</span> 是 <span class="math inline">\(F\)</span> 上的不可约多项式.<br />
+特别的, 分圆多项式 <span class="math inline">\(\Phi_n(x)\)</span> 在 <span class="math inline">\(\mathbb{Q}\)</span> 上的伽罗瓦群同构于 <span class="math inline">\(\mathbb{Z}_n^*\)</span>.<br />
+<span class="math inline">\(\mathrm{(ii)}\)</span> 设 <span class="math inline">\(\omega \in F\)</span>, <span class="math inline">\(g(x) = x^n - a\)</span>, <span class="math inline">\(0 \ne a \in F\)</span>. 则 <span class="math inline">\(G_g\)</span> 是 <span class="math inline">\(m\)</span> 阶循环群, 其中 <span class="math inline">\(m \mid n\)</span>; 且 <span class="math inline">\(G_g\)</span> 是 <span class="math inline">\(n\)</span> 阶循环群当且仅当 <span class="math inline">\(g(x)\)</span> 在 <span class="math inline">\(F\)</span> 上不可约.<br />
+<span class="math inline">\(\mathrm{(iii)}\)</span> 设 <span class="math inline">\(\omega \notin F\)</span>. 用 <span class="math inline">\(GL(2,\mathbb{Z}_n)\)</span> 表示剩余类环 <span class="math inline">\(\mathbb{Z}_n\)</span> 上的所有 <span class="math inline">\(2\)</span> 阶可逆矩阵的集合对于矩阵乘法作成的群. 则 <span class="math inline">\(G_g\)</span> 是 <span class="math inline">\(H\)</span> 的子群, 其中</p>
+<p><span class="math display">\[H = \left\{\begin{pmatrix} k &amp; l \\ 0 &amp; 1 \end{pmatrix} \mid k \in \mathbb{Z}_n^*, l \in \mathbb{Z}_n\right\}\]</span></p>
+<p>是 <span class="math inline">\(GL(2,\mathbb{Z}_n)\)</span> 的子群.<br />
+<span class="math inline">\(\mathrm{(iv)}\)</span> 设 <span class="math inline">\(p\)</span> 为素数, <span class="math inline">\(g(x) = x^p - a\)</span> 为有理数域 <span class="math inline">\(\mathbb{Q}\)</span> 上的不可约多项式. 则 <span class="math inline">\(G_g\)</span> 同构于子群 <span class="math inline">\(H = \left\{ \begin{pmatrix} k &amp; l \\ 0 &amp; 1 \end{pmatrix} \mid k \in \mathbb{Z}_p^*, l \in\mathbb{Z}_p \right\}\)</span>. {:.info}
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/08/Galois-Theory-4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
