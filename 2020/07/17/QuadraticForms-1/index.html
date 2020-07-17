@@ -28,7 +28,7 @@
 <meta property="og:description" content="\(\newcommand{\bbZ}{\mathbb{Z}}\) 看一点写(抄)一点 [1] 上的命题保持其编号. 这篇文章单独出现的命题以小括号编号.   Elementary Facts  Structure of \((\mathbb{Z}&#x2F;m\mathbb{Z})^{\times}\). The quadratic reciprocity law  The quadratic resid">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-17T13:37:02.000Z">
-<meta property="article:modified_time" content="2020-07-17T23:34:33.961Z">
+<meta property="article:modified_time" content="2020-07-17T23:41:17.934Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math Number-Theory">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-18 07:34:33" itemprop="dateModified" datetime="2020-07-18T07:34:33+08:00">2020-07-18</time>
+                <time title="修改时间：2020-07-18 07:41:17" itemprop="dateModified" datetime="2020-07-18T07:41:17+08:00">2020-07-18</time>
               </span>
 
           
@@ -331,9 +331,9 @@
     1 \to \mathrm{Hom}((\mathbb{Z}/s\mathbb{Z})^\times ,\mathbb{C}^\times) \to \mathrm{Hom}((\mathbb{Z}/r\mathbb{Z})^\times,\mathbb{C}^\times)\to \mathrm{Hom}(H_s,\mathbb{C}^\times) \to 1.
 \]</span></p>
 <p>正合.</p>
-<div class="note "><p><strong>Proposition (1).</strong> 设 <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(r\)</span> 的特征标, 则 <span class="math inline">\(\chi\)</span> 是本原的当且仅当对任意 <span class="math inline">\(r\)</span> 的因子 <span class="math inline">\(s\)</span>, 有 <span class="math inline">\(\chi\)</span> 在 <span class="math inline">\(H_s\)</span> 上的限制不为 <span class="math inline">\(1\)</span>.</p>
+<div class="note "><p><strong>Proposition (1).</strong> 设 <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(r\)</span> 的特征标, 则 <span class="math inline">\(\chi\)</span> 是本原的当且仅当对任意 <span class="math inline">\(r\)</span> 的真因子 <span class="math inline">\(s\)</span>, 有 <span class="math inline">\(\chi\)</span> 在 <span class="math inline">\(H_s\)</span> 上的限制不为 <span class="math inline">\(1\)</span>.</p>
 </div>
-<p><em>proof.</em> 若 <span class="math inline">\(\chi\)</span> 在某个 <span class="math inline">\(H_s\)</span> 上的限制平凡, 若 <span class="math inline">\(s=r\)</span>, 则 <span class="math inline">\(H_s = (\mathbb{Z}/r\mathbb{Z})^\times\)</span>, 这导致 <span class="math inline">\(\chi = 1\)</span>. 若 <span class="math inline">\(s\)</span> 是真因子, 由正合列, 存在模 <span class="math inline">\(s\)</span> 的特征标 <span class="math inline">\(\chi_1\)</span>, 使得 <span class="math inline">\(\chi = \chi_1\pi\)</span>. 其中 <span class="math inline">\(\pi\colon (\mathbb{Z}/r\mathbb{Z})^\times \to (\mathbb{Z}/s\mathbb{Z})^\times\)</span>. 这导致任意 <span class="math inline">\((c,r)=1\)</span>, 有 <span class="math inline">\(\chi(c) = \chi_1(c)\)</span>. 于是 <span class="math inline">\(\chi\)</span> 不本原.</p>
+<p><em>proof.</em> 若 <span class="math inline">\(\chi\)</span> 在某个 <span class="math inline">\(H_s\)</span> 上的限制平凡, 若 <span class="math inline">\(s=1\)</span>, 则 <span class="math inline">\(H_s = (\mathbb{Z}/r\mathbb{Z})^\times\)</span>, 这导致 <span class="math inline">\(\chi = 1\)</span>. 若 <span class="math inline">\(s \ne 1\)</span>, 由正合列, 存在模 <span class="math inline">\(s\)</span> 的特征标 <span class="math inline">\(\chi_1\)</span>, 使得 <span class="math inline">\(\chi = \chi_1\pi\)</span>. 其中 <span class="math inline">\(\pi\colon (\mathbb{Z}/r\mathbb{Z})^\times \to (\mathbb{Z}/s\mathbb{Z})^\times\)</span>. 这导致任意 <span class="math inline">\((c,r)=1\)</span>, 有 <span class="math inline">\(\chi(c) = \chi_1(c)\)</span>. 于是 <span class="math inline">\(\chi\)</span> 不本原.</p>
 <p>反之, 若 <span class="math inline">\(\chi\)</span> 不本原, <span class="math inline">\(\chi = 1\)</span> 时平凡, 下设 <span class="math inline">\(\chi \ne 1\)</span>. 存在 <span class="math inline">\(r\)</span> 的真因子 <span class="math inline">\(s\)</span> 和模 <span class="math inline">\(s\)</span> 的特征标 <span class="math inline">\(\chi_1\)</span> 使得 <span class="math inline">\(\chi(c) = \chi_1(c), \forall (c,r)=1\)</span>. 易见 <span class="math inline">\(\chi = \chi_1\pi\)</span>. 由正合列, <span class="math inline">\(\chi\)</span> 在 <span class="math inline">\(H_s\)</span> 上的限制平凡. 证完.</p>
 <div class="note "><p><strong>Lemma (1).</strong> 设 <span class="math inline">\(s\)</span> 是 <span class="math inline">\(r\)</span> 的真因子, 记 <span class="math inline">\(\zeta_s = e^{\frac{2\pi i}{s}}\)</span> 是本原 <span class="math inline">\(s\)</span> 次单位根, 设 <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(r\)</span> 的本原特征标. 则 <span class="math inline">\(\sum_{a \in (\mathbb{Z}/r\mathbb{Z})^\times} \chi(a)\zeta_s^a = 0\)</span>.</p>
 </div>
