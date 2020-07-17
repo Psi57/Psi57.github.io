@@ -154,12 +154,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -191,6 +191,105 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Group-Action/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/2019/07/03/Hello-World/psi.png">
+      <meta itemprop="name" content="Psi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Psi's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/29/Group-Action/" class="post-title-link" itemprop="url">群在集合上的作用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-29T00:00:00+08:00">2019-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-08 02:16:06" itemprop="dateModified" datetime="2020-07-08T02:16:06+08:00">2020-07-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <!-- vim-markdown-toc GFM -->
+<ul>
+<li><a href="#preliminaries">Preliminaries</a></li>
+<li><a href="#burnsides-lemma">Burnside's Lemma</a></li>
+<li><a href="#n-transitivity">n-Transitivity</a></li>
+<li><a href="#primitive-actions">Primitive Actions</a></li>
+<li><a href="#applications">Applications</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+<p>主要是 "Finite Groups, an Introduction" 第一章关于群作用部分的总结和习题.</p>
+<h2 id="preliminaries">Preliminaries</h2>
+<p>设 <span class="math inline">\(G\)</span> 是一个群. <span class="math inline">\(G\)</span> (左)作用在集合 <span class="math inline">\(X\)</span> 上是指一个映射</p>
+<p><span class="math display">\[
+    G \times X \to X, (g,x) \mapsto gx,
+\]</span></p>
+<p>满足如下性质:</p>
+<p><span class="math inline">\((1)\, g(g&#39;x) = (gg&#39;)x, \forall x \in X, g,g&#39; \in G\)</span>.<br />
+<span class="math inline">\((2)\, 1x = x,\forall x \in X\)</span>.</p>
+<p>等价的, <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X\)</span> 上的作用也可由群同态 <span class="math inline">\(G \to \mathcal{S}_X\)</span> 给出, 其中 <span class="math inline">\(\mathcal{S}_X\)</span> 指 <span class="math inline">\(X\)</span> 的对称群.</p>
+<p><strong>Definition.</strong> 若集合 <span class="math inline">\(X\)</span> 被 <span class="math inline">\(G\)</span> 作用, 称 <span class="math inline">\(X\)</span> 为 <span class="math inline">\(G\)</span>-Set.<br />
+设 <span class="math inline">\(X,Y\)</span> 是两个 <span class="math inline">\(G\)</span>-Set, 映射 <span class="math inline">\(f: X \to Y\)</span> 被称为 <span class="math inline">\(G\)</span>-Map, 如果 <span class="math inline">\(f(gx) = gf(x)\)</span> 对任意 <span class="math inline">\(x \in X, g \in G\)</span> 成立.<br />
+设 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(G\)</span>-Set, 若存在一一对应的 <span class="math inline">\(G\)</span>-Map <span class="math inline">\(X \to Y\)</span>, 称 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X,Y\)</span> 上的作用同构的. 下文简称 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(G\)</span>-同构的. {:.success}</p>
+<p><strong>Definition.</strong> 设 <span class="math inline">\(X\)</span> 是一个 <span class="math inline">\(G\)</span>-Set, <span class="math inline">\(x \in X\)</span>, 用 <span class="math inline">\(G_x\)</span> 表示 <span class="math inline">\(x\)</span> 的稳定子群(Stabilizer) {:.success}</p>
+<p><strong>Definition.</strong> <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X\)</span> 上的作用被称为<br />
+<span class="math inline">\((1)\)</span> 忠实的(faithful), 若 <span class="math inline">\(G \to \mathcal{S}_X\)</span> 是单射. 这等价于 <span class="math inline">\(\bigcap_{x \in X}G_x = 1\)</span>.<br />
+<span class="math inline">\((2)\)</span> 自由的(free), 若任意 <span class="math inline">\(x \in X\)</span>, 有 <span class="math inline">\(G_x = 1\)</span>.<br />
+若 <span class="math inline">\(G\)</span> 自由且传递地作用于 <span class="math inline">\(X\)</span>, 则 <span class="math inline">\(X\)</span> 称为 <span class="math inline">\(G\)</span>-torsor. {:.success}</p>
+<p>其他需要的概念和性质, 例如 <span class="math inline">\(G\)</span>-轨道(Orbit), 轨道-稳定子群定理, 这里省去. <span class="math inline">\(X\)</span> 的所有轨道组成的集合记为 <span class="math inline">\(X/G\)</span>.
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/29/Group-Action/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -946,78 +1045,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/07/03/Hello-World/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/pudding/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/2019/07/03/Hello-World/psi.png">
-      <meta itemprop="name" content="Psi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Psi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/03/pudding/" class="post-title-link" itemprop="url">记一次烤布丁的经历</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-03T00:00:00+08:00">2019-07-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 19:39:36" itemprop="dateModified" datetime="2019-08-27T19:39:36+08:00">2019-08-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>"需要烤箱"
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/07/03/pudding/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

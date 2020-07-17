@@ -154,12 +154,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -249,6 +249,151 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/QuadraticForms-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/2019/07/03/Hello-World/psi.png">
+      <meta itemprop="name" content="Psi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Psi's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/17/QuadraticForms-1/" class="post-title-link" itemprop="url">QuadraticForms-1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-17 21:37:02" itemprop="dateCreated datePublished" datetime="2020-07-17T21:37:02+08:00">2020-07-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-18 01:57:09" itemprop="dateModified" datetime="2020-07-18T01:57:09+08:00">2020-07-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><span class="math inline">\(\newcommand{\bbZ}{\mathbb{Z}}\)</span></p>
+<p>看一点写(<del>抄</del>)一点 ## Elementary Facts</p>
+<h3 id="structure-of-mathbbzmmathbbztimes.">Structure of <span class="math inline">\((\mathbb{Z}/m\mathbb{Z})^{\times}\)</span>.</h3>
+<p><span class="math inline">\((\mathbb{Z}/m\mathbb{Z})^\times\)</span> 是环 <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span> 的单位群.然而若 <span class="math inline">\(m_1,\ldots ,m_r\)</span> 是互素的整数则有</p>
+<p><span class="math display">\[
+    \mathbb{Z}/(m_1\ldots m_r)\mathbb{Z} \simeq \prod_{i=1}^{r} \mathbb{Z}/m_i\mathbb{Z}.
+\]</span></p>
+<p>于是 <span class="math inline">\((\mathbb{Z}/(m_1\ldots m_r)\mathbb{Z})^\times \simeq \prod_{i=1}^{r} (\mathbb{Z}/m_i\mathbb{Z})^{\times }\)</span>. 我们只需研究 <span class="math inline">\(\mathbb{Z}/p^r\mathbb{Z}\)</span> 的单位群的结构, 其中 <span class="math inline">\(p\)</span> 是素数, <span class="math inline">\(r &gt; 0\)</span>. 相关结论是</p>
+<div class="note "><p><strong>Theorem (原根).</strong> 设 <span class="math inline">\(p\)</span> 是素数, <span class="math inline">\(r &gt; 0\)</span>.<br />
+(i) 若 <span class="math inline">\(p\)</span> 是奇素数, 则 <span class="math inline">\((\mathbb{Z}/p^r\mathbb{Z})^\times\)</span> 是 <span class="math inline">\(p^{r-1}(p-1)\)</span> 阶循环群. 其生成元被称为模 <span class="math inline">\(p^r\)</span> 的原根.<br />
+(ii) 若 <span class="math inline">\(p=2\)</span>, <span class="math inline">\(r &gt; 2\)</span>, 则 <span class="math inline">\((\mathbb{Z} /2^r\mathbb{Z})^\times\)</span> 由 <span class="math inline">\(-1\)</span> 和 <span class="math inline">\(5\)</span> 生成, 且 <span class="math inline">\((\mathbb{Z} /2^r\mathbb{Z})^\times \simeq \{\pm 1\} \times \mathbb{Z} / 2^{r-2}\mathbb{Z}\)</span>.</p>
+</div>
+<p>见书[1] page 4-5.</p>
+<h3 id="the-quadratic-reciprocity-law">The quadratic reciprocity law</h3>
+<h4 id="the-quadratic-residue-symbol">The quadratic residue symbol</h4>
+<p>设 <span class="math inline">\(p\)</span> 是奇素数, 则 <span class="math inline">\((\mathbb{Z}/p\mathbb{Z})^\times\)</span> 是 <span class="math inline">\(p-1\)</span> 阶循环群. <span class="math inline">\(2 \mid p-1\)</span>, 故 <span class="math inline">\((\mathbb{Z}/p\mathbb{Z})^\times\)</span> 有唯一的 <span class="math inline">\(\frac{p-1}{2}\)</span> 阶子群 <span class="math inline">\(R = \{a^2 \mid a\in (\mathbb{Z}/p\mathbb{Z})^\times\}\)</span>. 存在唯一的同态 <span class="math inline">\(\lambda\)</span> 使得</p>
+<p><span class="math display">\[
+    1 \to R \to (\mathbb{Z}/p\mathbb{Z})^\times \xrightarrow{\lambda} \{\pm 1\} \to 1
+\]</span></p>
+<p>正合.</p>
+<p>子群 <span class="math inline">\(R\)</span> 的元素称为模 <span class="math inline">\(p\)</span> 的二次剩余. 定义</p>
+<p><span class="math display">\[
+    \left(\dfrac{b}{p}\right) = \begin{cases}
+         \lambda(b \pmod{p})&amp; p\nmid b,\\
+         0&amp;  p \mid b\\
+    \end{cases}
+\]</span></p>
+<p>则显然 <span class="math inline">\(\left(\dfrac{bc}{p}\right) = \left(\dfrac{b}{p}\right)\left(\dfrac{c}{p}\right)\)</span>, <span class="math inline">\(\forall b,c \in \mathbb{Z}\)</span>.</p>
+<p>设 <span class="math inline">\(r\)</span> 是模 <span class="math inline">\(p\)</span> 的一个原根. 对任意 <span class="math inline">\(a \in \mathbb{Z}\)</span>, 若 <span class="math inline">\(p \nmid a\)</span>, 记 <span class="math inline">\(a \equiv r^{m} \pmod{p}\)</span>, 则</p>
+<p><span class="math display">\[
+    \left(\dfrac{a}{p}\right) = (-1)^m \equiv (r^\frac{p-1}{2})^m \equiv a^\frac{p-1}{2} \pmod{p}.
+\]</span></p>
+<p>而当 <span class="math inline">\(p \mid a\)</span> 时我们也有上式左右两边模 <span class="math inline">\(p\)</span> 同余.</p>
+<p>带入 <span class="math inline">\(a = -1\)</span> 得到</p>
+<p><span class="math display">\[
+    \left(\dfrac{-1}{p}\right) = (-1)^{\frac{p-1}{2}}.
+\]</span></p>
+<h4 id="dirichlet-character">Dirichlet Character</h4>
+<p>设 <span class="math inline">\(2 &lt;r \in \mathbb{Z}\)</span>. 我们将同态 <span class="math inline">\(\chi\colon (\mathbb{Z} /r\mathbb{Z})^\times \to \mathbb{C}^\times\)</span> 称为模 <span class="math inline">\(r\)</span> 的 Dirichlet 特征(或者简写特征). 我们可以把 <span class="math inline">\(\chi\)</span> 视为 <span class="math inline">\(\mathbb{Z}\)</span> 的函数, 通过</p>
+<p><span class="math display">\[
+    \chi(c) = \begin{cases}
+        \chi(c) &amp; (c,r) = 1\\
+        0 &amp; (c,r) \ne 1\\
+    \end{cases}.
+\]</span></p>
+<p>易见对有限 Abel 群 <span class="math inline">\(G\)</span> 有 <span class="math inline">\(\mathrm{Hom}(G,\mathbb{C}^\times) \simeq G\)</span>. (见 Lang, <em>Algebra</em>.)</p>
+<p>我们称模 <span class="math inline">\(r\)</span> 的特征 <span class="math inline">\(\chi\)</span> 是本原的或非平凡的, 若不存在 <span class="math inline">\(s \mid r\)</span> 和模 <span class="math inline">\(s\)</span> 的特征 <span class="math inline">\(\xi\)</span>, 使得 <span class="math inline">\(\chi(c) =\xi(c), \forall (c,r)=1\)</span>.</p>
+<p>令 <span class="math inline">\(\zeta_r = e^{\frac{2\pi i}{r}}\)</span> 是本原 <span class="math inline">\(r\)</span> 次单位根, 称</p>
+<p><span class="math display">\[
+    \tau(\chi) = \sum_{a \in \mathbb{Z} /r\mathbb{Z}} \chi(a)\zeta_r^a
+\]</span></p>
+<p>为 <span class="math inline">\(\chi\)</span> 的 Gauss 和. 其求和号可以换为 <span class="math inline">\(\sum_{a=1}^r,\sum_{a=1}^{r-1}\)</span> 或者 <span class="math inline">\(\sum_{a \in (\mathbb{Z} /r\mathbb{Z})^\times}\)</span>. 我们有</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \sum_{a = 1}^{r} \chi(a)\zeta_r^{ab} &amp;= \overline\chi(b)\tau(x), \\
+        \tau(\chi)\tau(\overline\chi) &amp;= \chi(-1)r, \\
+        |\tau(\chi)|^2 &amp;= r, \\
+        \overline{\tau(\chi)} &amp;= \chi(-1)\tau(\overline\chi).
+    \end{aligned}
+\]</span></p>
+<p>见书 [1] page 7.</p>
+<p><div class="note "><p><strong>Theorem 3.4.</strong> 设 <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(r\)</span> 的本原特征标, 满足 <span class="math inline">\(\overline{\chi}=\chi\)</span>. 则任意和 <span class="math inline">\(r\)</span> 互素的素数 <span class="math inline">\(p\)</span> 有 <span class="math inline">\(\chi(p) = \chi(-1)^{(p-1) /2}\left(\dfrac{r}{p}\right)\)</span>.</p>
+</div></p>
+<p>特别地, 设 <span class="math inline">\(q\)</span> 是奇素数, 则 <span class="math inline">\(\left(\dfrac{-}{q}\right)\)</span> 是模 <span class="math inline">\(q\)</span> 的本原特征标. 由 Theorem 3.4 得到</p>
+<p><span class="math display">\[
+    \left(\dfrac{q}{p}\right)\left(\dfrac{p}{q}\right) =\left(\dfrac{-1}{q}\right)^{\frac{p-1}{2}} = (-1)^{\frac{p-1}{2}\frac{q-1}{2}}.
+ \]</span></p>
+<p>现在, 定义 <span class="math inline">\(\chi_1\colon (\mathbb{Z} /8\mathbb{Z})^\times \to \{\pm 1\}\)</span>, 其中</p>
+<p><span class="math display">\[
+    \chi_1(a) = \begin{cases}
+        1 &amp; a \equiv \pm 1\pmod{8} \\
+        -1 &amp; a \equiv \pm 3 \pmod{8} \\
+    \end{cases}.
+ \]</span></p>
+<p>则显然 <span class="math inline">\(\chi_1\)</span> 是模 <span class="math inline">\(8\)</span> 的本原特征标. 我们有 <span class="math inline">\(\chi_1(-1) = 1\)</span>. 于是 Theorem 3.4 说明了对任意奇素数 <span class="math inline">\(p\)</span> 有</p>
+<p><span class="math display">\[
+    \left(\dfrac{2}{p}\right)=\left(\dfrac{2^3}{p}\right) = \chi_1(p) = \begin{cases}
+        1 &amp; p \equiv \pm 1\pmod{8} \\
+        -1 &amp; p \equiv \pm 3 \pmod{8}\\
+    \end{cases}.
+ \]</span></p>
+
       
     </div>
 
@@ -845,105 +990,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/19/Sylow-Theory/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Group-Action/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/2019/07/03/Hello-World/psi.png">
-      <meta itemprop="name" content="Psi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Psi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/29/Group-Action/" class="post-title-link" itemprop="url">群在集合上的作用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-29T00:00:00+08:00">2019-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-08 02:16:06" itemprop="dateModified" datetime="2020-07-08T02:16:06+08:00">2020-07-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <!-- vim-markdown-toc GFM -->
-<ul>
-<li><a href="#preliminaries">Preliminaries</a></li>
-<li><a href="#burnsides-lemma">Burnside's Lemma</a></li>
-<li><a href="#n-transitivity">n-Transitivity</a></li>
-<li><a href="#primitive-actions">Primitive Actions</a></li>
-<li><a href="#applications">Applications</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-<p>主要是 "Finite Groups, an Introduction" 第一章关于群作用部分的总结和习题.</p>
-<h2 id="preliminaries">Preliminaries</h2>
-<p>设 <span class="math inline">\(G\)</span> 是一个群. <span class="math inline">\(G\)</span> (左)作用在集合 <span class="math inline">\(X\)</span> 上是指一个映射</p>
-<p><span class="math display">\[
-    G \times X \to X, (g,x) \mapsto gx,
-\]</span></p>
-<p>满足如下性质:</p>
-<p><span class="math inline">\((1)\, g(g&#39;x) = (gg&#39;)x, \forall x \in X, g,g&#39; \in G\)</span>.<br />
-<span class="math inline">\((2)\, 1x = x,\forall x \in X\)</span>.</p>
-<p>等价的, <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X\)</span> 上的作用也可由群同态 <span class="math inline">\(G \to \mathcal{S}_X\)</span> 给出, 其中 <span class="math inline">\(\mathcal{S}_X\)</span> 指 <span class="math inline">\(X\)</span> 的对称群.</p>
-<p><strong>Definition.</strong> 若集合 <span class="math inline">\(X\)</span> 被 <span class="math inline">\(G\)</span> 作用, 称 <span class="math inline">\(X\)</span> 为 <span class="math inline">\(G\)</span>-Set.<br />
-设 <span class="math inline">\(X,Y\)</span> 是两个 <span class="math inline">\(G\)</span>-Set, 映射 <span class="math inline">\(f: X \to Y\)</span> 被称为 <span class="math inline">\(G\)</span>-Map, 如果 <span class="math inline">\(f(gx) = gf(x)\)</span> 对任意 <span class="math inline">\(x \in X, g \in G\)</span> 成立.<br />
-设 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(G\)</span>-Set, 若存在一一对应的 <span class="math inline">\(G\)</span>-Map <span class="math inline">\(X \to Y\)</span>, 称 <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X,Y\)</span> 上的作用同构的. 下文简称 <span class="math inline">\(X,Y\)</span> 是 <span class="math inline">\(G\)</span>-同构的. {:.success}</p>
-<p><strong>Definition.</strong> 设 <span class="math inline">\(X\)</span> 是一个 <span class="math inline">\(G\)</span>-Set, <span class="math inline">\(x \in X\)</span>, 用 <span class="math inline">\(G_x\)</span> 表示 <span class="math inline">\(x\)</span> 的稳定子群(Stabilizer) {:.success}</p>
-<p><strong>Definition.</strong> <span class="math inline">\(G\)</span> 在 <span class="math inline">\(X\)</span> 上的作用被称为<br />
-<span class="math inline">\((1)\)</span> 忠实的(faithful), 若 <span class="math inline">\(G \to \mathcal{S}_X\)</span> 是单射. 这等价于 <span class="math inline">\(\bigcap_{x \in X}G_x = 1\)</span>.<br />
-<span class="math inline">\((2)\)</span> 自由的(free), 若任意 <span class="math inline">\(x \in X\)</span>, 有 <span class="math inline">\(G_x = 1\)</span>.<br />
-若 <span class="math inline">\(G\)</span> 自由且传递地作用于 <span class="math inline">\(X\)</span>, 则 <span class="math inline">\(X\)</span> 称为 <span class="math inline">\(G\)</span>-torsor. {:.success}</p>
-<p>其他需要的概念和性质, 例如 <span class="math inline">\(G\)</span>-轨道(Orbit), 轨道-稳定子群定理, 这里省去. <span class="math inline">\(X\)</span> 的所有轨道组成的集合记为 <span class="math inline">\(X/G\)</span>.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/29/Group-Action/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
