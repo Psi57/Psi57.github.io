@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -249,6 +249,110 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/24/QuadraticForms-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/2019/07/03/Hello-World/psi.png">
+      <meta itemprop="name" content="Psi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Psi's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/24/QuadraticForms-2/" class="post-title-link" itemprop="url">QuadraticForms-2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-24 02:15:35 / 修改时间：03:35:33" itemprop="dateCreated datePublished" datetime="2020-07-24T02:15:35+08:00">2020-07-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="valuations-and-p-adic-numbers">Valuations and <span class="math inline">\(p\)</span>-adic numbers</h2>
+<p><del>抄不动了呜呜呜呜呜</del> 定义略去.</p>
+<div class="note "><p><strong>Lemma 6.6.</strong> 设 <span class="math inline">\(F\)</span> 是对非阿基米德赋值 <span class="math inline">\(\varphi\)</span> 完备的域, 则</p>
+<p><span class="math display">\[
+    \sum_{n = 1}^{\infty}a_n \text{ is convergent} \Longleftrightarrow \lim_{n \to \infty}a_n = 0.
+\]</span></p>
+</div>
+<p>给定 <span class="math inline">\(F\)</span> 和赋值 <span class="math inline">\(|\cdot|\)</span>, 令</p>
+<p><span class="math display">\[
+    R = \{x \in F \mid |x| \le 1\}, M = \{x \in F \mid |x| &lt; 1\}.
+\]</span></p>
+<p>称 <span class="math inline">\(R\)</span> 是 <span class="math inline">\(F\)</span> 的赋值环, 易验证 <span class="math inline">\(M\)</span> 是 <span class="math inline">\(R\)</span> 唯一的极大理想. (见 Lang, <em>Algebra</em>). 若 <span class="math inline">\(|\cdot |\)</span> 是离散的, 对应一个正规化的 order function <span class="math inline">\(v\)</span>, 则 <span class="math inline">\(R\)</span> 的每个理想有形式 <span class="math inline">\(M^n\)</span>. 令 <span class="math inline">\(\pi\)</span> 使得 <span class="math inline">\(v(\pi) = 1\)</span>, 则 <span class="math inline">\(M = \pi R\)</span>, <span class="math inline">\(R\)</span> 的每个理想有形式 <span class="math inline">\((\pi^n)\)</span>. 于是 <span class="math inline">\(R\)</span> 是 PID.</p>
+<div class="note "><p><strong>Theorem 6.8.</strong> 设 <span class="math inline">\(F\)</span> 是域, <span class="math inline">\(|\cdot |\)</span> 是 <span class="math inline">\(F\)</span> 上的非阿基米德赋值, 令 <span class="math inline">\(F^*\)</span> 是 <span class="math inline">\(F\)</span> 的完备化, 赋值仍然记为 <span class="math inline">\(|\cdot |\)</span>, 则 <span class="math inline">\(F\)</span> 和 <span class="math inline">\(F^*\)</span> 在 <span class="math inline">\(|\cdot |\)</span> 下的像相同, 即 <span class="math inline">\(|F| = |F^*|\)</span>. 特别地, 若 <span class="math inline">\(|\cdot |\)</span> 离散, 则 <span class="math inline">\(|\cdot |\)</span> 的完备化也离散.</p>
+</div>
+<p><em>proof</em>. 任意 <span class="math inline">\(y \in F^*\)</span>, 任意 <span class="math inline">\(\varepsilon &gt; 0\)</span>, 存在 <span class="math inline">\(x \in F\)</span> 使得 <span class="math inline">\(|y-x| &lt; \varepsilon\)</span>. 我们令 <span class="math inline">\(\varepsilon &lt; |x|\)</span>, 得到</p>
+<p><span class="math display">\[
+    |y| = |y-x+x| = |x|.
+\]</span></p>
+<p>易见 <span class="math inline">\(|F^*| = |F|\)</span>.</p>
+<div class="note "><p><strong>Theorem 6.8.</strong> 条件同上, 令 <span class="math inline">\(R^*, M^*\)</span> 是 <span class="math inline">\(F^*\)</span> 的赋值环和极大理想, 则 <span class="math inline">\(R^*\)</span> 是 <span class="math inline">\(R\)</span> 在 <span class="math inline">\(F^*\)</span> 中的闭包, 同理于 <span class="math inline">\(M^*\)</span> 和 <span class="math inline">\(M\)</span>.</p>
+</div>
+<p><em>proof.</em> 设 <span class="math inline">\(x \in R^*\)</span>, 任意 <span class="math inline">\(0 &lt; \varepsilon &lt; |x|\)</span>, 存在 <span class="math inline">\(y \in F\)</span> 使得 <span class="math inline">\(|y-x| &lt; \varepsilon\)</span>. 我们得到 <span class="math inline">\(|y|=|x|\)</span> 故 <span class="math inline">\(y \in R\)</span>. 这说明 <span class="math inline">\(R\)</span> 在 <span class="math inline">\(R^*\)</span> 中稠密. 同理于 <span class="math inline">\(M\)</span> 和 <span class="math inline">\(M^*\)</span>.</p>
+<div class="note "><p><strong>Theorem 6.8.</strong> 条件同上, 我们有 <span class="math inline">\(R^* = R + M^*\)</span>, <span class="math inline">\(M = R\cap M^*\)</span>, 且 <span class="math inline">\(R /M \simeq R^* /M^*\)</span>.</p>
+</div>
+<p><em>proof.</em> 任意 <span class="math inline">\(x \in R^*\)</span>, 任意 <span class="math inline">\(\varepsilon \in (0,|x|)\)</span>, 由上, 存在 <span class="math inline">\(y \in R\)</span> 使得 <span class="math inline">\(|y-x| &lt; \varepsilon\)</span>. 令 <span class="math inline">\(\varepsilon &lt; 1\)</span> 我们得到 <span class="math inline">\(y-x \in M^*\)</span>. 于是 <span class="math inline">\(x = x-y+y \in M^* + R\)</span>. 易见 <span class="math inline">\(R^* = R+M^*\)</span>. 同时 <span class="math inline">\(M = R \cap M^*\)</span> 是平凡的. 同构 <span class="math inline">\(R /M \simeq R^* /M^*\)</span> 来源于同构定理.</p>
+<p>(实际上, 设 <span class="math inline">\(\varepsilon \in (0,1)\)</span>, 令 <span class="math inline">\(M_\varepsilon = \{x \in F \mid |x| &lt; \varepsilon\}\)</span>. 则 <span class="math inline">\(M_\varepsilon\)</span> 是 <span class="math inline">\(R\)</span> 的理想. 用上面的方法也可以发现 <span class="math inline">\(R^* = R + M^*_{\varepsilon}\)</span> 和 <span class="math inline">\(M_{\varepsilon} = M^*_{\varepsilon} \cap R\)</span>. 于是 <span class="math inline">\(R /M_{\varepsilon} \simeq R^* /M_{\varepsilon}^*\)</span>. 当 <span class="math inline">\(F^*\)</span> 取 <span class="math inline">\(\mathbb{Q}_p\)</span>, <span class="math inline">\(F\)</span> 取 <span class="math inline">\(\mathbb{Q}\)</span>, 赋值取 <span class="math inline">\(p\)</span>-adic 赋值时, <span class="math inline">\(\mathbb{Z}\)</span> 在 <span class="math inline">\(\mathbb{Z}_p\)</span> 中稠密, 用上面的方法知道 <span class="math inline">\(\mathbb{Z_p} /p^n\mathbb{Z}_p \simeq \mathbb{Z}/p^n\mathbb{Z}\)</span>.)</p>
+<div class="note "><p><strong>Theorem 6.8.</strong> 条件同上, 设 <span class="math inline">\(|\cdot |\)</span> 是离散的, 对应一个正规化的 order function <span class="math inline">\(v\)</span>. 令 <span class="math inline">\(\{\pi_k\}_{k \in\mathbb{Z}}\)</span> 是 <span class="math inline">\(F\)</span> 的子集, 使得 <span class="math inline">\(v(\pi_k) = k\)</span>. 令 <span class="math inline">\(S\)</span> 是陪集 <span class="math inline">\(R /M\)</span> 的一组代表元且 <span class="math inline">\(0 \in S\)</span>. 则 <span class="math inline">\(F^*\)</span> 的每个元素都可以唯一地写为 <span class="math inline">\(\sum_{k=m}^{\infty} s_k\pi_k\)</span>, 其中 <span class="math inline">\(m \in \mathbb{Z}\)</span>, <span class="math inline">\(s_k \in S\)</span>.</p>
+</div>
+<p>我们注意到 <span class="math inline">\(S\pi_n\)</span> 是陪集 <span class="math inline">\(M^n /M^{n+1}\)</span> 的代表元, 因为 <span class="math inline">\(R /M \to M^n /M^{n+1}, x \mapsto x\pi_n\)</span> 是 Abel 群的同构. 然后归纳即可.</p>
+<div class="note "><p><strong>Lemma 6.9.</strong> 设 <span class="math inline">\(v\)</span> 是离散的, <span class="math inline">\(R /M\)</span> 有限. 则 <span class="math inline">\(R^*\)</span>, <span class="math inline">\((R^*)^\times\)</span> 是紧的开集, <span class="math inline">\(F^*\)</span> 是局部紧的.</p>
+</div>
+<p>设 <span class="math inline">\(p\)</span> 是素数, 对 <span class="math inline">\(p^{n} \frac{a}{b} \in \mathbb{Q}\)</span>, <span class="math inline">\(p \nmid a,b\)</span>, 令 <span class="math inline">\(v_p(p^na /b) = n\)</span>. 则 <span class="math inline">\(v_p\)</span> 是一个 order function. 令 <span class="math inline">\(|x|_p = p^{-v_p(x)}\)</span>, 则 <span class="math inline">\(\mathbb{Q}\)</span> 的完备化记为 <span class="math inline">\(\mathbb{Q}_p\)</span>, 即 <span class="math inline">\(p\)</span>-adic 数域. <span class="math inline">\(\mathbb{Z}_p\)</span> 即 <span class="math inline">\(\{x \in \mathbb{Q}_p \mid v_p(x) \ge 0\}\)</span>. 我们有 <span class="math inline">\(\mathbb{Z}_P^\times =\{x \in \mathbb{Z}_p \mid v_p(x) = 0\}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span> 在 <span class="math inline">\(\mathbb{Q}_p\)</span> 中的闭包是 <span class="math inline">\(\mathbb{Z}_p\)</span>. 于是 Theorem 6.8 告诉我们</p>
+<p><span class="math display">\[
+    \mathbb{Z}_p = \{\sum_{k=0}^{\infty}a_kp^k \mid a_k = 0,1,\ldots ,p-1\}.
+\]</span></p>
+<p>下设 <span class="math inline">\(p\)</span> 是<strong>奇素数</strong>. 我们有同态 <span class="math inline">\(\varphi\colon\mathbb{Z}_p \to \mathbb{Z}_p /p\mathbb{Z}_p \to \mathbb{Z}/p\mathbb{Z}\)</span>. 设 <span class="math inline">\(x \in \mathbb{Z}_p\)</span>, 我们定义<span class="math inline">\(\left(\dfrac{x}{p}\right)=\left(\dfrac{\varphi(x)}{p}\right)\)</span>. 这个定义即, 若 <span class="math inline">\(\xi \in \mathbb{Z}\)</span> 使得 <span class="math inline">\(x - \xi \in p\mathbb{Z}_p\)</span>, 则 <span class="math inline">\(\left(\dfrac{x}{p}\right)=\left(\dfrac{\xi}{p}\right)\)</span>.</p>
+<div class="note "><p><strong>Lemma 6.11.</strong> 令 <span class="math inline">\(\mathbb{Z}_p^{\times 2} = \{x^2 \mid x \in \mathbb{Z}_p^\times\}\)</span>. 有</p>
+<p><span class="math display">\[\begin{aligned}
+    (i) \mathbb{Z}_p^{\times 2} = \left\{x \in \mathbb{Z}_p^\times  \mid \left(\dfrac{x}{p}\right) = 1\right\}, \\
+    (ii) (\mathbb{Z}_p^\times \colon\mathbb{Z}_{p}^{\times 2}) = 2, \\
+    (iii) (\mathbb{Q}_p^\times \colon \mathbb{Q}_p^{\times 2}) = 4.
+\end{aligned}\]</span></p>
+</div>
+<p><em>proof.</em> (i) 首先左边显然被右边包含. 反之, 设 <span class="math inline">\(x \in \mathbb{Z}_p^\times\)</span>, 对任意 <span class="math inline">\(n &gt; 0\)</span>, 有 <span class="math inline">\((\mathbb{Z}_p /p^n\mathbb{Z}_p)^\times \simeq (\mathbb{Z} /p^n\mathbb{Z})^\times\)</span>, 于是是循环群. 令 <span class="math inline">\(r \in \mathbb{Z}\)</span> 生成它们, 有 <span class="math inline">\(x-r^k \in p^b\mathbb{Z}_p\)</span>, 存在 <span class="math inline">\(k\)</span>. 若 <span class="math inline">\(\left(\dfrac{x}{p}\right) = 1\)</span> 则 <span class="math inline">\(k\)</span> 是偶数, 因为 <span class="math inline">\(\left(\dfrac{r}{p}\right) = -1\)</span>. 于是我们可以找到 <span class="math inline">\(y_n^2 - x \in p^n\mathbb{Z}_p\)</span>. 数列 <span class="math inline">\(\{y_n\}\)</span> 有收敛子列收敛于 <span class="math inline">\(z \in \mathbb{Z}_p\)</span>. 易见 <span class="math inline">\(z^2 = x\)</span>, 从而 <span class="math inline">\(x \in \mathbb{Z}_p^{\times 2}\)</span>. (ii),(iii) 不抄.</p>
+<p>这说明 <span class="math inline">\(\mathbb{Q}_p^\times /\mathbb{Q}_p^{\times 2}\)</span> 的陪集有代表元 <span class="math inline">\(\{1,r,p,pr\}\)</span>, 其中 <span class="math inline">\(r\)</span> 是任意非一个模 <span class="math inline">\(p\)</span> 的二次剩余. 我们结合 Kummer 理论, 知道 <span class="math inline">\(\mathbb{Q}_p\)</span> 上的二次扩张只有 <span class="math inline">\(\mathbb{Q}_p(\sqrt{r}),\mathbb{Q}_p(\sqrt{p}),\mathbb{Q}_p(\sqrt{pr})\)</span>.</p>
+<p>对 <span class="math inline">\(p=2\)</span>, 我不抄了! 抄不动了呜呜呜呜呜, 抄这些干什么.jpg呜呜呜, 笔记本不香吗呜呜呜.</p>
+
       
     </div>
 
@@ -854,86 +958,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/26/Primtive-Element/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/19/Sylow-Theory/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/2019/07/03/Hello-World/psi.png">
-      <meta itemprop="name" content="Psi">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Psi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/19/Sylow-Theory/" class="post-title-link" itemprop="url">Sylow 定理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-19 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-19T00:00:00+08:00">2020-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-10 22:37:25" itemprop="dateModified" datetime="2020-07-10T22:37:25+08:00">2020-07-10</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>主要是习题整理.</p>
-<!-- vim-markdown-toc GFM -->
-<ul>
-<li><a href="#sylow-theorems">Sylow Theorems</a></li>
-<li><a href="#fusion-in-the-normalizer-of-a-boldsymbolp-sylow-subgroup">Fusion in the normalizer of a <span class="math inline">\(\boldsymbol{p}\)</span>-Sylow subgroup</a></li>
-<li><a href="#local-conjugacy-and-alperins-theorem">Local conjugacy and Alperin's Theorem</a></li>
-<li><a href="#exercises">Exercises</a></li>
-</ul>
-<!-- vim-markdown-toc -->
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/19/Sylow-Theory/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
