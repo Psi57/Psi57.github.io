@@ -28,7 +28,7 @@
 <meta property="og:description" content="\(\newcommand{\bbZ}{\mathbb{Z}}\) 看一点写(抄)一点 [1] 上的命题保持其编号. 这篇文章单独出现的命题以小括号编号.   Elementary Facts  Structure of \((\mathbb{Z}&#x2F;m\mathbb{Z})^{\times}\). The quadratic reciprocity law  The quadratic resid">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-17T13:37:02.000Z">
-<meta property="article:modified_time" content="2020-07-17T23:47:16.261Z">
+<meta property="article:modified_time" content="2020-07-23T10:38:29.574Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math Number-Theory">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-18 07:47:16" itemprop="dateModified" datetime="2020-07-18T07:47:16+08:00">2020-07-18</time>
+                <time title="修改时间：2020-07-23 18:38:29" itemprop="dateModified" datetime="2020-07-23T18:38:29+08:00">2020-07-23</time>
               </span>
 
           
@@ -372,9 +372,30 @@
 <ol start="3" type="i">
 <li>直接由 (iv) 和 (ii) 得到.</li>
 </ol>
-<p><div class="note "><p><strong>Theorem 3.4.</strong> 设 <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(r\)</span> 的本原特征标, 满足 <span class="math inline">\(\overline{\chi}=\chi\)</span>. 则任意和 <span class="math inline">\(r\)</span> 互素的素数 <span class="math inline">\(p\)</span> 有 <span class="math inline">\(\chi(p) = \chi(-1)^{(p-1) /2}\left(\dfrac{r}{p}\right)\)</span>.</p>
+<p><div class="note "><p><strong>Theorem 3.4.</strong> 设 <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(r\)</span> 的本原特征标, 满足 <span class="math inline">\(\overline{\chi}=\chi\)</span>. 则任意和 <span class="math inline">\(r\)</span> 互素的奇素数 <span class="math inline">\(p\)</span> 有 <span class="math inline">\(\chi(p) = \chi(-1)^{(p-1) /2}\left(\dfrac{r}{p}\right)\)</span>.</p>
 </div></p>
-<p><em>proof.</em> 见 [1].</p>
+<p><em>proof.</em> 记 <span class="math inline">\(\tau = \tau(\chi)\)</span>, <span class="math inline">\(\zeta =\zeta_r\)</span>. 令 <span class="math inline">\(R= \mathbb{Z}[\zeta]\)</span>. 我们有 <span class="math inline">\(\tau \in R\)</span>. 有 <span class="math inline">\(\tau^2 = \chi(-1)r\)</span>. 于是</p>
+<p><span class="math display">\[
+    \tau^p = (\tau^2)^{\frac{p-1}{2}}\tau = \chi(-1)^{\frac{p-1}{2}}r^{\frac{p-1}{2}}\tau.
+ \]</span></p>
+<p>另一方面, 我们有 <span class="math inline">\((a+b)^p \equiv a^p+b^p \pmod{pR}\)</span>, 于是</p>
+<p><span class="math display">\[
+    \tau^p \equiv \sum_{a=1}^{r-1} \chi(a)\zeta^{ap} \equiv \chi(p)\tau \pmod{pR}.
+ \]</span></p>
+<p>从而, 得到</p>
+<p><span class="math display">\[
+    \chi(p)\tau \equiv \chi(-1)^{\frac{p-1}{2}}r^{\frac{p-1}{2}}\tau \equiv \chi(-1)^{\frac{p-1}{2}}\left(\dfrac{r}{p}\right)\tau \pmod{pR}.
+\]</span></p>
+<p>我们有<span class="math inline">\(\tau\cdot\overline{\tau} = r\)</span>, 故</p>
+<p><span class="math display">\[
+    \chi(p)r \equiv \chi(-1)^{\frac{p-1}{2}}\left(\dfrac{r}{p}\right)r \pmod{pR}.
+\]</span></p>
+<p>注意 <span class="math inline">\(pR \cap \mathbb{Z} = p\mathbb{Z}\)</span> 且上式两边都是整数, 我们有</p>
+<p><span class="math display">\[
+    \chi(p)r \equiv \chi(-1)^{\frac{p-1}{2}}\left(\dfrac{r}{p}\right)r \pmod {p}.
+\]</span></p>
+<p>结合 <span class="math inline">\(r\)</span> 和 <span class="math inline">\(p\)</span> 互素, 我们得到 <span class="math inline">\(\chi(p) \equiv \chi(-1)^{(p-1) /2}\left(\dfrac{r}{p}\right) \pmod {p}\)</span>. 同余式两边取值 <span class="math inline">\(\pm 1\)</span> 而 <span class="math inline">\(p &gt; 2\)</span>, 故 <span class="math inline">\(\chi(p) = \chi(-1)^{(p-1) /2}\left(\dfrac{r}{p}\right)\)</span>. 证完.</p>
+<p>注: <span class="math inline">\(pR \cap \mathbb{Z} = p\mathbb{Z}\)</span> 的原因是: 有 <span class="math inline">\(p\mathbb{Z} \subset pR \cap \mathbb{Z} \subset \mathbb{Z}\)</span>, 而 <span class="math inline">\(pR \cap \mathbb{Z}\)</span> 是 <span class="math inline">\(\mathbb{Z}\)</span> 的理想, <span class="math inline">\(p\mathbb{Z}\)</span> 是 <span class="math inline">\(\mathbb{Z}\)</span> 的极大理想, 我们有 <span class="math inline">\(pR\mathbb{Z} \cap \mathbb{Z} = p\mathbb{Z}\)</span> 或 <span class="math inline">\(\mathbb{Z}\)</span>. 若 <span class="math inline">\(pR \cap \mathbb{Z} = \mathbb{Z}\)</span> 则 <span class="math inline">\(1 \in pR\)</span>, 导致 <span class="math inline">\(1/ p \in R\)</span>, 导致 <span class="math inline">\(1 /p\)</span> 是代数整数,矛盾.</p>
 <p>特别地, 设 <span class="math inline">\(q\)</span> 是奇素数, 则 <span class="math inline">\(\left(\dfrac{-}{q}\right)\)</span> 是模 <span class="math inline">\(q\)</span> 的本原特征标. 由 Theorem 3.4 得到</p>
 <p><span class="math display">\[
     \left(\dfrac{q}{p}\right)\left(\dfrac{p}{q}\right) =\left(\dfrac{-1}{q}\right)^{\frac{p-1}{2}} = (-1)^{\frac{p-1}{2}\frac{q-1}{2}}.
@@ -393,6 +414,7 @@
         -1 &amp; p \equiv \pm 3 \pmod{8}\\
     \end{cases}.
  \]</span></p>
+<p>现在, 设 <span class="math inline">\(\xi\)</span> 是模 <span class="math inline">\(t\)</span> 的非本原的特征标, 存在 <span class="math inline">\(s = 1\)</span> 或 <span class="math inline">\(s \mid \xi\)</span> 使得 <span class="math inline">\(\xi\)</span> 在 <span class="math inline">\(\mathrm{Hom}((\mathbb{Z} /s\mathbb{Z})^\times ,\mathbb{C}^\times ) \to \mathrm{Hom}((\mathbb{Z} /t\mathbb{Z})^\times ,\mathbb{C}^\times)\)</span> 的像中(若 <span class="math inline">\(s = 1\)</span>, 令 <span class="math inline">\(\xi\)</span> 是平凡的特征标 <span class="math inline">\(1\)</span>). 存在最小的 <span class="math inline">\(s\)</span>, 使得 <span class="math inline">\(\xi = \chi\pi\)</span>, 其中 <span class="math inline">\(\pi\)</span> 是投射, <span class="math inline">\(\chi\)</span> 是模 <span class="math inline">\(s\)</span> 的特征标, 易见 <span class="math inline">\(\chi\)</span> 是本原的(否则与 <span class="math inline">\(s\)</span> 最小矛盾) 且 <span class="math inline">\(\chi\)</span> 是唯一的 (因为 <span class="math inline">\(0 \to \mathrm{Hom}((\mathbb{Z} /s\mathbb{Z})^\times ,\mathbb{C}^\times ) \to \mathrm{Hom}((\mathbb{Z} /t\mathbb{Z})^\times ,\mathbb{C}^\times)\)</span> 正合). 称 <span class="math inline">\(\chi\)</span> 为与 <span class="math inline">\(\xi\)</span> 相联的本原特征标(the prime character associated with <span class="math inline">\(\xi\)</span>). 称 <span class="math inline">\(s\)</span> 为 <span class="math inline">\(\xi\)</span> 的 conductor.</p>
 <h2 id="参考资料">参考资料</h2>
 <p>[1] Goro Shimura, <em>Arithmetic of Quadratic Forms</em>, Springer-Verlag, Springer Monographs in Mathematics, 2010.</p>
 
