@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Valuations and \(p\)-adic numbers 抄不动了呜呜呜呜呜 定义略去. Lemma 6.6. 设 \(F\) 是对非阿基米德赋值 \(\varphi\) 完备的域, 则 \[     \sum_{n &#x3D; 1}^{\infty}a_n \text{ is convergent} \Longleftrightarrow \lim_{n \to \infty}a_n &#x3D; 0.">
+  <meta name="description" content="Valuations and \(p\)-adic numbers 抄不动了呜呜呜呜呜 定义略去.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QuadraticForms-2">
 <meta property="og:url" content="http://yoursite.com/2020/07/24/QuadraticForms-2/index.html">
 <meta property="og:site_name" content="Psi&#39;s Blog">
-<meta property="og:description" content="Valuations and \(p\)-adic numbers 抄不动了呜呜呜呜呜 定义略去. Lemma 6.6. 设 \(F\) 是对非阿基米德赋值 \(\varphi\) 完备的域, 则 \[     \sum_{n &#x3D; 1}^{\infty}a_n \text{ is convergent} \Longleftrightarrow \lim_{n \to \infty}a_n &#x3D; 0.">
+<meta property="og:description" content="Valuations and \(p\)-adic numbers 抄不动了呜呜呜呜呜 定义略去.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-23T18:15:35.000Z">
-<meta property="article:modified_time" content="2020-07-23T19:35:33.978Z">
+<meta property="article:modified_time" content="2020-07-23T19:41:13.578Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math Number-Theory">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-24 02:15:35 / 修改时间：03:35:33" itemprop="dateCreated datePublished" datetime="2020-07-24T02:15:35+08:00">2020-07-24</time>
+              <time title="创建时间：2020-07-24 02:15:35 / 修改时间：03:41:13" itemprop="dateCreated datePublished" datetime="2020-07-24T02:15:35+08:00">2020-07-24</time>
             </span>
 
           
@@ -242,6 +242,7 @@
       
         <h2 id="valuations-and-p-adic-numbers">Valuations and <span class="math inline">\(p\)</span>-adic numbers</h2>
 <p><del>抄不动了呜呜呜呜呜</del> 定义略去.</p>
+<a id="more"></a>
 <div class="note "><p><strong>Lemma 6.6.</strong> 设 <span class="math inline">\(F\)</span> 是对非阿基米德赋值 <span class="math inline">\(\varphi\)</span> 完备的域, 则</p>
 <p><span class="math display">\[
     \sum_{n = 1}^{\infty}a_n \text{ is convergent} \Longleftrightarrow \lim_{n \to \infty}a_n = 0.
@@ -273,7 +274,7 @@
 </div>
 <p>设 <span class="math inline">\(p\)</span> 是素数, 对 <span class="math inline">\(p^{n} \frac{a}{b} \in \mathbb{Q}\)</span>, <span class="math inline">\(p \nmid a,b\)</span>, 令 <span class="math inline">\(v_p(p^na /b) = n\)</span>. 则 <span class="math inline">\(v_p\)</span> 是一个 order function. 令 <span class="math inline">\(|x|_p = p^{-v_p(x)}\)</span>, 则 <span class="math inline">\(\mathbb{Q}\)</span> 的完备化记为 <span class="math inline">\(\mathbb{Q}_p\)</span>, 即 <span class="math inline">\(p\)</span>-adic 数域. <span class="math inline">\(\mathbb{Z}_p\)</span> 即 <span class="math inline">\(\{x \in \mathbb{Q}_p \mid v_p(x) \ge 0\}\)</span>. 我们有 <span class="math inline">\(\mathbb{Z}_P^\times =\{x \in \mathbb{Z}_p \mid v_p(x) = 0\}\)</span>, <span class="math inline">\(\mathbb{Z}\)</span> 在 <span class="math inline">\(\mathbb{Q}_p\)</span> 中的闭包是 <span class="math inline">\(\mathbb{Z}_p\)</span>. 于是 Theorem 6.8 告诉我们</p>
 <p><span class="math display">\[
-    \mathbb{Z}_p = \{\sum_{k=0}^{\infty}a_kp^k \mid a_k = 0,1,\ldots ,p-1\}.
+    \mathbb{Z}_p = \left\{\sum_{k=0}^{\infty}a_kp^k \mid a_k = 0,1,\ldots ,p-1\right\}.
 \]</span></p>
 <p>下设 <span class="math inline">\(p\)</span> 是<strong>奇素数</strong>. 我们有同态 <span class="math inline">\(\varphi\colon\mathbb{Z}_p \to \mathbb{Z}_p /p\mathbb{Z}_p \to \mathbb{Z}/p\mathbb{Z}\)</span>. 设 <span class="math inline">\(x \in \mathbb{Z}_p\)</span>, 我们定义<span class="math inline">\(\left(\dfrac{x}{p}\right)=\left(\dfrac{\varphi(x)}{p}\right)\)</span>. 这个定义即, 若 <span class="math inline">\(\xi \in \mathbb{Z}\)</span> 使得 <span class="math inline">\(x - \xi \in p\mathbb{Z}_p\)</span>, 则 <span class="math inline">\(\left(\dfrac{x}{p}\right)=\left(\dfrac{\xi}{p}\right)\)</span>.</p>
 <div class="note "><p><strong>Lemma 6.11.</strong> 令 <span class="math inline">\(\mathbb{Z}_p^{\times 2} = \{x^2 \mid x \in \mathbb{Z}_p^\times\}\)</span>. 有</p>
