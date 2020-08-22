@@ -28,7 +28,7 @@
 <meta property="og:description" content="长期更新, 收集各种问题&#x2F;技巧&#x2F;日常&#x2F;诸如此类.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2999-12-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-22T09:52:42.789Z">
+<meta property="article:modified_time" content="2020-08-22T18:06:58.580Z">
 <meta property="article:author" content="Psi">
 <meta property="article:tag" content="Math">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-22 17:52:42" itemprop="dateModified" datetime="2020-08-22T17:52:42+08:00">2020-08-22</time>
+                <time title="修改时间：2020-08-23 02:06:58" itemprop="dateModified" datetime="2020-08-23T02:06:58+08:00">2020-08-23</time>
               </span>
 
           
@@ -456,6 +456,27 @@ P = \begin{pmatrix}1 &amp; \\ &amp; 1\end{pmatrix}, S = \begin{pmatrix}-1 &amp; 
 <p>https://math.stackexchange.com/questions/1654414/why-is-textgalk-k-cong-textgalk-omega-k-omega-with-omega-not?r=SearchResults</p>
 <p>2020.8.22</p>
 <p>设 <span class="math inline">\(k\)</span> 是任意一环, 令 <span class="math inline">\(G\)</span> 是有限群. 则 <span class="math inline">\(R = k[G]\)</span> 半单当且仅当 <span class="math inline">\(k\)</span> 是半单的且 <span class="math inline">\(|G|\)</span> 在 <span class="math inline">\(k\)</span> 中可逆. 见 https://www.isibang.ac.in/~sury/ayushtiwari.pdf Theorem 10.</p>
+<p>2020.8.23 凌晨.</p>
+<p>设 <span class="math inline">\(A\)</span> 为交换环, 令 <span class="math inline">\(\mathfrak{p}_1,\ldots ,\mathfrak{p}_n\)</span> 是 <span class="math inline">\(A\)</span> 的素理想. 则 <span class="math inline">\(S = A -\bigcup_{i=1}^{n} \mathfrak{p}_i\)</span> 是乘性子集. 且 <span class="math inline">\(S^{-1}A_{S^{-1}\mathfrak{p}_i} \simeq A_{\mathfrak{p}_i}\)</span>.(都显然.)</p>
+<p>现在设 <span class="math inline">\(A\)</span> 是整环. 则 <span class="math inline">\(S^{-1}A = \bigcap_{i=1}^{n}A_{\mathfrak{p}_i}\)</span>.(此时, 局部化都在 <span class="math inline">\(A\)</span> 的商域中.) 这是因为:</p>
+<p>由 <span class="math inline">\(S^{-1}A_{S^{-1}\mathfrak{p}_i} = A_{\mathfrak{p}_i}\)</span>, 有 <span class="math inline">\(\bigcap A_{\mathfrak{p}_i} =\bigcap S^{-1}A_{S^{-1}\mathfrak{p_i}}\)</span>. 熟知 <span class="math inline">\(S^{-1}A\)</span> 是其所有素理想处局部化的交, 于是 <span class="math inline">\(S^{-1}A= \bigcap_{\mathfrak{q}} S^{-1}A_{S^{-1}q}\)</span>, 其中 <span class="math inline">\(\mathfrak{q}\)</span> 是包含在 <span class="math inline">\(\bigcup_{i=1}^{n}\mathfrak{p}_i\)</span> 的素理想, 熟知此时存在 <span class="math inline">\(i\)</span> 使得 <span class="math inline">\(\mathfrak{q}\subset \mathfrak{p}_i\)</span>. 于是 <span class="math inline">\(\bigcap_\mathfrak{q} S^{-1}A_{S^{-1}\mathfrak{q}}=\bigcap_i S^{-1}A_{S^{-1}\mathfrak{p}_i}\)</span>. 从而证完.</p>
+<p>关于两个熟知的事实:</p>
+<div class="note "><p>设 <span class="math inline">\(A\)</span> 是整环, 则 <span class="math inline">\(A\)</span> 是其所有素理想处局部化的交.</p>
+</div>
+<p><em>proof.</em> 设 <span class="math inline">\(x \in \bigcap_{\mathfrak{q}}A_{\mathfrak{q}}\)</span>. 令</p>
+<p><span class="math display">\[
+    I=\{y \in A\mid yx \in A\}.
+\]</span></p>
+<p>则显然 <span class="math inline">\(I = A\)</span> 或 <span class="math inline">\(I\)</span> 是 <span class="math inline">\(A\)</span> 的理想. 若 <span class="math inline">\(1 \not\in I\)</span>, 则 <span class="math inline">\(I\)</span> 是真理想, 故存在 <span class="math inline">\(A\)</span> 的极大理想 <span class="math inline">\(\mathfrak{m}\)</span> 包含 <span class="math inline">\(I\)</span>. 有 <span class="math inline">\(x \in A_{\mathfrak{m}}\)</span>, 故存在 <span class="math inline">\(y \in A-\mathfrak{m}\)</span> 使得 <span class="math inline">\(yx \in A\)</span>, 导致 <span class="math inline">\(y \in I \subset \mathfrak{m}\)</span>, 矛盾.</p>
+<div class="note "><p>设 <span class="math inline">\(R\)</span> 是环, 设 <span class="math inline">\(I_i,i=1,2,\ldots ,r\)</span> 和 <span class="math inline">\(J\)</span> 是理想.假设</p>
+<ol type="1">
+<li><span class="math inline">\(J \not\subset I_i\)</span>, 任意 <span class="math inline">\(i=1,\ldots ,r\)</span>.<br />
+</li>
+<li><span class="math inline">\(I_i\)</span> 中有两个素理想.</li>
+</ol>
+<p>则存在 <span class="math inline">\(x \in J\)</span> 使得 <span class="math inline">\(x \not\in I_i,i=1,\ldots ,r\)</span>.</p>
+</div>
+<p>见 https://stacks.math.columbia.edu/tag/00DS</p>
 
     </div>
 
